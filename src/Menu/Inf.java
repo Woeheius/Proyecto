@@ -15,7 +15,7 @@ public final class Inf extends JFrame{
     JButton jbVolver;
     
     public Inf(MenuPrincipal obj){
-        super("Integrantes");
+        super("Integrantes del equipo");
         mp = obj;
         setSize(1000, 700);
         //setLocation(1000, 200);
