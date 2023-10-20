@@ -53,7 +53,7 @@ public final class Matrices extends JFrame{
         add(jlTitulo);
                 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(700, 600, 200, 30);
+        jbVolver.setBounds(700, 630, 200, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
@@ -67,32 +67,29 @@ public final class Matrices extends JFrame{
         
         editor.setText(
                 
-    "<!DOCTYPE html>\n" +
-    "<html>\n" +
-    "    <head>\n" +
-    "        <title>Definición</title>\n" +
-    "    </head>\n" +
-    "    <body bgcolor=\"#181818\">\n" +
-    "        <font color='white' face='Tahoma'>\n" +
-    "            <center><h1>Definición</h1></center>\n" +
-    "        </font>\n" +
-    "        <hr>\n" +
-    "        <font color='white' face='Tahoma' size='2'>\n" +
-    "            <p>Un sistema de ecuaciones es un conjunto de ecuaciones algebraicas que se utilizan para representar una serie de relaciones matemáticas entre varias incógnitas o variables. En otras palabras, es un conjunto de ecuaciones en el que estamos tratando de encontrar los valores desconocidos de ciertas variables que satisfacen todas las ecuaciones simultáneamente.</p>\n" +
-    "            <p>Un sistema de ecuaciones puede resolverse de varias formas, el método que elijas dependerá, en su mayoría, de tus preferencias personales y tu experiencia.</p>\n" +
-    "            <p>Hay algunos métodos comunes para resolver sistemas de ecuaciones y estos son:</p>\n" +
-    "            <ol>\n" +
-    "                <li>Método de sustitución: En este método, resuelves una de las ecuaciones para una de las variables y luego sustituyes esta expresión en las otras ecuaciones.</li>\n" +
-    "                "
-            + "<li>Eliminación: También conocido como el método de suma/resta, consiste en sumar o restar múltiplos adecuados de las ecuaciones para eliminar una de las variables. Esto simplifica el sistema, dejando una ecuación con una sola variable que puedes resolver.</li>\n" +
-    "                <li>Matrices y determinantes: Puedes utilizar matrices y determinantes para resolver sistemas de ecuaciones lineales. Puedes expresar el sistema en forma matricial y utilizar la inversa de una matriz o la regla de Cramer para encontrar las soluciones.</li>\n" +
-    "                <li>Método de Gauss-Jordán: Este método utiliza operaciones elementales de fila para reducir la matriz aumentada del sistema a una forma escalonada.</li>\n" +
-    "                <li>Método de la regla de Cramer: Este método se aplica a sistemas de ecuaciones lineales cuyas matrices de coeficientes sean cuadradas y tengan un determinante distinto de cero. Permite resolver cada variable de manera independiente utilizando determinantes y matrices adjuntas.</li>\n" +
-    "            </ol>\n" +
-    "            <p>Estos son algunos de los métodos más comunes y utilizados para resolver sistemas de ecuaciones. Con cualquiera de estos métodos, puedes solucionar el sistema de ecuaciones. La elección del método depende de tu decisión y preferencia al desarrollar un sistema de ecuaciones.</p>\n" +
-    "        </font>\n" +
-    "    </body>\n" +
-    "</html>");
+  "<!DOCTYPE html>\n" +
+"<html>\n" +
+"    <head>\n" +
+"        <title>Sistemas de Ecuaciones</title>\n" +
+"    </head>\n" +
+"    <body bgcolor=\"#181818\">\n" +
+"        <font color=\"white\" face=\"Tahoma\">\n" +
+"            <center><h1><font color=\"white\">Definición</font></h1></center>\n" +
+"        </font>\n" +
+"        <hr>\n" +
+"        <font color=\"white\" face=\"Tahoma\" size=\"3\">\n" +
+"            <p>Un sistema de ecuaciones es un conjunto de ecuaciones algebraicas que se utilizan para representar una serie de relaciones matemáticas entre varias incógnitas o variables. En otras palabras, es un conjunto de ecuaciones en el que estamos tratando de encontrar los valores desconocidos de ciertas variables que satisfacen todas las ecuaciones simultáneamente.</p>\n" +
+"            <p>Un sistema de ecuaciones puede resolverse de varias formas, el método que elijas dependerá, en su mayoría, de tus preferencias personales y tu experiencia.</p>\n" +
+"            <p>Hay algunos métodos comunes para resolver sistemas de ecuaciones y estos son:</p>\n" +
+"            <p><font color=\"red\">✔</font> Método de sustitución: En este método, resuelves una de las ecuaciones para una de las variables y luego sustituyes esta expresión en las otras ecuaciones.</p>\n" + 
+"            <p><font color=\"red\">✔</font> Eliminación: También conocido como el método de suma/resta, consiste en sumar o restar múltiplos adecuados de las ecuaciones para eliminar una de las variables. Esto simplifica el sistema, dejando una ecuación con una sola variable que puedes resolver.</p>\n" +
+"            <p><font color=\"red\">✔</font> Matrices y determinantes: Puedes utilizar matrices y determinantes para resolver sistemas de ecuaciones lineales. Puedes expresar el sistema en forma matricial y utilizar la inversa de una matriz o la regla de Cramer para encontrar las soluciones.</p>\n" +
+"            <p><font color=\"red\">✔</font> Método de Gauss-Jordán: Este método utiliza operaciones elementales de fila para reducir la matriz aumentada del sistema a una forma escalonada.</p>\n" +
+"            <p><font color=\"red\">✔</font> Método de la regla de Cramer: Este método se aplica a sistemas de ecuaciones lineales cuyas matrices de coeficientes sean cuadradas y tengan un determinante distinto de cero. Permite resolver cada variable de manera independiente utilizando determinantes y matrices adjuntas.</p>\n" +
+"            <p>Estos son algunos de los métodos más comunes y utilizados para resolver sistemas de ecuaciones. Con cualquiera de estos métodos, puedes solucionar el sistema de ecuaciones. La elección del método depende de tu decisión y preferencia al desarrollar un sistema de ecuaciones.</p>\n" +
+"        </font>\n" +
+"    </body>\n" +
+"</html>");
         
         editor.setEditable(false);//mostrar solo codigo HTML
         
@@ -111,7 +108,7 @@ public final class Matrices extends JFrame{
         }
         );
     JScrollPane js = new JScrollPane(editor);
-        js.setBounds(40, 90, 910, 570);
+        js.setBounds(40, 90, 915, 500);
         add(js);
     }
     

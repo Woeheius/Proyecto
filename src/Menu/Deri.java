@@ -53,7 +53,7 @@ public final class Deri extends JFrame{
         add(jlTitulo);
                 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(700, 600, 200, 30);
+        jbVolver.setBounds(700, 630, 200, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
@@ -103,7 +103,7 @@ public final class Deri extends JFrame{
         }
         );
     JScrollPane js = new JScrollPane(editor);
-        js.setBounds(40, 90, 910, 570);
+        js.setBounds(40, 90, 915, 500);
         add(js);
     }
     
