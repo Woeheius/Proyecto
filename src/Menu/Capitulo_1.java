@@ -46,7 +46,7 @@ public final class Capitulo_1 extends JFrame{
     public void crearGUI(){
         
         JLabel jlTitulo = new JLabel("Capitulo 1");
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 1000, 70);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);
@@ -74,7 +74,7 @@ public final class Capitulo_1 extends JFrame{
             "    <body bgcolor=\"#181818\">\n" +
             "        <font color='white' face='Tahoma'>  <center><h1>Problemas en la implementación del ODS 1: Erradicar la pobreza en todas sus formas en el mundo</h1></center>\n" +
             "        <hr>\n" +
-            "        <h2>Capitulo 4:</h2></font>\n" +
+            "        <h2>Capitulo 4:</h2></font\n" +
             "             <font color='white' face='Tahoma' size ='1' ><h3>Revisa las opciones métricas disponibles para medir la pobreza multidimensional y lograr que el Objetivo de Desarrollo Sostenible 1 de la Agenda 2030 sea universal y comprometa a todos los países. Se destaca la importancia de superar las limitaciones de la tradicional línea de pobreza monetaria y se presenta la metodología de Alkire y Foster como una alternativa flexible y completa.</h3></font>\n" +
             "             <font color='white' face='Tahoma' size ='2'>\n" +
             "             <p>La metodología de Alkire y Foster se basa en la identificación de las dimensiones relevantes para medir la pobreza multidimensional, como la educación, la salud y el nivel de vida. A partir de estas dimensiones, se establecen umbrales que determinan si una persona es considerada pobre o no en cada una de ellas. Se aplican ponderaciones a cada dimensión para reflejar su importancia relativa en la medición de la pobreza. Finalmente, se utiliza una línea de corte para determinar si una persona es considerada pobre multidimensionalmente.</p></font>\n" +
@@ -118,7 +118,7 @@ public final class Capitulo_1 extends JFrame{
         }
         );
     JScrollPane js = new JScrollPane(editor);
-        js.setBounds(40, 90, 900, 500);
+        js.setBounds(40, 90, 915, 500);
         add(js);
     }
     

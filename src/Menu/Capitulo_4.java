@@ -45,7 +45,7 @@ public final class Capitulo_4 extends JFrame{
     
     public void crearGUI(){
        JLabel jlTitulo = new JLabel("Capitulo 4");
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 1000, 70);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);
@@ -108,7 +108,7 @@ public final class Capitulo_4 extends JFrame{
         }
         );
     JScrollPane js = new JScrollPane(editor);
-        js.setBounds(40, 90, 900, 500);
+        js.setBounds(40, 90, 915, 500);
         add(js);
         
         
