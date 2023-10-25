@@ -77,7 +77,7 @@ public final class Capitulo_2 extends JFrame{
     "            <center><h1>Relación del ODS 1 con otros Objetivos de Desarrollo Sostenible en Colombia</h1></center>\n" +
     "        </font>\n" +
     "        <hr>\n" +
-    "        <font color='white' face='Tahoma' size='2'>\n" +
+    "        <font color='white' face='Tahoma' size='3'>\n" +
     "            <p>La relación del ODS 1, \"Fin de la pobreza\", con otros Objetivos de Desarrollo Sostenible (ODS) en Colombia es fundamental para comprender cómo el progreso en la reducción de la pobreza tiene un impacto significativo en el desarrollo sostenible del país. Uno de los vínculos más notables se encuentra con el ODS 8, \"Trabajo Decente y Crecimiento Económico\". La reducción de la pobreza está intrínsecamente relacionada con la creación de empleo digno y el fomento de un crecimiento económico sostenible.</p>\n" +
     "            <p>En Colombia, se han implementado políticas y programas orientados a promover la inclusión laboral y mejorar las condiciones de trabajo. Esto incluye la promoción del empleo formal, la protección de los derechos laborales y la igualdad de oportunidades en el mercado laboral. Al reducir la pobreza y proporcionar oportunidades de trabajo digno, se crea un entorno propicio para el crecimiento económico y el desarrollo sostenible. Las personas que salen de la pobreza tienen más recursos para invertir en educación y salud, lo que a su vez contribuye a alcanzar otros ODS, como el ODS 4 (Educación de Calidad) y el ODS 3 (Salud y Bienestar).</p>\n" +
     "            <p>Además, la reducción de la pobreza tiene un impacto positivo en otros ODS, como el ODS 2 (Hambre Cero), al mejorar la capacidad de las personas para acceder a alimentos nutritivos, y el ODS 5 (Igualdad de Género), al empoderar a las mujeres y niñas en situaciones de pobreza. En resumen, el ODS 1 actúa como un catalizador para el logro de múltiples Objetivos de Desarrollo Sostenible en Colombia, creando un efecto positivo y sinérgico en la agenda de desarrollo del país.</p>\n" +
@@ -109,13 +109,7 @@ public final class Capitulo_2 extends JFrame{
     }
     
     
-    
-        
-        
-        
-    
-    
-    public void evento_jbVolver(){
+   public void evento_jbVolver(){
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         ca.setVisible(true); // mostrar la ventana de menu principal 

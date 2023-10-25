@@ -72,26 +72,26 @@ public final class Capitulo_1 extends JFrame{
             "        <title>capitulo e</title>\n" +
             "    </head>\n" +
             "    <body bgcolor=\"#181818\">\n" +
-            "        <font color='white' face='Tahoma'>  <center><h1>Problemas en la implementación del ODS 1: Erradicar la pobreza en todas sus formas en el mundo</h1></center>\n" +
+            "        <font color='white' face='Tahoma'> <center><h1>Problemas en la implementación del ODS 1: Erradicar la pobreza en todas sus formas en el mundo</h1></center>\n" +
             "        <hr>\n" +
             "        <h2>Capitulo 4:</h2></font\n" +
-            "             <font color='white' face='Tahoma' size ='1' ><h3>Revisa las opciones métricas disponibles para medir la pobreza multidimensional y lograr que el Objetivo de Desarrollo Sostenible 1 de la Agenda 2030 sea universal y comprometa a todos los países. Se destaca la importancia de superar las limitaciones de la tradicional línea de pobreza monetaria y se presenta la metodología de Alkire y Foster como una alternativa flexible y completa.</h3></font>\n" +
-            "             <font color='white' face='Tahoma' size ='2'>\n" +
+            "             <font color='white' face='Tahoma' size ='3' ><h3>Revisa las opciones métricas disponibles para medir la pobreza multidimensional y lograr que el Objetivo de Desarrollo Sostenible 1 de la Agenda 2030 sea universal y comprometa a todos los países. Se destaca la importancia de superar las limitaciones de la tradicional línea de pobreza monetaria y se presenta la metodología de Alkire y Foster como una alternativa flexible y completa.</h3></font>\n" +
+            "             <font color='white' face='Tahoma' size ='3'>\n" +
             "             <p>La metodología de Alkire y Foster se basa en la identificación de las dimensiones relevantes para medir la pobreza multidimensional, como la educación, la salud y el nivel de vida. A partir de estas dimensiones, se establecen umbrales que determinan si una persona es considerada pobre o no en cada una de ellas. Se aplican ponderaciones a cada dimensión para reflejar su importancia relativa en la medición de la pobreza. Finalmente, se utiliza una línea de corte para determinar si una persona es considerada pobre multidimensionalmente.</p></font>\n" +
-            "        <hr>\n" +
+            "        <br>\n" +
             "        <center><div>  <img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_WjhmmH4JA50hzsgxN9YD-gHf7ezDXXvCig&usqp=CAU\" width=\"340\"/></div>\n" +
-            "<p></p>\n" +
             "</center>\n" +
-            "<font color='white' face='Tahoma' size ='2'>\n" +
+            "<font color='white' face='Tahoma' size ='3'>\n" +
             "<p>Además de la metodología de Alkire y Foster, se presentan otras opciones métricas para medir la pobreza multidimensional, como el Índice de Pobreza Multidimensional (IPM) utilizado en América Latina y el Índice de Privación Material Severa (IPMS) utilizado en Europa. Estos índices también tienen en cuenta diferentes dimensiones y aplican diferentes metodologías para calcular la pobreza multidimensional. Se mencionan experiencias de medición de pobreza multidimensional en América Latina y Europa. En América Latina, se destaca la experiencia de México, que ha implementado el Índice de Pobreza Multidimensional (IPM) adaptado a su contexto nacional. Este índice considera diferentes dimensiones, como la educación, la salud y el nivel de vida, y ha permitido una mejor comprensión de la pobreza en el país.</p>\n" +
+            "<br>\n" +
             "<center><img src=\"https://www.nueva-iso-14001.com/wp-content/uploads/2020/03/ODS.jpg\" width=\"440\"></center>\n" +
-            "<hr>\n" +
+            "<br>\n" +
+            "<br>\n" +            
             "<h3><p>Informacion extra sobre el tema</p></h3>\n" +
             "<a target=\"_blank\" href=\"https://minciencias.gov.co/sites/default/files/ctei_y_ods_-_documento_de_trabajo.pdf\">Los Objetivos de Desarrollo Sostenible en Colombia y el aporte de la ciencia, la tecnología y la innovación</a>\n" +
             "<br>\n" +
             "<br>\n" +
             "<a target=\"_blank\" href=\"https://www.fao.org/3/ca5162es/ca5162es.pdf\">El estado de la seguridad alimentaria y la nutricion en el mundo</a>\n" +
-            "<br>\n" +
             "<a target=\"_blank\" href=\"https://www.cadep.org.py/uploads/2022/05/Seguimiento-ODS-Marti%CC%81nez-y-Serafini-2021.pdf\">PARAGUAY. SEGUIMIENTO A LOS ODS 1, 2, 10 y 13. 2015-2020</a>\n" +
             "<h3><p>Video Explicativo</p></h3>\n" +
             "<a target=\"_blank\" href=\"https://www.youtube.com/watch?app=desktop&v=YuQHEAwaj6c&ab_channel=DanielPerez\">ODS - Proyectos que se realizan en colombia.</a>\n" +

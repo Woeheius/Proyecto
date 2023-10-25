@@ -86,8 +86,13 @@ public final class Matrices extends JFrame{
 "            <p><font color=\"red\">✔</font> Matrices y determinantes: Puedes utilizar matrices y determinantes para resolver sistemas de ecuaciones lineales. Puedes expresar el sistema en forma matricial y utilizar la inversa de una matriz o la regla de Cramer para encontrar las soluciones.</p>\n" +
 "            <p><font color=\"red\">✔</font> Método de Gauss-Jordán: Este método utiliza operaciones elementales de fila para reducir la matriz aumentada del sistema a una forma escalonada.</p>\n" +
 "            <p><font color=\"red\">✔</font> Método de la regla de Cramer: Este método se aplica a sistemas de ecuaciones lineales cuyas matrices de coeficientes sean cuadradas y tengan un determinante distinto de cero. Permite resolver cada variable de manera independiente utilizando determinantes y matrices adjuntas.</p>\n" +
-"            <p>Estos son algunos de los métodos más comunes y utilizados para resolver sistemas de ecuaciones. Con cualquiera de estos métodos, puedes solucionar el sistema de ecuaciones. La elección del método depende de tu decisión y preferencia al desarrollar un sistema de ecuaciones.</p>\n" +
-"        </font>\n" +
+"            <br>\n"+
+"            <br>\n" +
+" <center><div> <img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr6LvwY0SDIvMy9VyJ8B0JNhf0JS4hNZLZfg&usqp=CAU\" width=\"340\"/></div>\n" +
+" <br>\n"+
+" </center>\n" +
+"      <p>Estos son algunos de los métodos más comunes y utilizados para resolver sistemas de ecuaciones. Con cualquiera de estos métodos, puedes solucionar el sistema de ecuaciones. La elección del método depende de tu decisión y preferencia al desarrollar un sistema de ecuaciones.</p>\n" +
+"      </font>\n" +
 "    </body>\n" +
 "</html>");
         
@@ -118,4 +123,5 @@ public final class Matrices extends JFrame{
         al.setVisible(true); // mostrar la ventana de menu principal 
     }
 }
+
 

@@ -81,8 +81,7 @@ public class Cons extends JFrame{
     "        <font color='white' face='Tahoma' size='3'>\n" +
     "            <p>Los Mecanismos de Protección Ciudadana son los instrumentos instituidos para proteger una eventual o real pérdida, vulneración o amenaza de derechos fundamentales consagrados en la Constitución Política, que se ejercen mediante acción judicial, y cuando fuere posible restituir las cosas a su estado anterior.</p>\n" +
     "            <p>Colombia cuenta con varios mecanismos de protección de los derechos humanos y las libertades de sus ciudadanos, establecidos en su Constitución y leyes.</p>\n" +
-    "            <p>Algunos de los principales mecanismos de protección en Colombia:</p>\n" +
-    "            <br>\n" +
+    "            <p>Algunos de los principales mecanismos de protección en Colombia:</p>\n" + 
     "            <p><font color='red'>➡</font> Acción de Tutela: La Tutela es un mecanismo fundamental en Colombia para la protección de los derechos fundamentales de las personas. Permite a los ciudadanos presentar demandas ante jueces para la protección inmediata de sus derechos, como la vida, la integridad personal, la igualdad y otros derechos fundamentales.</li>\n" + 
     "            <br>\n"+
     "            <br>\n" +
@@ -109,10 +108,13 @@ public class Cons extends JFrame{
     "            <br>\n" +
     "            <font color='red'>➡</font> Control Constitucional: La Corte Constitucional de Colombia tiene la facultad de revisar la constitucionalidad de las leyes y actos legislativos para garantizar que estén en conformidad con la Constitución y los tratados internacionales de derechos humanos.</li>\n" +
     "            <br>\n" +
-   "            </ul>\n" +
-    "            <p>Estos son algunos de los mecanismos de protección en Colombia. La protección de los derechos humanos y las libertades es un aspecto fundamental en el marco legal del país, dada su historia de conflicto y la importancia de garantizar el respeto a los derechos fundamentales de sus ciudadanos.</p>\n" +
-    "        </font>\n" +
-    "    </body>\n" +
+    "            </ul>\n" +
+    "            <br>\n"+
+    "        <center><div> <img src=\"https://img.freepik.com/fotos-premium/bandera-colombia-pintada-concepto-protesta-fuerza-puno-cerrado_601748-9322.jpg\" width=\"300\"/></div>\n" +
+    " </center>\n" +
+    " <p>Estos son algunos de los mecanismos de protección en Colombia, la protección de los derechos humanos y las libertades es un aspecto fundamental en el marco legal del país, dada su historia de conflicto y la importancia de garantizar el respeto a los derechos fundamentales de sus ciudadanos.</p>\n" +
+    " </font>\n" +
+    " </body>\n" +
     "</html>");
 
                 

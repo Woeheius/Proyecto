@@ -72,11 +72,11 @@ public final class Capitulo_7 extends JFrame{
     "        <title>Impacto de la pandemia en la pobreza</title>\n" +
     "    </head>\n" +
     "    <body bgcolor=\"#181818\">\n" +
-    "        <font color='WHITE' face='Tahoma'>\n" +
-    "            <center>\n" +
-    "                <h1>Impacto de la pandemia en la pobreza</h1>\n" +
-    "            </center>\n" +
-    "            <hr>\n" +
+    "        <font color='white' face='Tahoma'>\n" +
+    "            <center><h1>Impacto de la pandemia en la pobreza</h1></center>\n" +
+    "        </font>\n" +
+    "        <hr>\n" +
+    "        <font color='white' face='Tahoma' size='3'>\n" +
     "            <p>La pandemia de COVID-19 ha tenido un impacto significativo en Colombia, aumentando los niveles de pobreza y exacerbando las desigualdades. El confinamiento y la disminución de empleos y salarios han generado una crisis económica y social sin precedentes. El Gobierno Nacional ha implementado políticas de apoyo, como el programa Ingreso Solidario, para ayudar a la población en situación de pobreza y vulnerabilidad.</p>\n" +
     "            <p>Las microsimulaciones muestran un aumento devastador en la pobreza durante la pandemia, multiplicando la pobreza extrema y moderada en comparación con los niveles iniciales. Sin embargo, las intervenciones del Gobierno, como los giros extraordinarios de programas sociales, han contribuido eficazmente a la reducción de la pobreza.</p>\n" +
     "            <p>Varios factores han contribuido al aumento de la pobreza, incluyendo la pérdida de empleos, la disminución de ingresos y la interrupción de programas de alimentación escolar. Los trabajadores informales y por cuenta propia, que representan una gran parte de la fuerza laboral, se vieron especialmente afectados. Además, los niños que dependían de las comidas escolares perdieron acceso a estas, aumentando la inseguridad alimentaria.</p>\n" +
@@ -84,6 +84,7 @@ public final class Capitulo_7 extends JFrame{
     "        </font>\n" +
     "    </body>\n" +
     "</html>"
+                
   );
         
         editor.setEditable(false);//mostrar solo codigo HTML
@@ -122,4 +123,5 @@ public final class Capitulo_7 extends JFrame{
        
       
 }
+
 

@@ -73,13 +73,13 @@ public class Sem extends JFrame{
                     "    <body bgcolor=\"#181818\">\n" +
                     "        <font color='white' face='Tahoma'>  <center><h1>MATRIZ PESTEL</h1></center>\n" +
                     "        <hr>\n" +
-                    "             <font color='white' face='Tahoma' size ='2'> \n" +
+                    "             <font color='white' face='Tahoma' size ='3'> \n" +
                     "             <p>La matriz PESTEL (también conocida como PESTLE o PEST) es una herramienta de análisis estratégico utilizada para evaluar el entorno externo en el que opera una organización. PESTEL es un acrónimo que representa los siguientes factores:</p></font>\n" +
-                    "        <hr>\n" +
+                    "        <br>\n" +
                     "        <center><div>  <img src=\"https://sumalemarketing.com/wp-content/uploads/2021/04/ANALISIS-PESTEL.png\" width=\"340\"/></div>\n" +
-                    "        <p></p>\n" +
                     "        </center>\n" +
-                    "        <font color='white' face='Tahoma' size ='2'>\n" +
+                    "        <font color='white' face='Tahoma' size ='3'>\n" +
+                    
                     "        <p>1. Políticos: Se refiere a los aspectos relacionados con el entorno político, como la estabilidad gubernamental, regulaciones, políticas fiscales y comerciales, y la influencia de los gobiernos en los negocios." +
                     "        <p>    2. Económicos: Incluye factores económicos que pueden afectar a una organización, como tasas de interés, inflación, tasas de cambio, condiciones económicas globales y locales, entre otros." +
                     "        <p>    3. Sociales: Considera aspectos socioculturales, demográficos y de comportamiento de los consumidores que pueden influir en la empresa, como tendencias culturales, cambios en la población y actitudes hacia productos o servicios.</p>" +
@@ -87,7 +87,7 @@ public class Sem extends JFrame{
                     "        <p>    5. Ambientales: Aborda cuestiones medioambientales, como regulaciones ambientales, sostenibilidad, conciencia ambiental y la presión para reducir el impacto ambiental." +  
                     "        <p>    6. Legales: Incluye consideraciones legales que pueden afectar a la organización, como regulaciones laborales, leyes de propiedad intelectual, normativas de seguridad, etc." +
                     "        <p>    Al utilizar la matriz PESTEL, las empresas pueden identificar oportunidades y amenazas en su entorno externo, lo que les permite tomar decisiones estratégicas informadas y adaptarse a las condiciones cambiantes del mercado." +
-                    "                <hr>\n" +
+                    "                <br>\n" +
                        
                     "        <h3><p>Informacion extra sobre el tema</p></h3>\n" +
                     "        <a target=\"_blank\" href=\"https://incp.org.co/el-analisis-pest-una-herramienta-para-planificar-tu-estrategia/\">El analisis PEST\n" +

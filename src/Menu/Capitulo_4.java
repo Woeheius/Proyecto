@@ -75,7 +75,7 @@ public final class Capitulo_4 extends JFrame{
     "            <center><h1>Desarrollo sostenible en comunidades indígenas</h1></center>\n" +
     "        </font>\n" +
     "        <hr>\n" +
-    "        <font color='white' face='Tahoma' size='2'>\n" +
+    "        <font color='white' face='Tahoma' size='3'>\n" +
     "            <p>El desarrollo sostenible en comunidades indígenas es un enfoque que busca promover el bienestar de estas comunidades, al mismo tiempo que se protege y conserva su entorno natural y cultural. A través de programas y proyectos específicos, se busca fortalecer la participación y el liderazgo de los pueblos indígenas en la toma de decisiones que afectan sus vidas y territorios.</p>\n" +
     "            <p>Conservación y gestión sostenible del medio ambiente:</p>\n" +
     "            <p>Las comunidades indígenas han demostrado una capacidad única para adaptarse a entornos ecológicamente frágiles y han desarrollado conocimientos profundos sobre los recursos naturales que los rodean. Estos conocimientos se han traducido en prácticas y técnicas complejas para gestionar su hábitat de manera sostenible. Además, los pueblos indígenas consideran que son parte integral de la naturaleza y promueven la conservación y restauración de sus medios naturales como condición previa para participar en otros esfuerzos de desarrollo.</p>\n" +
@@ -127,4 +127,5 @@ public final class Capitulo_4 extends JFrame{
        
       
 }
+
 

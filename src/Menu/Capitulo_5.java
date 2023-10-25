@@ -77,7 +77,7 @@ public final class Capitulo_5 extends JFrame{
     "            <center><h1>Innovación social y tecnológica en la lucha contra la pobreza</h1></center>\n" +
     "        </font>\n" +
     "        <hr>\n" +
-    "        <font color='white' face='Tahoma' size='2'>\n" +
+    "        <font color='white' face='Tahoma' size='3'>\n" +
     "            <p>La innovación social y tecnológica ha demostrado ser una herramienta poderosa en la lucha contra la pobreza. En un mundo cada vez más digitalizado, la tecnología se ha convertido en un vehículo clave para abordar los desafíos sociales y económicos que enfrentan las comunidades más vulnerables.</p>\n" +
     "            <p>Un ejemplo destacado de esta sinergia entre innovación social y tecnología es el proyecto 'Dos Pasos por Delante', una iniciativa que surgió durante la crisis de la COVID-19 en Córdoba, España. Este proyecto, liderado por profesionales del ámbito digital y tecnológico, se propuso anticiparse a las necesidades de la comunidad, identificando, canalizando y optimizando los recursos y la ayuda a través de una plataforma en línea. De esta manera, se logró una respuesta más eficiente y oportuna a las demandas de la población afectada por la pandemia.</p>\n" +
     "            <p>La relación entre innovación social y tecnología se ha vuelto cada vez más estrecha, al punto de que se ha acuñado el término 'innovación social tecnológica'. Esta forma de innovación social se centra en el uso de la tecnología como elemento central de las soluciones, siendo indispensable para su comprensión y aplicación.</p>\n" +

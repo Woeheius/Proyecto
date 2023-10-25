@@ -77,7 +77,7 @@ public final class Capitulo_10 extends JFrame{
     "            <center><h1>Implementación del Primer ODS en América Latina - Erradicar la Pobreza Extrema y el Hambre</h1></center>\n" +
     "        </font>\n" +
     "        <hr>\n" +
-    "        <font color=\"white\" face=\"Tahoma\" size=\"2\">\n" +
+    "        <font color=\"white\" face=\"Tahoma\" size=\"3\">\n" +
     "            <p>La región de América Latina ha enfrentado desafíos significativos en su búsqueda por alcanzar el primer Objetivo de Desarrollo Sostenible (ODS) de las Naciones Unidas: Erradicar la pobreza extrema y el hambre. Este capítulo se adentra en las diversas estrategias y acciones implementadas en la región para abordar esta cuestión fundamental.</p>\n" +
     "            <p>Uno de los enfoques más comunes ha sido la implementación de programas de transferencia de efectivo directo a familias en situación de pobreza. Estos programas ofrecen un sustento económico esencial para las poblaciones más vulnerables y les permiten satisfacer sus necesidades básicas.</p>\n" +
     "            <p>El fomento de la agricultura sostenible se ha convertido en una pieza clave en la lucha contra el hambre en América Latina. La capacitación de agricultores en prácticas sostenibles y el apoyo a la producción de alimentos han contribuido a mejorar la seguridad alimentaria en la región.</p>\n" +
