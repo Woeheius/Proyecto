@@ -13,7 +13,7 @@ import javax.swing.plaf.ColorUIResource;
 public final class Alg extends JFrame{
     
     MenuPrincipal mp;
-    JButton jbVolver,jbMatrices,jbSistema;
+    JButton jbVolver,jbMatrices,jbSistema,jbDeterminantes;
     GaussJordan gau = new GaussJordan(this); 
     
     
@@ -62,6 +62,14 @@ public final class Alg extends JFrame{
             evento_jbMatrices();
         });
              add(jbMatrices);
+           
+        
+             jbDeterminantes = new JButton("Determinantes");
+        jbDeterminantes.setBounds((1015-510)/2, 350, 300, 80);
+        jbDeterminantes.addActionListener((e) -> {
+            evento_jbDeterminantes();
+        });
+             add(jbDeterminantes); 
              
              
         jbSistema = new JButton("Sistema de Ecuaciones ");
@@ -70,6 +78,7 @@ public final class Alg extends JFrame{
             evento_jbSistema();
         });
              add(jbSistema); 
+                     
     }             
     
      public void evento_jbMatrices(){
@@ -80,6 +89,11 @@ public final class Alg extends JFrame{
          gau.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
    }
+      public void evento_jbDeterminantes(){
+         Determinantes det = new Determinantes(this);
+        setVisible(false); // ocultar la ventana de menu principal
+   }
+     
     
     public void evento_jbVolver(){
         setVisible(false); // ocultar la ventana de Matematicas
