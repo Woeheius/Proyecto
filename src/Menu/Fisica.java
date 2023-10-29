@@ -12,8 +12,8 @@ import javax.swing.JLabel;
 public class Fisica extends JFrame{
     
     MenuPrincipal mp;
-    JButton jbVolver, jbVectores;
-    
+    JButton jbVolver, jbVectores,jbGraficadora;
+    GraficVectores g = new GraficVectores();
     public Fisica(MenuPrincipal obj){
         super("Area de Fisica");
         mp = obj;
@@ -60,6 +60,12 @@ public class Fisica extends JFrame{
             evento_jbVectores();
         });
              add(jbVectores);
+        jbGraficadora = new JButton("Graficadora");
+        jbGraficadora.setBounds((2025-610)/2, 172, 100, 40);
+        jbGraficadora.addActionListener((e) -> {
+            evento_jbGraficadora();
+        });
+             add(jbGraficadora);
     }             
     
      public void evento_jbVectores(){
@@ -72,4 +78,9 @@ public class Fisica extends JFrame{
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
+    
+     public void evento_jbGraficadora(){
+         g.setVisible(true);
+        setVisible(false); // ocultar la ventana de menu principal
+   }
 }

@@ -65,27 +65,41 @@ public final class Capitulo_3 extends JFrame{
         
         URL url = getClass().getResource("imagenes/logo_duke.png");
         
-        editor.setText(
-                     "<!DOCTYPE html>\n" +
+      editor.setText(
+    "<!DOCTYPE html>\n" +
     "<html>\n" +
     "    <head>\n" +
-    "        <title>Impacto de la pandemia en la pobreza</title>\n" +
+    "        <title>capitulo e</title>\n" +
     "    </head>\n" +
     "    <body bgcolor=\"#181818\">\n" +
-    "        <font color='white' face='Tahoma'>\n" +
-    "            <center><h1>Impacto de la pandemia en la pobreza</h1></center>\n" +
-    "        </font>\n" +
+    "        <font color='white' face='Tahoma'> <center><h1>Problemas en la implementación del ODS 1: Erradicar la pobreza en todas sus formas en el mundo</h1></center>\n" +
     "        <hr>\n" +
+    "        <h2><font color='white'>Capitulo 4:</font></h2></font>\n" +
+    "        <font color='white' face='Tahoma' size='3'><h3><font color='white'>Revisa las opciones métricas disponibles para medir la pobreza multidimensional y lograr que el Objetivo de Desarrollo Sostenible 1 de la Agenda 2030 sea universal y comprometa a todos los países. Se destaca la importancia de superar las limitaciones de la tradicional línea de pobreza monetaria y se presenta la metodología de Alkire y Foster como una alternativa flexible y completa.</font></h3></font>\n" +
     "        <font color='white' face='Tahoma' size='3'>\n" +
-    "            <p>La pandemia de COVID-19 ha tenido un impacto significativo en Colombia, aumentando los niveles de pobreza y exacerbando las desigualdades. El confinamiento y la disminución de empleos y salarios han generado una crisis económica y social sin precedentes. El Gobierno Nacional ha implementado políticas de apoyo, como el programa Ingreso Solidario, para ayudar a la población en situación de pobreza y vulnerabilidad.</p>\n" +
-    "            <p>Las microsimulaciones muestran un aumento devastador en la pobreza durante la pandemia, multiplicando la pobreza extrema y moderada en comparación con los niveles iniciales. Sin embargo, las intervenciones del Gobierno, como los giros extraordinarios de programas sociales, han contribuido eficazmente a la reducción de la pobreza.</p>\n" +
-    "            <p>Varios factores han contribuido al aumento de la pobreza, incluyendo la pérdida de empleos, la disminución de ingresos y la interrupción de programas de alimentación escolar. Los trabajadores informales y por cuenta propia, que representan una gran parte de la fuerza laboral, se vieron especialmente afectados. Además, los niños que dependían de las comidas escolares perdieron acceso a estas, aumentando la inseguridad alimentaria.</p>\n" +
-    "            <p>El Gobierno ha implementado medidas para mitigar el impacto en la pobreza, como programas de transferencias monetarias y apoyo a la generación de empleo, como el Programa de Apoyo al Empleo Formal (PAEF). Estos esfuerzos buscan aliviar la crisis económica y social desencadenada por la pandemia en Colombia.</p>\n" +
-    "        </font>\n" +
+    "        <p>La metodología de Alkire y Foster se basa en la identificación de las dimensiones relevantes para medir la pobreza multidimensional, como la educación, la salud y el nivel de vida. A partir de estas dimensiones, se establecen umbrales que determinan si una persona es considerada pobre o no en cada una de ellas. Se aplican ponderaciones a cada dimensión para reflejar su importancia relativa en la medición de la pobreza. Finalmente, se utiliza una línea de corte para determinar si una persona es considerada pobre multidimensionalmente.</p></font>\n" +
+    "        <br>\n" +
+    "        <center><div>  <img src=\"https://cdn.pixabay.com/photo/2017/12/25/22/36/poverty-3030389_960_720.jpg\" width=\"340\"/></div>\n" +
+    "        </center>\n" +
+    "        <font color='white' face='Tahoma' size='3'>\n" +
+    "        <p>Además de la metodología de Alkire y Foster, se presentan otras opciones métricas para medir la pobreza multidimensional, como el Índice de Pobreza Multidimensional (IPM) utilizado en América Latina y el Índice de Privación Material Severa (IPMS) utilizado en Europa. Estos índices también tienen en cuenta diferentes dimensiones y aplican diferentes metodologías para calcular la pobreza multidimensional. Se mencionan experiencias de medición de pobreza multidimensional en América Latina y Europa. En América Latina, se destaca la experiencia de México, que ha implementado el Índice de Pobreza Multidimensional (IPM) adaptado a su contexto nacional. Este índice considera diferentes dimensiones, como la educación, la salud y el nivel de vida, y ha permitido una mejor comprensión de la pobreza en el país.</p></font>\n" +
+    "        <br>\n" +
+    "        <center><img src=\"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg\" width=\"440\"></center>\n" +
+    "        <br>\n" +
+    "        <br>\n" +            
+    "        <h3><p>Información extra sobre el tema</p></h3>\n" +
+    "        <a target=\"_blank\" href=\"https://minciencias.gov.co/sites/default/files/ctei_y_ods_-_documento_de_trabajo.pdf\">Los Objetivos de Desarrollo Sostenible en Colombia y el aporte de la ciencia, la tecnología y la innovación</a>\n" +
+    "        <br>\n" +
+    "        <br>\n" +
+    "        <a target=\"_blank\" href=\"https://www.fao.org/3/ca5162es/ca5162es.pdf\">El estado de la seguridad alimentaria y la nutrición en el mundo</a>\n" +
+    "        <a target=\"_blank\" href=\"https://www.cadep.org.py/uploads/2022/05/Seguimiento-ODS-Marti%CC%81nez-y-Serafini-2021.pdf\">PARAGUAY. SEGUIMIENTO A LOS ODS 1, 2, 10 y 13. 2015-2020</a>\n" +
+    "    </font>\n" +
     "    </body>\n" +
     "</html>"
-                
-  );
+);
+
+
+
         
         editor.setEditable(false);//mostrar solo codigo HTML
         
