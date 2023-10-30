@@ -12,24 +12,24 @@ public class CalculadoraDerivadas extends javax.swing.JFrame {
     JButton jbVolver;
     Matematicas mt;
     
-    public CalculadoraDerivadas(Matematicas obj) {
+     public CalculadoraDerivadas(Matematicas obj) {
         super("Calculadora derivadas");
         mt = obj;
         setSize(1000, 700);
-        //setLocation(1200, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setBackground(new Color(41, 41, 41));
         Image im = new ImageIcon(
-                getClass().getResource("/imagenes/aaaa.png")).getImage();
+            getClass().getResource("/imagenes/aaaa.png")).getImage();
         setIconImage(im);
-        setLayout(null); // 
-        
-        initComponents(); // 
-        setVisible(false); // 
+        setLayout(null);
+
+        initComponents();
         
     }
+     
+     
 
       
     @SuppressWarnings("unchecked")
@@ -168,16 +168,17 @@ public class CalculadoraDerivadas extends javax.swing.JFrame {
             derivada.derivar();
             texFuncionSalida.setText(derivada.getFuncionDerivada());
             
-            jbVolver = new JButton("Volver");
-        jbVolver.setBounds(600, 540, 300, 60);
+             jbVolver = new JButton("Volver");
+        jbVolver.setBounds(600, 540, 300, 60); //  coordenadas y el tamaño del botón
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
-        add(jbVolver);
         jPanel1.add(jbVolver);
-    
+        
+// Llama a revalidate y repaint para actualizar la interfaz gráfica
+        jPanel1.revalidate();
+        jPanel1.repaint();
             
- 
     }//GEN-LAST:event_jButton1ActionPerformed
 
      public void evento_jbVolver(){

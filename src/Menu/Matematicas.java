@@ -1,5 +1,6 @@
 package Menu;
 
+import Menu.PlanoCartesiano;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -11,8 +12,11 @@ import javax.swing.JLabel;
 public class Matematicas extends JFrame{
     
     MenuPrincipal mp;
-    JButton jbVolver,jbDeri,jbFun,jbCalculadoraDerivadas;
+    JButton jbVolver,jbDeri,jbFun,jbCalculadoraDerivadas,jbGrafi;
     CalculadoraDerivadas c = new CalculadoraDerivadas(this);
+    PlanoCartesiano p = new PlanoCartesiano();
+    VentanaFunciones v = new VentanaFunciones(p);
+  
     
     public Matematicas(MenuPrincipal obj){
         super("Area de Matematicas");
@@ -76,10 +80,13 @@ public class Matematicas extends JFrame{
             evento_jbCalculadoraDerivadas();
         });
         add(jbCalculadoraDerivadas); 
-        
-        
-
-        
+        jbGrafi = new JButton("Graficadora");
+       
+        jbGrafi.setBounds((2025-610)/2, 172, 100, 40);
+        jbGrafi.addActionListener((e) -> {
+            evento_jbGraficadora();
+        });
+        add(jbGrafi);
     }
 
     
@@ -99,7 +106,13 @@ public class Matematicas extends JFrame{
         setVisible(false); // ocultar la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-   
+public void evento_jbGraficadora() {
+    PlanoCartesiano plano = new PlanoCartesiano(); // crea una instancia de PlanoCartesiano
+    v = new VentanaFunciones(plano); // pasa la instancia de PlanoCartesiano al constructor de VentanaFunciones
+    p.setVisible(true);
+    v.setVisible(true);
+    setVisible(false); // ocultar la ventana de menu principal
+}
 
    
     
