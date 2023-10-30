@@ -30,7 +30,6 @@ public final class Encuesta extends JFrame{
         setIconImage(im);
         setLayout(null); // asignar un diseño libre
         crearGUI();
-        
         setVisible(true);
     }
     

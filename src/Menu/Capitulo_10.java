@@ -26,7 +26,7 @@ public final class Capitulo_10 extends JFrame{
     
     
     public Capitulo_10(Capitulos obj){
-        super("Cpitulo 10");
+        super("Capitulo 10");
         ca = obj;
         setSize(1000, 700);
         //setLocation(1000, 200);
