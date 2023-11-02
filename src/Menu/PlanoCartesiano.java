@@ -5,8 +5,13 @@ import Menu.VentanaFunciones;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
+import org.lsmp.djep.djep.DJep;
+import org.nfunk.jep.JEP;
+import org.nfunk.jep.Node;
+import org.nfunk.jep.ParseException;
 
 public class PlanoCartesiano extends JFrame {
+
     private String funcion1;
     private String funcion2;
 
@@ -26,6 +31,7 @@ public class PlanoCartesiano extends JFrame {
     }
 
     private class PlanoPanel extends JPanel {
+
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -55,13 +61,61 @@ public class PlanoCartesiano extends JFrame {
             g2d.drawLine(getWidth() / 2 - vertexSize, getHeight() / 2, getWidth() / 2 + vertexSize, getHeight() / 2);
             g2d.drawLine(getWidth() / 2, getHeight() / 2 - vertexSize, getWidth() / 2, getHeight() / 2 + vertexSize);
 
-            // Dibuja las funciones (implementa la lógica aquí)
+            // Dibuja las funciones 
             if (funcion1 != null && !funcion1.isEmpty()) {
-                // Implementa la lógica para graficar la función 1 aquí
+                if (funcion1 != null && !funcion1.isEmpty()) {
+                    g2d.setColor(Color.RED); 
+
+                    // Crear un objeto JEP para evaluar expresiones matemáticas
+                    JEP jep = new JEP();
+                    jep.addStandardConstants();
+                    jep.addStandardFunctions();
+
+                    // Evaluar y graficar la función 1
+                    for (int x = -getWidth() / 2; x <= getWidth() / 2; x++) {
+                        jep.addVariable("x", x);
+                        jep.parseExpression(funcion1);
+
+                        if (!jep.hasError()) {
+                            double y = jep.getValue();
+
+                            // Convierte las coordenadas del plano a las coordenadas del panel
+                            int panelX = getWidth() / 2 + x;
+                            int panelY = getHeight() / 2 - (int) y;
+
+                            g2d.fillRect(panelX, panelY, 1, 1); // Dibuja un punto para la función 1
+                        }
+                    }
+                }
+
             }
 
             if (funcion2 != null && !funcion2.isEmpty()) {
-                // Implementa la lógica para graficar la función 2 aquí
+                if (funcion2 != null && !funcion2.isEmpty()) {
+                    g2d.setColor(Color.BLUE); // Color de la línea de la función 2 (puedes cambiarlo)
+
+                    // Crear un objeto JEP para evaluar expresiones matemáticas
+                    JEP jep = new JEP();
+                    jep.addStandardConstants();
+                    jep.addStandardFunctions();
+
+                    // Evaluar y graficar la función 2
+                    for (int x = -getWidth() / 2; x <= getWidth() / 2; x++) {
+                        jep.addVariable("x", x);
+                        jep.parseExpression(funcion2);
+
+                        if (!jep.hasError()) {
+                            double y = jep.getValue();
+
+                            // Convierte las coordenadas del plano a las coordenadas del panel
+                            int panelX = getWidth() / 2 + x;
+                            int panelY = getHeight() / 2 - (int) y;
+
+                            g2d.fillRect(panelX, panelY, 1, 1); // Dibuja un punto para la función 2
+                        }
+                    }
+                }
+
             }
         }
     }

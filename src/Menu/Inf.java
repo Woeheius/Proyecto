@@ -168,7 +168,7 @@ public final class Inf extends JFrame{
         add(telefonoMiembro4);
         
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(400, 600, 500, 30);
+        jbVolver.setBounds(600, 600, 200, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });

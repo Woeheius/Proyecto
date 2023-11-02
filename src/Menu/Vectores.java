@@ -72,6 +72,7 @@ public final class Vectores extends JFrame{
     "    <p><font color='white'>Los vectores son conceptos fundamentales en la física que se utilizan para representar cantidades que tienen magnitud y dirección. En contraste con las cantidades escalares, como la masa o la temperatura, que solo tienen magnitud, los vectores incorporan información sobre la dirección en la que actúa la cantidad medida. Los vectores son esenciales para describir el movimiento y las interacciones entre objetos en el mundo físico.</font></p>\n" +
     "    <h2><font color='white'>¿Qué son los vectores?</font></h2>\n" +
     "    <p><font color='white'>Los vectores son entidades matemáticas que constan de dos componentes principales: magnitud y dirección. La magnitud se refiere al valor numérico de la cantidad que se está midiendo, como la velocidad en kilómetros por hora o la fuerza en newtons. La dirección especifica hacia dónde apunta el vector en el espacio tridimensional. Por ejemplo, un vector de velocidad puede tener una magnitud de 30 km/h y apuntar hacia el norte.</font></p>\n" +
+    "<center><div><img src=\"https://2.bp.blogspot.com/-wZCSm6FFL5Y/Wp8tkpLjneI/AAAAAAAAVQs/1XE9LlKfxF8cjElPF_kCGxmfBR0e6_k0QCLcBGAs/s1600/1.png\" width=\"400\"/></div>\n" +
     "    <h2><font color='white'>¿Para qué sirven los vectores en física?</font></h2>\n" +
     "    <p><font color='white'>Los vectores se utilizan en la física para describir una amplia variedad de fenómenos. Algunos ejemplos de su aplicación incluyen:</font></p>\n" +
     "    <ol style=\"color:white;\">\n" +
@@ -80,6 +81,7 @@ public final class Vectores extends JFrame{
     "        <li><font color='white'>Momento lineal: El momento lineal, que es el producto de la masa de un objeto y su velocidad, se representa como un vector. Esto es esencial para entender la conservación del momento lineal en colisiones y otras interacciones.</font></li>\n" +
     "        <li><font color='white'>Campos vectoriales: Los vectores se utilizan para describir campos físicos como el campo eléctrico, el campo magnético y el campo de gravedad. Estos campos tienen magnitud y dirección en cada punto del espacio.</font></li>\n" +
     "    </ol>\n" +
+                "<center><div><img src=\"https://ik.imagekit.io/smdxc0e2g3/userscontent2-endpoint/images/0d888b8d-0226-4eda-bf52-463aa7c0dcc9/0ce4120c-48a8-4af9-a7ab-38a858afe07ajpeg?tr=w-280,rt-0\" width=\"400\"/></div>\n" +
     "    <h2><font color='white'>¿Cómo graficar vectores en física?</font></h2>\n" +
     "    <p><font color='white'>Graficar vectores en física es una forma de representar visualmente estas cantidades. Para hacerlo, sigue estos pasos:</font></p>\n" +
     "    <ol style=\"color:white;\">\n" +
@@ -91,8 +93,7 @@ public final class Vectores extends JFrame{
     "        <li><font color='white'>Puedes usar un transportador o un compás para medir y dibujar ángulos con precisión si es necesario.</font></li>\n" +
     "    </ol>\n" +
     "    <p><font color='white'>Graficar vectores es una herramienta fundamental en física, ya que proporciona una representación visual de las cantidades vectoriales, lo que facilita la comprensión de los conceptos y la resolución de problemas físicos.</font></p>\n" +
-    "    <img src=\"https://cdn.pixabay.com/photo/2016/03/09/15/03/vector-1244820_960_720.jpg\" width=\"400\">\n" +
-    "    <img src=\"https://cdn.pixabay.com/photo/2017/01/31/18/24/artificial-intelligence-2029328_960_720.jpg\" width=\"400\">\n" +
+           "<center><div><img src=\"https://i.ytimg.com/vi/w05zw7JdZz8/maxresdefault.jpg\" width=\"400\"/></div>\n" +   
     "</body>\n" +
     "</html>"
 );
