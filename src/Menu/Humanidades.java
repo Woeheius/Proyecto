@@ -16,6 +16,7 @@ public final class Humanidades extends JFrame{
     MenuPrincipal mp;
     Inf inf;
     JButton jbVolver,jbCapitulos,jbEncuesta;
+    Cuestionario_ods c = new Cuestionario_ods(null);
     
     public Humanidades(MenuPrincipal obj){
         super("Area de Humanidades");
@@ -82,7 +83,7 @@ public final class Humanidades extends JFrame{
         setVisible(false); // ocultar la ventana de menu principal
    }
     public void evento_jbEncuesta(){
-       Encuesta en = new Encuesta(this);
+       c.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
    }
 
