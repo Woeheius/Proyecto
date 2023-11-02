@@ -10,13 +10,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+import static jdk.internal.org.jline.utils.Colors.s;
 
 public final class Humanidades extends JFrame{
     
     MenuPrincipal mp;
     Inf inf;
     JButton jbVolver,jbCapitulos,jbEncuesta;
-    Cuestionario_ods c = new Cuestionario_ods(null);
     
     public Humanidades(MenuPrincipal obj){
         super("Area de Humanidades");
@@ -83,8 +83,9 @@ public final class Humanidades extends JFrame{
         setVisible(false); // ocultar la ventana de menu principal
    }
     public void evento_jbEncuesta(){
-       c.setVisible(true);
+        Datos d = new Datos();
         setVisible(false); // ocultar la ventana de menu principal
+        d.setVisible(true);
    }
 
 }
