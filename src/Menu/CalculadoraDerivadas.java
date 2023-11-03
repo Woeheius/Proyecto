@@ -1,4 +1,5 @@
 package Menu;
+
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -11,6 +12,7 @@ import java.awt.event.ActionListener;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class CalculadoraDerivadas extends JFrame {
+
     private JButton jbVolver;
     private JButton jbLimpiar; // Botón de Limpiar
     private Matematicas mt;
@@ -85,7 +87,7 @@ public class CalculadoraDerivadas extends JFrame {
     private void setupFrame() {
         setSize(600, 300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
         getContentPane().setBackground(new Color(41, 41, 41));
         Image im = new ImageIcon(getClass().getResource("/imagenes/aaaa.png")).getImage();

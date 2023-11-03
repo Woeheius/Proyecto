@@ -9,12 +9,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
-public final class Inf extends JFrame{
-    
+public final class Inf extends JFrame {
+
     MenuPrincipal mp;
     JButton jbVolver;
-    
-    public Inf(MenuPrincipal obj){
+
+    public Inf(MenuPrincipal obj) {
         super("Integrantes del equipo de trabajo");
         mp = obj;
         setSize(900, 700);
@@ -29,11 +29,11 @@ public final class Inf extends JFrame{
         setIconImage(im);
         setLayout(null); // asignar un diseño libre
         crearGUI();
-        
+
         setVisible(true);
     }
-    
-    public void crearGUI(){
+
+    public void crearGUI() {
         JLabel jlTitulo = new JLabel("Equipo de Trabajo");
         jlTitulo.setBounds(0, 0, 800, 80);
         jlTitulo.setOpaque(true);
@@ -166,7 +166,7 @@ public final class Inf extends JFrame{
         telefonoMiembro4.setBounds(470, 470, 600, 30);
         telefonoMiembro4.setForeground(Color.white);
         add(telefonoMiembro4);
-        
+
         jbVolver = new JButton("Volver al menu principal");
         jbVolver.setBounds(600, 600, 200, 30);
         jbVolver.addActionListener((e) -> {
@@ -174,8 +174,8 @@ public final class Inf extends JFrame{
         });
         add(jbVolver);
     }
-    
-    public void evento_jbVolver(){
+
+    public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 

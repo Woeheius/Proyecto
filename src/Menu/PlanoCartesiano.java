@@ -18,7 +18,7 @@ public class PlanoCartesiano extends JFrame {
     public PlanoCartesiano() {
         setTitle("Plano Cartesiano");
         setSize(600, 600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
         add(new PlanoPanel());
@@ -64,7 +64,7 @@ public class PlanoCartesiano extends JFrame {
             // Dibuja las funciones 
             if (funcion1 != null && !funcion1.isEmpty()) {
                 if (funcion1 != null && !funcion1.isEmpty()) {
-                    g2d.setColor(Color.RED); 
+                    g2d.setColor(Color.RED);
 
                     // Crear un objeto JEP para evaluar expresiones matemáticas
                     JEP jep = new JEP();

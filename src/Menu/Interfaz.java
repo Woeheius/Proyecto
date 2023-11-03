@@ -16,7 +16,7 @@ public class Interfaz extends JFrame {
         super("My Form");
         setSize(800, 600);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         jPanel1 = new JPanel();
         jPanel1.setBackground(new Color(18, 18, 18));

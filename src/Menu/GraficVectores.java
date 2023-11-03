@@ -1,4 +1,5 @@
 package Menu;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,12 +7,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class GraficVectores extends JFrame {
+
     // Lista para almacenar los vectores ingresados por el usuario
     private ArrayList<Vector> vectors = new ArrayList<>();
-    
+
     // Vector para almacenar el resultado de la suma de vectores
     private Vector sumVector = null;
-    
+
     private JPanel drawingPanel; // Panel de dibujo
     private JTextField xField; // Campo de entrada para la coordenada X
     private JTextField yField; // Campo de entrada para la coordenada Y
@@ -21,7 +23,7 @@ public class GraficVectores extends JFrame {
         setTitle("Plano Cartesiano");
         setSize(600, 600);
         setResizable(false); // La ventana no se puede redimensionar
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         // Panel de dibujo personalizado
         drawingPanel = new JPanel() {
@@ -146,6 +148,7 @@ public class GraficVectores extends JFrame {
 }
 
 class Vector {
+
     private double startX;
     private double startY;
     private double endX;

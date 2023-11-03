@@ -1,13 +1,14 @@
 package Menu;
 
 public class Util {
+
     private String nombre;
     private String apellido;
     private String correo;
     private String codigo;
     private String carrera;
-    
-    public void guardar_datos (String nombre, String apellido, String correo, String codigo, String carrera){
+
+    public void guardar_datos(String nombre, String apellido, String correo, String codigo, String carrera) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -34,8 +35,5 @@ public class Util {
     public String getCarrera() {
         return carrera;
     }
-    
-    
-    
-}
 
+}

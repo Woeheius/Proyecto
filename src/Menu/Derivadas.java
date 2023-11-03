@@ -1,23 +1,29 @@
-
 package Menu;
+
 import org.lsmp.djep.djep.DJep;
 import org.nfunk.jep.Node;
 import org.nfunk.jep.ParseException;
+
 public class Derivadas {
-    private String funcion= "";
+
+    private String funcion = "";
     DJep djep;
     Node nodoFuncion;
     Node nodoDerivada;
-    public Derivadas(){
-        
+
+    public Derivadas() {
+
     }
-    public void setFuncionADerivar(String funcion){
-        this.funcion =  funcion;
+
+    public void setFuncionADerivar(String funcion) {
+        this.funcion = funcion;
     }
-    public String getFuncionDerivada(){
+
+    public String getFuncionDerivada() {
         return this.funcion;
-    }  
-    public void derivar(){
+    }
+
+    public void derivar() {
         try {
             this.djep = new DJep();
             this.djep.addStandardFunctions();
@@ -32,6 +38,7 @@ public class Derivadas {
             this.nodoDerivada = this.djep.simplify(diff);
             this.funcion = this.djep.toString(this.nodoDerivada);
         } catch (ParseException e) {
-            System.out.println("Error"+ e.getErrorInfo());}
+            System.out.println("Error" + e.getErrorInfo());
+        }
     }
 }

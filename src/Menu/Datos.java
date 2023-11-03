@@ -9,7 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
-public class Datos extends JFrame{
+public class Datos extends JFrame {
+
     JTextField jtNombre, jtApellido, jtCorreo, jtCodigo;
     JComboBox<Object> jcCarrera;
     JButton jbVolver, jbLimpiar, jbGuardar, jbSiguiente, jbAtras;
@@ -18,17 +19,17 @@ public class Datos extends JFrame{
     public Datos() {
         super("Ingreso datos");
         setSize(600, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null); //asignar un diseño libre
         crearGUI();
-       setVisible(false);
+        setVisible(false);
     }
 
     public void crearGUI() {
         JLabel jlApellido = new JLabel("Apellido");
-         jlApellido.setBounds(40, 70, 120, 30);
+        jlApellido.setBounds(40, 70, 120, 30);
         add(jlApellido);
         jtApellido = new JTextField();
         jtApellido.setBounds(160, 70, 200, 30);
@@ -56,7 +57,7 @@ public class Datos extends JFrame{
         jcCarrera.addItem("Licenciatura en ciencias sociales");
         jcCarrera.addItem("Licenciatura en educacion fisica");
         jcCarrera.addItem("Licenciatura en lenguas extranjeras");
-         jcCarrera.addItem("Psicologia");
+        jcCarrera.addItem("Psicologia");
         jcCarrera.addItem("Derecho");
         jcCarrera.addItem("Medicina");
         jcCarrera.addItem("Enfermeria");
@@ -105,7 +106,7 @@ public class Datos extends JFrame{
         boolean error = false;
         try {
             fw = new FileWriter("Datos.csv", true);
-            } catch (Exception e) {
+        } catch (Exception e) {
             error = true;
             JOptionPane.showMessageDialog(null, "Error al crear o abrri el archivo Datos.csv");
         }
@@ -122,7 +123,7 @@ public class Datos extends JFrame{
                 JOptionPane.showMessageDialog(null, "Error al cerrar el archivo Datos.csv");
             }
             setVisible(true);
-            
+
             Util util = new Util();
             util.guardar_datos(jtNombre.getText(), jtApellido.getText(), jtCorreo.getText(), jtCodigo.getText(), jcCarrera.getSelectedItem().toString());
             Cuestionario_ods c = new Cuestionario_ods("CUESTIONARIO HUMANIDADES");
@@ -130,10 +131,12 @@ public class Datos extends JFrame{
             dispose();
         }
     }
+
     private void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
     }
+
     public static void main(String[] args) {
         Datos d = new Datos();
         d.setVisible(true);

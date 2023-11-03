@@ -1,4 +1,3 @@
-
 package Menu;
 
 import java.awt.Color;
@@ -9,19 +8,20 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Fisica extends JFrame{
-    
+public class Fisica extends JFrame {
+
     MenuPrincipal mp;
-    JButton jbVolver, jbVectores,jbGraficadora;
+    JButton jbVolver, jbVectores, jbGraficadora;
     GraficVectores g = new GraficVectores();
-    public Fisica(MenuPrincipal obj){
+
+    public Fisica(MenuPrincipal obj) {
         super("Area de Fisica");
         mp = obj;
         setSize(1000, 700);
         //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        
+
         setResizable(false);
         getContentPane().setBackground(
                 new Color(41, 41, 41));
@@ -30,11 +30,11 @@ public class Fisica extends JFrame{
         setIconImage(im);
         setLayout(null); // asignar un diseño libre
         crearGUI();
-        
+
         setVisible(true);
     }
-    
-    public void crearGUI(){
+
+    public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/fisicaa.png"));
         JLabel jlTitulo = new JLabel("Area de Fisica", ic, JLabel.CENTER);
@@ -45,42 +45,41 @@ public class Fisica extends JFrame{
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);
         jlTitulo.setFont(new Font("Colonna MT", Font.BOLD, 35));
         add(jlTitulo);
-                
+
         jbVolver = new JButton("Volver al menu principal");
         jbVolver.setBounds(400, 600, 500, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
-                add(jbVolver);
-               
-        
+        add(jbVolver);
+
         jbVectores = new JButton("Vectores");
-        jbVectores.setBounds((1215-510)/2, 160, 300, 80);
+        jbVectores.setBounds((1215 - 510) / 2, 160, 300, 80);
         jbVectores.addActionListener((e) -> {
             evento_jbVectores();
         });
-             add(jbVectores);
+        add(jbVectores);
         jbGraficadora = new JButton("Graficadora");
-        jbGraficadora.setBounds((2025-610)/2, 172, 100, 40);
+        jbGraficadora.setBounds((2025 - 610) / 2, 172, 100, 40);
         jbGraficadora.addActionListener((e) -> {
             evento_jbGraficadora();
         });
-             add(jbGraficadora);
-    }             
-    
-     public void evento_jbVectores(){
+        add(jbGraficadora);
+    }
+
+    public void evento_jbVectores() {
         Vectores ve = new Vectores(this);
         setVisible(false); // ocultar la ventana de menu principal
-   }
-    
-    public void evento_jbVolver(){
+    }
+
+    public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-    
-     public void evento_jbGraficadora(){
-         g.setVisible(true);
+
+    public void evento_jbGraficadora() {
+        g.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
-   }
+    }
 }

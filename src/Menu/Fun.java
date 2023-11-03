@@ -9,12 +9,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
-public final class Fun extends JFrame{
-    
+public final class Fun extends JFrame {
+
     Matematicas ma;
     JButton jbVolver;
-    
-    public Fun(Matematicas obj){
+
+    public Fun(Matematicas obj) {
         super("Funciones");
         ma = obj;
         setSize(1000, 700);
@@ -29,12 +29,12 @@ public final class Fun extends JFrame{
         setIconImage(im);
         setLayout(null); // asignar un diseño libre
         crearGUI();
-        
+
         setVisible(true);
     }
-    
-    public void crearGUI(){
-        
+
+    public void crearGUI() {
+
         JLabel jlTitulo = new JLabel("Funciones");
         jlTitulo.setBounds(0, 0, 1000, 80);
         jlTitulo.setOpaque(true);
@@ -43,7 +43,7 @@ public final class Fun extends JFrame{
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);
         jlTitulo.setFont(new Font("Colonna MT", Font.BOLD, 35));
         add(jlTitulo);
-                
+
         jbVolver = new JButton("Volver al menu principal");
         jbVolver.setBounds(700, 600, 200, 30);
         jbVolver.addActionListener((e) -> {
@@ -51,8 +51,8 @@ public final class Fun extends JFrame{
         });
         add(jbVolver);
     }
-    
-    public void evento_jbVolver(){
+
+    public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         ma.setVisible(true); // mostrar la ventana de menu principal 

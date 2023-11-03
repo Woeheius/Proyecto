@@ -7,24 +7,20 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
 public class GaussJordan extends JFrame {
-    
+
     JButton jbVolver;
     Alg al;
-    
+
     int n = 3; // Tamaño de la matriz (3x3)
     double[][] a = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
     double[] x = new double[n + 1]; // Soluciones
-    
+
     //int n = 4; // Tamaño de la matriz (4x4)
     //double[][] a = {{1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
     //double[] x = new double[n]; // Soluciones
-    
     //int n = 5; // Tamaño de la matriz (5x5)
     //double[][] a = {{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
     //double[] x = new double[n]; // Soluciones
-    
-  
-
     private JTextField[][] matrixFields; // Campos de entrada para la matriz
     private JTextArea resultArea; // Área para mostrar los resultados
     private DecimalFormat decimalFormat; // Formateador de números decimales
@@ -32,7 +28,7 @@ public class GaussJordan extends JFrame {
     public GaussJordan(Alg obj) {
         super("Sistema de Ecuaciones");
         al = obj;
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setSize(700, 600);
         setLocation(330, 70);
         setResizable(false);
@@ -63,15 +59,13 @@ public class GaussJordan extends JFrame {
                 displayResults(); // Mostrar las soluciones en el área de resultados
             }
         });
-        
+
         jbVolver = new JButton("Volver");
         jbVolver.setBounds(550, 545, 110, 20);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
         add(jbVolver);
-        
-        
 
         // Crear un área de texto para mostrar los resultados
         resultArea = new JTextArea(5, 20);
@@ -167,7 +161,7 @@ public class GaussJordan extends JFrame {
         });
     }
 
-    public void evento_jbVolver(){
+    public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         al.setVisible(true); // mostrar la ventana de menu principal 

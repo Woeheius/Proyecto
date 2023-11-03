@@ -9,8 +9,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
+import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 class Cuestionario_ods extends JFrame implements ActionListener {
+
     private static final long serialVersionUID = 1L;
     JLabel label;
     JRadioButton radioButton[] = new JRadioButton[5];
@@ -23,6 +25,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
 
     Cuestionario_ods(String s) {
         super("CUESTIONARIO DE HUMANIDADES");
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         label = new JLabel();
         add(label);
         bg = new ButtonGroup();
@@ -41,17 +44,17 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
-                add(jbVolver);
-                
+        add(jbVolver);
+
         set();
         label.setBounds(10, 40, 4500, 20);
         radioButton[0].setBounds(50, 80, 60000, 20);
         radioButton[1].setBounds(50, 110, 60000, 20);
         radioButton[2].setBounds(50, 140, 60000, 20);
         radioButton[3].setBounds(50, 170, 60000, 20);
-        jbSiguiente.setBounds(50, 240, 100, 30);
-        jbAtras.setBounds(210, 240, 100, 30);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jbSiguiente.setBounds(210, 240, 100, 30);
+        jbAtras.setBounds(50, 240, 100, 30);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setLayout(null);
         setLocation(400, 100);
         setVisible(false);
@@ -60,7 +63,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
 
     //manejar todas las acciones basadas en el evento
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == jbSiguiente && cant_preg <=6) {
+        if (e.getSource() == jbSiguiente && cant_preg <= 6) {
             if (check()) {
                 correctas = correctas + 1;
             }
@@ -92,15 +95,15 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     }
 
     // Seteando preguntas con sus respuestas
-   private void set() {
-       Util util = new Util();
-       String nombre = util.getNombre();
-    String apellido = util.getApellido();
-    String correo = util.getCorreo();
-    String codigo = util.getCodigo();
-    String carrera = util.getCarrera();
-        do {            
-                    pregunta = (int) (Math.random() * 30);
+    private void set() {
+        Util util = new Util();
+        String nombre = util.getNombre();
+        String apellido = util.getApellido();
+        String correo = util.getCorreo();
+        String codigo = util.getCodigo();
+        String carrera = util.getCarrera();
+        do {
+            pregunta = (int) (Math.random() * 30);
         } while (salio[pregunta]);
         salio[pregunta] = true;
         radioButton[4].setSelected(true);
@@ -415,13 +418,13 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         return false;
     }
 
-    public void evento_jbVolver(){
+    public void evento_jbVolver() {
         MenuPrincipal mp = new MenuPrincipal();
         setVisible(false); // ocultar la ventana 
         dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-    
+
     public static void main(String s[]) {
         Cuestionario_ods preg = new Cuestionario_ods("Cuestionario de humanidades");
         preg.setVisible(true);

@@ -17,14 +17,14 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-public final class Capitulo_7 extends JFrame{
-           JEditorPane editor; 
+public final class Capitulo_7 extends JFrame {
+
+    JEditorPane editor;
     Capitulo_7 cap7;
     Capitulos ca;
-    JButton jbVolver,jbCapitulo_7;
-    
-    
-    public Capitulo_7(Capitulos obj){
+    JButton jbVolver, jbCapitulo_7;
+
+    public Capitulo_7(Capitulos obj) {
         super("Capitulo 7");
         ca = obj;
         setSize(1000, 700);
@@ -39,12 +39,12 @@ public final class Capitulo_7 extends JFrame{
         setIconImage(im);
         setLayout(null); // asignar un diseño libre
         crearGUI();
-        
-        setVisible(false); 
+
+        setVisible(false);
     }
-    
-    public void crearGUI(){
-     
+
+    public void crearGUI() {
+
         JLabel jlTitulo = new JLabel("Capitulo 7");
         jlTitulo.setBounds(0, 0, 1000, 70);
         jlTitulo.setOpaque(true);
@@ -53,7 +53,7 @@ public final class Capitulo_7 extends JFrame{
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);
         jlTitulo.setFont(new Font("Colonna MT", Font.BOLD, 35));
         add(jlTitulo);
-                
+
         jbVolver = new JButton("Volver");
         jbVolver.setBounds(700, 630, 200, 30);
         jbVolver.addActionListener((e) -> {
@@ -62,33 +62,32 @@ public final class Capitulo_7 extends JFrame{
         add(jbVolver);
         editor = new JEditorPane();
         editor.setContentType("text/html");
-        
+
         URL url = getClass().getResource("imagenes/logo_duke.png");
 
         editor.setText(
-                    "<!DOCTYPE html>\n" +
-    "<html>\n" +
-    "    <head>\n" +
-    "        <title>Impacto de la pandemia en la pobreza</title>\n" +
-    "    </head>\n" +
-    "    <body bgcolor=\"#181818\">\n" +
-    "        <font color='white' face='Tahoma'>\n" +
-    "            <center><h1>Impacto de la pandemia en la pobreza</h1></center>\n" +
-    "        </font>\n" +
-    "        <hr>\n" +
-    "        <font color='white' face='Tahoma' size='3'>\n" +
-    "            <p>La pandemia de COVID-19 ha tenido un impacto significativo en Colombia, aumentando los niveles de pobreza y exacerbando las desigualdades. El confinamiento y la disminución de empleos y salarios han generado una crisis económica y social sin precedentes. El Gobierno Nacional ha implementado políticas de apoyo, como el programa Ingreso Solidario, para ayudar a la población en situación de pobreza y vulnerabilidad.</p>\n" +
-    "            <p>Las microsimulaciones muestran un aumento devastador en la pobreza durante la pandemia, multiplicando la pobreza extrema y moderada en comparación con los niveles iniciales. Sin embargo, las intervenciones del Gobierno, como los giros extraordinarios de programas sociales, han contribuido eficazmente a la reducción de la pobreza.</p>\n" +
-    "            <p>Varios factores han contribuido al aumento de la pobreza, incluyendo la pérdida de empleos, la disminución de ingresos y la interrupción de programas de alimentación escolar. Los trabajadores informales y por cuenta propia, que representan una gran parte de la fuerza laboral, se vieron especialmente afectados. Además, los niños que dependían de las comidas escolares perdieron acceso a estas, aumentando la inseguridad alimentaria.</p>\n" +
-    "            <p>El Gobierno ha implementado medidas para mitigar el impacto en la pobreza, como programas de transferencias monetarias y apoyo a la generación de empleo, como el Programa de Apoyo al Empleo Formal (PAEF). Estos esfuerzos buscan aliviar la crisis económica y social desencadenada por la pandemia en Colombia.</p>\n" +
-    "        </font>\n" +
-    "    </body>\n" +
-    "</html>"
-                
-  );
-        
+                "<!DOCTYPE html>\n"
+                + "<html>\n"
+                + "    <head>\n"
+                + "        <title>Impacto de la pandemia en la pobreza</title>\n"
+                + "    </head>\n"
+                + "    <body bgcolor=\"#181818\">\n"
+                + "        <font color='white' face='Tahoma'>\n"
+                + "            <center><h1>Impacto de la pandemia en la pobreza</h1></center>\n"
+                + "        </font>\n"
+                + "        <hr>\n"
+                + "        <font color='white' face='Tahoma' size='3'>\n"
+                + "            <p>La pandemia de COVID-19 ha tenido un impacto significativo en Colombia, aumentando los niveles de pobreza y exacerbando las desigualdades. El confinamiento y la disminución de empleos y salarios han generado una crisis económica y social sin precedentes. El Gobierno Nacional ha implementado políticas de apoyo, como el programa Ingreso Solidario, para ayudar a la población en situación de pobreza y vulnerabilidad.</p>\n"
+                + "            <p>Las microsimulaciones muestran un aumento devastador en la pobreza durante la pandemia, multiplicando la pobreza extrema y moderada en comparación con los niveles iniciales. Sin embargo, las intervenciones del Gobierno, como los giros extraordinarios de programas sociales, han contribuido eficazmente a la reducción de la pobreza.</p>\n"
+                + "            <p>Varios factores han contribuido al aumento de la pobreza, incluyendo la pérdida de empleos, la disminución de ingresos y la interrupción de programas de alimentación escolar. Los trabajadores informales y por cuenta propia, que representan una gran parte de la fuerza laboral, se vieron especialmente afectados. Además, los niños que dependían de las comidas escolares perdieron acceso a estas, aumentando la inseguridad alimentaria.</p>\n"
+                + "            <p>El Gobierno ha implementado medidas para mitigar el impacto en la pobreza, como programas de transferencias monetarias y apoyo a la generación de empleo, como el Programa de Apoyo al Empleo Formal (PAEF). Estos esfuerzos buscan aliviar la crisis económica y social desencadenada por la pandemia en Colombia.</p>\n"
+                + "        </font>\n"
+                + "    </body>\n"
+                + "</html>"
+        );
+
         editor.setEditable(false);//mostrar solo codigo HTML
-        
+
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -103,25 +102,21 @@ public final class Capitulo_7 extends JFrame{
             }
         }
         );
-    JScrollPane js = new JScrollPane(editor);
+        JScrollPane js = new JScrollPane(editor);
         js.setBounds(40, 90, 915, 500);
         add(js);
-        
-        
-        
+
     }
-    
-    public void evento_jbVolver(){
+
+    public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         ca.setVisible(true); // mostrar la ventana de menu principal 
-    }   
-    public void evento_jbCapitulo_6(){
-           cap7.setVisible(true);
+    }
+
+    public void evento_jbCapitulo_6() {
+        cap7.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
-   }
-       
-      
+    }
+
 }
-
-

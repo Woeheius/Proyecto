@@ -5,8 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Menu.PlanoCartesiano;
+import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 public class VentanaFunciones extends JFrame {
+
     private JTextField funcion1TextField;
     private JTextField funcion2TextField;
     private PlanoCartesiano planoCartesiano;
@@ -16,9 +18,9 @@ public class VentanaFunciones extends JFrame {
 
         setTitle("Ingresar Funciones");
         setSize(200, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
-        setLocation(125,50);
+        setLocation(125, 50);
         JPanel panelFunciones = new JPanel(new GridLayout(3, 1));
 
         JLabel labelFuncion1 = new JLabel("Función 1:");

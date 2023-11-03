@@ -9,13 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
-public final class Encuesta extends JFrame{
-    
-   // Humanidades hu = new Humanidades (this);
+public final class Encuesta extends JFrame {
+
+    // Humanidades hu = new Humanidades (this);
     Humanidades hu;
     JButton jbVolver;
-    
-    public Encuesta(Humanidades obj){
+
+    public Encuesta(Humanidades obj) {
         super("Encuesta");
         hu = obj;
         setSize(1000, 700);
@@ -32,8 +32,8 @@ public final class Encuesta extends JFrame{
         crearGUI();
         setVisible(true);
     }
-    
-    public void crearGUI(){
+
+    public void crearGUI() {
         JLabel jlTitulo = new JLabel("Encuesta");
         jlTitulo.setBounds(0, 0, 1000, 80);
         jlTitulo.setOpaque(true);
@@ -42,16 +42,16 @@ public final class Encuesta extends JFrame{
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);
         jlTitulo.setFont(new Font("Colonna MT", Font.BOLD, 35));
         add(jlTitulo);
-                
+
         jbVolver = new JButton("Volver al menu principal");
         jbVolver.setBounds(700, 600, 200, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
-        add(jbVolver);  
+        add(jbVolver);
     }
-    
-    public void evento_jbVolver(){
+
+    public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         hu.setVisible(true); // mostrar la ventana de menu principal 
