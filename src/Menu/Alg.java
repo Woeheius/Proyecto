@@ -19,7 +19,7 @@ public final class Alg extends JFrame {
     public Alg(MenuPrincipal obj) {
         super("Area de Algebra Lineal");
         mp = obj;
-        setSize(1000, 700);
+        setSize(900, 600);
         //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -39,7 +39,7 @@ public final class Alg extends JFrame {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/lineall.png"));
         JLabel jlTitulo = new JLabel("Area de Algebra Lineal", ic, JLabel.CENTER);
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 900, 80);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.darkGray);
         jlTitulo.setForeground(Color.WHITE);
@@ -48,21 +48,21 @@ public final class Alg extends JFrame {
         add(jlTitulo);
 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(400, 600, 500, 30);
+        jbVolver.setBounds(570, 530, 300, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
         add(jbVolver);
 
         jbMatrices = new JButton("Sistema de Ecuaciones");
-        jbMatrices.setBounds((1015 - 510) / 2, 160, 300, 80);
+        jbMatrices.setBounds(300, 140, 300, 80);
         jbMatrices.addActionListener((e) -> {
             evento_jbMatrices();
         });
         add(jbMatrices);
 
         jbDeterminantes = new JButton("Determinantes");
-        jbDeterminantes.setBounds((1015 - 510) / 2, 350, 300, 80);
+        jbDeterminantes.setBounds(300, 330, 300, 80);
         jbDeterminantes.addActionListener((e) -> {
             evento_jbDeterminantes();
         });

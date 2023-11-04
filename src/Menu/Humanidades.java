@@ -10,7 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
-import static jdk.internal.org.jline.utils.Colors.s;
 
 public final class Humanidades extends JFrame {
 
@@ -21,7 +20,7 @@ public final class Humanidades extends JFrame {
     public Humanidades(MenuPrincipal obj) {
         super("Area de Humanidades");
         mp = obj;
-        setSize(1000, 700);
+        setSize(900, 600);
         //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -41,7 +40,7 @@ public final class Humanidades extends JFrame {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/mundo.png"));
         JLabel jlTitulo = new JLabel("Area de Humanidades", ic, JLabel.CENTER);
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 900, 80);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);
@@ -64,7 +63,7 @@ public final class Humanidades extends JFrame {
         add(jbEncuesta);
 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(400, 600, 500, 30);
+        jbVolver.setBounds(570, 530, 300, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });

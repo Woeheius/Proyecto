@@ -1,6 +1,5 @@
 package Menu;
 
-import Menu.PlanoCartesiano;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -14,13 +13,11 @@ public class Matematicas extends JFrame {
     MenuPrincipal mp;
     JButton jbVolver, jbDeri, jbFun, jbCalculadoraDerivadas, jbGrafi;
     CalculadoraDerivadas c = new CalculadoraDerivadas(this);
-    PlanoCartesiano p = new PlanoCartesiano();
-    VentanaFunciones v = new VentanaFunciones(p);
 
     public Matematicas(MenuPrincipal obj) {
         super("Area de Matematicas");
         mp = obj;
-        setSize(1000, 700);
+        setSize(900, 600);
         //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -40,7 +37,7 @@ public class Matematicas extends JFrame {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/calcula.png"));
         JLabel jlTitulo = new JLabel("Area de Matematicas", ic, JLabel.CENTER);
-        jlTitulo.setBounds(0, 0, 1000, 60);
+        jlTitulo.setBounds(0, 0, 900, 60);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);
@@ -49,7 +46,7 @@ public class Matematicas extends JFrame {
         add(jlTitulo);
 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(400, 600, 500, 30);
+        jbVolver.setBounds(570, 530, 300, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
@@ -107,9 +104,7 @@ public class Matematicas extends JFrame {
     }
 
     public void evento_jbGraficadora() {
-        PlanoCartesiano plano = new PlanoCartesiano(); // crea una instancia de PlanoCartesiano
-        v = new VentanaFunciones(plano); // pasa la instancia de PlanoCartesiano al constructor de VentanaFunciones
-        p.setVisible(true);
+        VentanaGraficar v = new VentanaGraficar();
         v.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
