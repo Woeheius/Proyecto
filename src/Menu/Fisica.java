@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 public class Fisica extends JFrame {
 
     MenuPrincipal mp;
-    JButton jbVolver, jbVectores, jbGraficadora;
+    JButton jbVolver, jbVectores, jbGraficadora,jbJuego;
     GraficVectores g = new GraficVectores();
 
     public Fisica(MenuPrincipal obj) {
@@ -65,6 +65,14 @@ public class Fisica extends JFrame {
             evento_jbGraficadora();
         });
         add(jbGraficadora);
+        
+        jbJuego = new JButton("Juego");
+        jbJuego.setBounds((2025-610)/2, 375, 100, 40);
+        jbJuego.addActionListener((e) -> {
+            InterfazFisica InterfazFisica = new InterfazFisica();
+            setVisible(false);
+        });
+        add(jbJuego);
     }
 
     public void evento_jbVectores() {

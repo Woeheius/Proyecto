@@ -64,7 +64,7 @@ public class VentanaGraficar extends JFrame {
         add(limpiar);
 
         jbVolver = new JButton("Volver");
-        jbVolver.setBounds(390, 450, 165, 30);
+        jbVolver.setBounds(0, 0, 165, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
             setVisible(false);
