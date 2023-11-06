@@ -13,8 +13,9 @@ import javax.swing.plaf.ColorUIResource;
 public final class Alg extends JFrame {
 
     MenuPrincipal mp;
-    JButton jbVolver, jbMatrices, jbSistema, jbDeterminantes;
+    JButton jbVolver, jbMatrices, jbSistema, jbDeterminantes,jbInversa_Matriz;
     GaussJordan gau = new GaussJordan(this);
+    Inversa_Matriz inv = new Inversa_Matriz(this);
 
     public Alg(MenuPrincipal obj) {
         super("Area de Algebra Lineal");
@@ -54,26 +55,38 @@ public final class Alg extends JFrame {
         });
         add(jbVolver);
 
-        jbMatrices = new JButton("Sistema de Ecuaciones");
-        jbMatrices.setBounds(300, 140, 300, 80);
+        ImageIcon i_sist = new ImageIcon(
+                getClass().getResource("/imagenes/sist.png"));
+        jbMatrices= new JButton("Sistema de Ecuaciones", i_sist);
+        jbMatrices.setBounds(100, 160, 300, 50);
         jbMatrices.addActionListener((e) -> {
             evento_jbMatrices();
         });
         add(jbMatrices);
-
-        jbDeterminantes = new JButton("Determinantes");
-        jbDeterminantes.setBounds(300, 330, 300, 80);
+ 
+        ImageIcon i_deter = new ImageIcon(
+                getClass().getResource("/imagenes/deter.png"));
+        jbDeterminantes = new JButton("Determinantes", i_deter);
+        jbDeterminantes.setBounds(100, 300, 300, 50);
         jbDeterminantes.addActionListener((e) -> {
             evento_jbDeterminantes();
         });
         add(jbDeterminantes);
 
         jbSistema = new JButton("Calculadora de sistema de Ecuaciones ");
-        jbSistema.setBounds((1825 - 610) / 2, 180, 250, 40);
+        jbSistema.setBounds((1825 - 610) / 2, 170, 250, 40);
         jbSistema.addActionListener((e) -> {
             evento_jbSistema();
         });
         add(jbSistema);
+        
+        
+        jbInversa_Matriz = new JButton("Calculadora Inversa Matriz");
+        jbInversa_Matriz.setBounds((1825 - 610) / 2, 310, 250, 40);
+        jbInversa_Matriz.addActionListener((e) -> {
+            evento_jbInversa_Matriz();
+        });
+        add(jbInversa_Matriz);
 
     }
 
@@ -84,6 +97,10 @@ public final class Alg extends JFrame {
 
     public void evento_jbSistema() {
         gau.setVisible(true);
+        setVisible(false); // ocultar la ventana de menu principal
+    }
+     public void evento_jbInversa_Matriz() {
+        inv.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
 

@@ -36,6 +36,10 @@ public final class Humanidades extends JFrame {
         setVisible(true);
     }
 
+    Humanidades() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/mundo.png"));
@@ -47,16 +51,21 @@ public final class Humanidades extends JFrame {
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);
         jlTitulo.setFont(new Font("Colonna MT", Font.BOLD, 35));
         add(jlTitulo);
-
-        jbCapitulos = new JButton("Leer capitulos");
-        jbCapitulos.setBounds((700 - 200) / 2, 200, 500, 30);
+        
+        ImageIcon i_cap = new ImageIcon(
+                getClass().getResource("/imagenes/libros.png"));
+        jbCapitulos = new JButton("Leer capitulos", i_cap);
+         jbCapitulos.setBounds((670 - 200) / 2, 170, 500, 50);
         jbCapitulos.addActionListener((e) -> {
             evento_jbCapitulos();
         });
         add(jbCapitulos);
-
-        jbEncuesta = new JButton("Encuesta");
-        jbEncuesta.setBounds((700 - 200) / 2, 300, 500, 30);
+        
+        
+        ImageIcon i_enc = new ImageIcon(
+                getClass().getResource("/imagenes/encuesta.png"));
+        jbEncuesta = new JButton("Encuesta", i_enc);
+        jbEncuesta.setBounds((670 - 200) / 2, 320, 500, 50);
         jbEncuesta.addActionListener((e) -> {
             evento_jbEncuesta();
         });

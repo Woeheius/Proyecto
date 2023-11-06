@@ -11,20 +11,22 @@ import javax.swing.JTextField;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class VentanaGraficar extends JFrame {
-
+    
+    Matematicas mt;
     JTextField Texfuncion;
     JButton jbVolver, graficar, limpiar,jbpuntos;
     JPanel panel;
 
-    public VentanaGraficar() {
+    public VentanaGraficar(Matematicas obj) {
         super("Graficar Funciones");
+        mt = obj;
         setSize(600, 540); // Tamaño reducido para ajustar a los botones y el plano
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
         getContentPane().setBackground(new Color(44, 44, 44));
         setLayout(null);
-        setVisible(true);
+        setVisible(false);
         crearGUI();
     }
 
@@ -67,8 +69,6 @@ public class VentanaGraficar extends JFrame {
         jbVolver.setBounds(390, 450, 165, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
-            setVisible(false);
-            dispose();
         });
         add(jbVolver);
         
@@ -76,7 +76,10 @@ public class VentanaGraficar extends JFrame {
         jbpuntos.setBounds(390, 420, 165, 20);
         add(jbpuntos);
     }
-    public void evento_jbVolver(){
+     public void evento_jbVolver() {
+        setVisible(false); // ocultar la ventana de Matematicas
+        dispose(); // destruir la ventana de Matematicas
+        mt.setVisible(true); // mostrar la ventana de menu principal
 
     }
 }

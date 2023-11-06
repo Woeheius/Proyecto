@@ -12,7 +12,7 @@ public class Fisica extends JFrame {
 
     MenuPrincipal mp;
     JButton jbVolver, jbVectores, jbGraficadora;
-    GraficVectores g = new GraficVectores();
+    GraficVectores g = new GraficVectores(this);
 
     public Fisica(MenuPrincipal obj) {
         super("Area de Fisica");
@@ -52,15 +52,19 @@ public class Fisica extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
-
-        jbVectores = new JButton("Vectores");
-        jbVectores.setBounds((1215 - 510) / 2, 160, 300, 80);
+        
+         ImageIcon i_vect = new ImageIcon(
+                getClass().getResource("/imagenes/vect.png"));
+        jbVectores = new JButton("Vectores", i_vect);
+        jbVectores.setBounds(100, 160, 300, 50);
         jbVectores.addActionListener((e) -> {
             evento_jbVectores();
         });
         add(jbVectores);
+        
+        
         jbGraficadora = new JButton("Graficadora");
-        jbGraficadora.setBounds((2025 - 610) / 2, 172, 100, 40);
+        jbGraficadora.setBounds((2025 - 610) / 2, 168, 100, 40);
         jbGraficadora.addActionListener((e) -> {
             evento_jbGraficadora();
         });

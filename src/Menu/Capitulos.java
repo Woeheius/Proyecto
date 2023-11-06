@@ -25,9 +25,9 @@ public final class Capitulos extends JFrame {
     Capitulo_10 cap10 = new Capitulo_10(this);
 
     public Capitulos(Humanidades obj) {
-        super("Capitulos sobre ODS 1");
+        super("Capitulos");
         hu = obj;
-        setSize(900, 600);
+        setSize(1000, 700);
         //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -45,8 +45,8 @@ public final class Capitulos extends JFrame {
 
     public void crearGUI() {
 
-        JLabel jlTitulo = new JLabel("Capitulos ODS 1");
-        jlTitulo.setBounds(0, 0, 900, 60);
+        JLabel jlTitulo = new JLabel("Capitulos");
+        jlTitulo.setBounds(0, 0, 1000, 60);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);
@@ -55,7 +55,7 @@ public final class Capitulos extends JFrame {
         add(jlTitulo);
 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(570, 530, 300, 30);
+        jbVolver.setBounds(700, 600, 200, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });

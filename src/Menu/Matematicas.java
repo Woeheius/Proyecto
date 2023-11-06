@@ -13,6 +13,7 @@ public class Matematicas extends JFrame {
     MenuPrincipal mp;
     JButton jbVolver, jbDeri, jbFun, jbCalculadoraDerivadas, jbGrafi;
     CalculadoraDerivadas c = new CalculadoraDerivadas(this);
+    VentanaGraficar ven = new VentanaGraficar(this);
 
     public Matematicas(MenuPrincipal obj) {
         super("Area de Matematicas");
@@ -51,16 +52,21 @@ public class Matematicas extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
-
-        jbFun = new JButton("Funciones");
-        jbFun.setBounds((1215 - 510) / 2, 160, 300, 65);
+        
+        
+          ImageIcon i_func = new ImageIcon(
+                getClass().getResource("/imagenes/func.png"));
+        jbFun= new JButton("Funciones", i_func);
+        jbFun.setBounds(100, 160, 300, 50);
         jbFun.addActionListener((e) -> {
             evento_jbFun();
         });
         add(jbFun);
-
-        jbDeri = new JButton("Derivadas");
-        jbDeri.setBounds((1215 - 510) / 2, 350, 300, 65);
+         
+          ImageIcon i_deriv = new ImageIcon(
+                getClass().getResource("/imagenes/deriv.png"));
+        jbDeri = new JButton("Derivadas", i_deriv);
+        jbDeri.setBounds(100, 350, 300, 50);
         jbDeri.addActionListener((e) -> {
             evento_jbDeri();
         });
@@ -74,8 +80,8 @@ public class Matematicas extends JFrame {
             evento_jbCalculadoraDerivadas();
         });
         add(jbCalculadoraDerivadas);
+       
         jbGrafi = new JButton("Graficadora");
-
         jbGrafi.setBounds((2025 - 610) / 2, 172, 100, 40);
         jbGrafi.addActionListener((e) -> {
             evento_jbGraficadora();
@@ -104,9 +110,9 @@ public class Matematicas extends JFrame {
     }
 
     public void evento_jbGraficadora() {
-        VentanaGraficar v = new VentanaGraficar();
-        v.setVisible(true);
+        ven.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+    }
 
-}
+
