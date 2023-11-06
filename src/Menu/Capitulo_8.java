@@ -65,26 +65,35 @@ public final class Capitulo_8 extends JFrame {
 
         URL url = getClass().getResource("imagenes/logo_duke.png");
 
-        editor.setText(
-                "<!DOCTYPE html>\n"
-                + "<html>\n"
-                + "    <head>\n"
-                + "        <title>La Importancia de la Educación en la Lucha Contra la Pobreza</title>\n"
-                + "    </head>\n"
-                + "    <body bgcolor=\"#181818\">\n"
-                + "        <font color=\"white\" face=\"Tahoma\">\n"
-                + "            <center><h1>La Importancia de la Educación en la Lucha Contra la Pobreza</h1></center>\n"
-                + "        </font>\n"
-                + "        <hr>\n"
-                + "        <font color=\"white\" face=\"Tahoma\" size=\"3\">\n"
-                + "            <p>La relación entre educación y pobreza es un tema ampliamente discutido en la investigación educativa. Aunque no se puede afirmar que la educación \"saque\" a los pobres de la pobreza, tampoco se puede prescindir de la educación en el combate contra la pobreza. Si bien no existe evidencia empírica que demuestre cómo la educación contribuye al aumento de los ingresos de una persona, se sabe que en forma mayoritaria los pobres carecen de educación o tienen acceso a una educación deficiente.</p>\n"
-                + "            <p>La educación popular y la educación no formal tienen como objetivo mejorar las condiciones de vida de los educandos, aunque no hay evidencia empírica de que esto se traduzca en un aumento de los ingresos o en una mayor movilidad ocupacional [3]. Sin embargo, es importante destacar que la educación no formal y popular buscan cambiar la sociedad y acceder a un contexto más igualitario, lo que podría generar una cierta movilidad social y una forma de vida mejor.</p>\n"
-                + "            <p>La relación entre educación y pobreza se encuentra en dos coordenadas. Por un lado, está determinada por el contexto socioeconómico del país, como la distribución del ingreso que limita las posibilidades de los niños mexicanos para asistir a la escuela. Por otro lado, se encuentra en las características internas del sistema educacional, como el deficiente desempeño de los maestros en atender situaciones de riesgo de exclusión en el aula.</p>\n"
-                + "            <p>La importancia de la educación en la lucha contra la pobreza radica en su capacidad para contribuir a la formación de individuos autónomos, creativos y participativos, así como al mejoramiento del nivel de vida de la sociedad en su conjunto. Aunque no exista una evidencia concluyente sobre cómo la educación se relaciona con el ingreso, se reconoce que la educación es un factor determinante en la adquisición de empleo y en la mejora de las condiciones de vida.</p>\n"
-                + "        </font>\n"
-                + "    </body>\n"
-                + "</html>"
-        );
+editor.setText(
+    "<!DOCTYPE html>\n"
+    + "<html>\n"
+    + "    <head>\n"
+    + "        <title>La relación entre educación y pobreza</title>\n"
+    + "    </head>\n"
+    + "    <body bgcolor=\"#181818\">\n"
+    + "        <font color=\"white\" face=\"Tahoma\">\n"
+    + "            <center><h1>La relación entre educación y pobreza</h1></center>\n"
+    + "        </font>\n"
+    + "        <hr>\n"
+    + "        <font color=\"white\" face=\"Tahoma\" size=\"3\">\n"
+    + "            <p>La relación entre educación y pobreza es un tema de gran relevancia y ha sido ampliamente discutido en la investigación educativa y en el desarrollo social. Aunque no se puede afirmar de manera categórica que la educación sea la única solución para sacar a las personas de la pobreza, es innegable que desempeña un papel crucial en la lucha contra la pobreza y la mejora de las condiciones de vida.</p>\n"
+    + "            <font color=\"white\">\n"
+    + "            <p>1. Acceso a oportunidades:</p> <p>La educación brinda a las personas acceso a un conjunto más amplio de oportunidades. Proporciona habilidades y conocimientos que son valiosos en el mercado laboral, lo que aumenta las posibilidades de obtener empleo y, por lo tanto, de aumentar los ingresos.</p>\n"
+    + "            <p>2. Romper el ciclo de la pobreza:</p> <p>La educación tiene el potencial de romper el ciclo de la pobreza intergeneracional. Cuando las personas tienen acceso a una educación de calidad, están en mejores condiciones de proporcionar a sus hijos un entorno más favorable para su desarrollo y educación, lo que puede ayudar a romper el ciclo de la pobreza.</p>\n"
+    + "            <p>3. Empoderamiento y movilidad social:</p> <p>La educación no formal y popular, aunque no necesariamente se traduce en un aumento inmediato de los ingresos, puede empoderar a las personas y darles la capacidad de participar de manera más activa en la sociedad. Esto puede conducir a una mayor movilidad social y al cambio de su realidad.</p>\n"
+    + "            <p>4. Igualdad de oportunidades:</p> <p>La educación contribuye a la creación de una sociedad más equitativa al proporcionar a las personas igualdad de oportunidades para desarrollar su potencial. Ayuda a superar las barreras socioeconómicas y culturales que pueden limitar el acceso a una vida mejor.</p>\n"
+    + "            <p>5. Desafíos en la educación:</p> <p>La relación entre educación y pobreza también está influenciada por factores como la calidad de la educación, la distribución de recursos educativos, y la capacitación y desempeño de los maestros. Para que la educación sea un motor efectivo en la lucha contra la pobreza, es necesario abordar estos desafíos y garantizar que la educación sea accesible y de alta calidad.</p>\n"
+    + "            </font>\n"
+    + "            <p><strong>Recursos adicionales:</strong></p>\n"
+    + "            <p><a href=\"https://biblioteca.clacso.edu.ar/clacso/gt/20101029064158/6ziccardi.pdf\">Enlace 1</a></p>\n"
+    + "            <p><a href=\"https://www.educo.org/blog/claves-para-acabar-pobreza-con-educacion\">Enlace 2</a></p>\n"
+    + "            <p><a href=\"https://www.un.org/es/chronicle/article/acabar-con-la-pobreza-mediante-la-educacion-el-desafio-de-la-educacion-para-todos\">Enlace 3</a></p>\n"
+    + "        </font>\n"
+    + "    </body>\n"
+    + "</html>"
+);
+
 
         editor.setEditable(false);//mostrar solo codigo HTML
 

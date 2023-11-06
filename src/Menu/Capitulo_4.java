@@ -85,11 +85,13 @@ public final class Capitulo_4 extends JFrame {
                 + "            <p>Para lograr un desarrollo sostenible en comunidades indígenas, es fundamental promover la participación y el empoderamiento de estas comunidades. Esto implica garantizar su acceso a recursos y servicios básicos, fortalecer sus capacidades y habilidades, y fomentar su participación activa en la planificación, implementación y evaluación de proyectos y programas de desarrollo.</p>\n"
                 + "            <p>Apoyo institucional y financiero:</p>\n"
                 + "            <p>El desarrollo sostenible en comunidades indígenas requiere de un apoyo institucional y financiero adecuado.</p>\n"
-                + "        </font>\n"
-                + "    </body>\n"
-                + "</html>"
-        );
-
+                    + "            <p><strong>Recursos adicionales:</strong></p>\n"
+ + "            <p><a href=\"https://www.iwgia.org/es/ip-i-mi/3776-mi-2020-ods.html\">Enlace 1</a></p>\n"
+    + "            <p><a href=\"https://elpais.com/elpais/2019/08/10/3500_millones/1565448989_143006.html\">Enlace 2</a></p>\n"
+    + "            <p><a href=\"https://www.un.org/esa/socdev/unpfii/documents/2016/Docs-updates/SPANISH_Backgrounder_2030_Agenda.pdf\">Enlace 3</a></p>\n"
+    + "        </font>\n"
+    + "    </body>\n"
+    + "</html>");
         editor.setEditable(false);//mostrar solo codigo HTML
 
         editor.addHyperlinkListener(new HyperlinkListener() {

@@ -61,6 +61,7 @@ public class VentanaGraficar extends JFrame {
         limpiar.addActionListener((e) -> {
         panel.removeAll();  // Elimina todos los componentes del panel
         panel.repaint();     // Vuelve a pintar el panel vacío
+        Texfuncion.setText("");
         });
 
         add(limpiar);
