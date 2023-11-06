@@ -1,3 +1,4 @@
+
 package Menu;
 
 import java.awt.Color;
@@ -96,3 +97,5 @@ public class Fisica extends JFrame {
         setVisible(false); // ocultar la ventana de menu principal
     }
 }
+
+  
