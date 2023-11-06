@@ -7,11 +7,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 public class Fisica extends JFrame {
 
-    MenuPrincipal mp;
-    JButton jbVolver, jbVectores, jbGraficadora;
+   MenuPrincipal mp;
+    JButton jbVolver, jbVectores, jbGraficadora,jbJuego;
     GraficVectores g = new GraficVectores(this);
 
     public Fisica(MenuPrincipal obj) {
@@ -69,6 +70,14 @@ public class Fisica extends JFrame {
             evento_jbGraficadora();
         });
         add(jbGraficadora);
+        
+        jbJuego = new JButton("Juego");
+        jbJuego.setBounds((2025-610)/2, 375, 100, 40);
+        jbJuego.addActionListener((e) -> {
+            InterfazFisica InterfazFisica = new InterfazFisica();
+            setVisible(false);
+        });
+        add(jbJuego);
     }
 
     public void evento_jbVectores() {
