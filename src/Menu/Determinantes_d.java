@@ -46,7 +46,7 @@ public final class Determinantes_d extends JFrame {
 
     public void crearGUI() {
         JLabel jlTitulo = new JLabel("Area Determinantes");
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 1000, 60);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.darkGray);
         jlTitulo.setForeground(Color.WHITE);
@@ -70,7 +70,7 @@ public final class Determinantes_d extends JFrame {
                 "<!DOCTYPE html>\n"
                 + "<html>\n"
                 + "    <head>\n"
-                + "        <title>Sistemas de Ecuaciones</title>\n"
+                + "        <title>Determinantes</title>\n"
                 + "    </head>\n"
                 + "    <body bgcolor=\"#181818\">\n"
                 + "        <font color=\"white\" face=\"Tahoma\">\n"
