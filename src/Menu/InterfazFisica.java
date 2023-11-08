@@ -15,16 +15,22 @@ public class InterfazFisica extends JFrame   {
 
     JLabel jlTexto, jlImagen, jlTextoImg;
     JButton jbMovimiento,jbVolver; 
+    Fisica fs; 
+    
       
-public InterfazFisica(){
+    public InterfazFisica(Fisica obj){
     super("FISICA");
+    fs = obj;
     setSize(800, 600);
     setLocationRelativeTo(null);
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     setLayout(null);
+    Image im = new ImageIcon(
+                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        setIconImage(im);
             crearGUI() ;
     
-    setVisible(true);
+    setVisible(false);
 }
     public void crearGUI(){
         jlTexto = new JLabel("FISICA");
@@ -52,7 +58,9 @@ public InterfazFisica(){
         jbVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
+                 setVisible(false); // ocultar la ventana de Matematicas
+                 dispose(); // destruir la ventana de Matematicas
+                 fs.setVisible(true); // mostrar la ventana de menu principal 
             }
         });
         add(jbVolver);
@@ -65,12 +73,14 @@ public InterfazFisica(){
         
     }
     public void Evento_JbMovimiento(){
-        INTERFAZSF INTERFAZSF = new INTERFAZSF();
+        INTERFAZSF INTERFAZSF = new INTERFAZSF(this);
         INTERFAZSF.setVisible(true);
     }
 
     public static void main(String[] args) {
-        InterfazFisica ej = new InterfazFisica();
+        InterfazFisica ej = new InterfazFisica(new Fisica(new MenuPrincipal()));
+        ej.setVisible(true);
     }
-    
+  
+       
 }

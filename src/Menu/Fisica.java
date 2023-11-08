@@ -15,6 +15,9 @@ public class Fisica extends JFrame {
    MenuPrincipal mp;
     JButton jbVolver, jbVectores, jbGraficadora,jbJuego;
     GraficVectores g = new GraficVectores(this);
+    InterfazFisica i = new InterfazFisica(this);
+    
+    
 
     public Fisica(MenuPrincipal obj) {
         super("Area de Fisica");
@@ -35,6 +38,12 @@ public class Fisica extends JFrame {
 
         setVisible(true);
     }
+
+    Fisica() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
 
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
@@ -75,9 +84,11 @@ public class Fisica extends JFrame {
         jbJuego = new JButton("Juego");
         jbJuego.setBounds((2025-610)/2, 375, 100, 40);
         jbJuego.addActionListener((e) -> {
-            InterfazFisica InterfazFisica = new InterfazFisica();
+            evento_jbJuego();
+            InterfazFisica InterfazFisica = new InterfazFisica(this);
             setVisible(false);
-        });
+            
+           });
         add(jbJuego);
     }
 
@@ -96,6 +107,12 @@ public class Fisica extends JFrame {
         g.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+    public void evento_jbJuego() {
+        i.setVisible(true);
+        setVisible(false); // ocultar la ventana de menu principal
+    }
+    
+   
 }
 
   

@@ -22,18 +22,24 @@ public class INTERFAZSF extends JFrame   {
     JLabel jlImagen, jlAlturaf, jlAlcancef, jlPosicionxf, jlPosicionyf, jlGrados;
     JButton jbGuardar, jbLimpiar,jbVolver;
     JTextArea jtArea; 
-    private MenuPrincipal obj;
+    InterfazFisica i; 
+  
+   
     
-public INTERFAZSF(){
+public INTERFAZSF(InterfazFisica obj){
     super("Juego - Fisica");
+    i = obj;
     setSize(800, 600);
     setLocationRelativeTo(null);
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     setBackground(Color.yellow);
     setLayout(null);
             crearGUI() ;
+            Image im = new ImageIcon(
+                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        setIconImage(im);
     
-    setVisible(true);
+    setVisible(false);
 }
     public void crearGUI(){
         
@@ -144,7 +150,10 @@ public INTERFAZSF(){
         jbVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
+                setVisible(false); // ocultar la ventana de Matematicas
+                 dispose(); // destruir la ventana de Matematicas
+                 i.setVisible(true); // mostrar la ventana de menu principal
+                
             }
         });
         add(jbVolver);
@@ -250,7 +259,9 @@ public INTERFAZSF(){
     }
     
     public static void main(String[] args) {
-        INTERFAZSF ej = new INTERFAZSF();
+        
+        INTERFAZSF ej = new INTERFAZSF(new InterfazFisica(new Fisica()));
+        ej.setVisible(true);
     }
     
 }

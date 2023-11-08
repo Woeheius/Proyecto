@@ -44,7 +44,7 @@ public final class Fun extends JFrame {
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Funciones");
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 1000, 60);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);
@@ -53,7 +53,7 @@ public final class Fun extends JFrame {
         add(jlTitulo);
 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(700, 600, 200, 30);
+        jbVolver.setBounds(700, 630, 200, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
@@ -95,7 +95,7 @@ public final class Fun extends JFrame {
 
 
         editor.setEditable(false);//mostrar solo codigo HTML
-
+         editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {

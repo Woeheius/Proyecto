@@ -27,6 +27,9 @@ public class VentanaGraficar extends JFrame {
         getContentPane().setBackground(new Color(44, 44, 44));
         setLayout(null);
         setVisible(false);
+        Image im = new ImageIcon(
+                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        setIconImage(im);
         crearGUI();
     }
 
