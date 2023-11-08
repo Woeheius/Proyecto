@@ -1,16 +1,28 @@
+/*
+Proposito:
+Clase en la cual se podran visualzar los 10 capitulos y resolver la encuesta
+Autores:
+Angie Natalia Cobo Vasquez
+Juan Diego Rodriguez Ortiz
+Sebastian Henao Gamboa
+Santiago Ospina Gonzalez
+
+Version:
+2.0
+Fecha ultima actualizacion:
+08/11/2023
+Version JDK:
+ */
 package Menu;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
-import static jdk.internal.org.jline.utils.Colors.s;
 
 public final class Humanidades extends JFrame {
 
@@ -72,8 +84,8 @@ public final class Humanidades extends JFrame {
     }
 
     public void evento_jbVolver() {
-        setVisible(false); // ocultar la ventana de Matematicas
-        dispose(); // destruir la ventana de Matematicas
+        setVisible(false); // ocultar la ventana 
+        dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
 
@@ -83,9 +95,9 @@ public final class Humanidades extends JFrame {
     }
 
     public void evento_jbEncuesta() {
-        Datos d = new Datos();
+        Cuestionario_ods preg = new Cuestionario_ods("CUESTIONARIO HUMANIDADES");
         setVisible(false); // ocultar la ventana de menu principal
-        d.setVisible(true);
+        preg.setVisible(true);
     }
 
 }

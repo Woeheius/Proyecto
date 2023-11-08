@@ -1,11 +1,29 @@
+/*
+Proposito:
+Clase en la cual sera presentado el cuestionario de 5 preguntas sobre el ODS 1
+Autores:
+Angie Natalia Cobo Vasquez
+Juan Diego Rodriguez Ortiz
+Sebastian Henao Gamboa
+Santiago Ospina Gonzalez
+
+Version:
+2.0
+Fecha ultima actualizacion:
+08/11/2023
+Version JDK:
+ */
 package Menu;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
@@ -16,17 +34,23 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     private static final long serialVersionUID = 1L;
     JLabel label;
     JRadioButton radioButton[] = new JRadioButton[5];
-    JButton jbSiguiente, jbVolver, jbJugar, jbRecord, jbguardar, jblimpiar, jbpuntaje, jbCalificar, jbAtras;
+    JButton jbSiguiente, jbVolver, jbAtras;
     ButtonGroup bg;
     int correctas = 0, pregunta = 0, cant_preg = 1;
+    float porcentaje;
     int m[] = new int[10];
-    String resultado = "Resultados";
-    boolean[] salio = new boolean[30];
+    private String[] guardar = new String[6];
+    boolean[] salio = new boolean[30]; //arreglo para controlar las preguntas que salen
 
     Cuestionario_ods(String s) {
         super("CUESTIONARIO DE HUMANIDADES");
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        getContentPane().setBackground(
+                new Color(41, 41, 41));
         label = new JLabel();
+        label.setOpaque(true);
+        label.setBackground(Color.DARK_GRAY);
+        label.setForeground(Color.white);
         add(label);
         bg = new ButtonGroup();
         for (int i = 0; i < 5; i++) {
@@ -38,6 +62,16 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         jbSiguiente.addActionListener(this);
         add(jbSiguiente);
         jbAtras = new JButton("Atras");
+        jbAtras.addActionListener((e) -> {
+            if (cant_preg > 1) {
+                cant_preg--; //reducir contador de preguntas si se acciona el boton atras
+                label.setText(guardar[cant_preg - 1]);
+                guardar[cant_preg] = null;
+            } else {
+                JOptionPane.showMessageDialog(null, "No puede retroceder ya que esta es la primera pregunta", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+
+        });
         add(jbAtras);
         jbVolver = new JButton("Volver al menu principal");
         jbVolver.setBounds(370, 240, 200, 30);
@@ -46,7 +80,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         });
         add(jbVolver);
 
-        set();
+        set(); //se crea el tamaño de los radiobttons y el label que sera presentado en cada pregunta
         label.setBounds(10, 40, 4500, 20);
         radioButton[0].setBounds(50, 80, 60000, 20);
         radioButton[1].setBounds(50, 110, 60000, 20);
@@ -65,45 +99,28 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jbSiguiente && cant_preg <= 6) {
             if (check()) {
-                correctas = correctas + 1;
+                correctas++; //se llama la funcion check, donde si la pregunta coincide con el boton seleccionado, correctas aumentara
             }
-            cant_preg++;
+            cant_preg++; //cantidad de preguntas aumentara
             set();
             if (cant_preg == 6) {
+                Datos d = new Datos();
                 setVisible(false);
-                jbSiguiente.setEnabled(true);
+                porcentaje = (float) correctas / 5 * 100;
+                DecimalFormat df = new DecimalFormat("#0.0"); //funcion para que porcentaje solo tenga dos decimales
+                String porce = df.format(porcentaje);
+                JOptionPane.showMessageDialog(null, "Las correctas: " + correctas + "\n" + "Tu porcentaje de correctas es de: " + porce + "%");
+                guardar();
+                d.setVisible(true);
+                guardar = new String[6];
             }
-        }
-        for (int i = 0, y = 1; i < 5; i++, y++) {
-            if (e.getActionCommand().equals("Marcador" + y)) {
-                if (check()) {
-                    correctas = correctas + 1;
-                }
-                cant_preg = m[y];
-                set();
-                ((JButton) e.getSource()).setEnabled(false);
-            }
-        }
-
-        if (e.getActionCommand().equals(resultado)) {
-            if (check()) {
-                correctas = correctas + 1;
-            }
-            JOptionPane.showMessageDialog(this, "Respuestas correctas= " + correctas);
-            System.exit(0);
         }
     }
 
     // Seteando preguntas con sus respuestas
     private void set() {
-        Util util = new Util();
-        String nombre = util.getNombre();
-        String apellido = util.getApellido();
-        String correo = util.getCorreo();
-        String codigo = util.getCodigo();
-        String carrera = util.getCarrera();
         do {
-            pregunta = (int) (Math.random() * 30);
+            pregunta = (int) (Math.random() * 30);//la variable pregunta sera aleatoria, y el numero que salga sera la pregunta con sus respuestas que se muestre
         } while (salio[pregunta]);
         salio[pregunta] = true;
         radioButton[4].setSelected(true);
@@ -122,74 +139,74 @@ class Cuestionario_ods extends JFrame implements ActionListener {
             radioButton[3].setText("Ninguna de las anteriores");
         }
         if (pregunta == 2) {
+            label.setText("Donde se utiliza el indice de pobreza multidimensional (IPM)");
+            radioButton[0].setText("Europa");
+            radioButton[1].setText("Asia");
+            radioButton[2].setText("Africa");
+            radioButton[3].setText("America latina");
+        }
+        if (pregunta == 3) {
             label.setText("¿Cual es el ODS que puede ayudar a que el ODS 1 (fin de la pobreza) sea cumplido");
             radioButton[0].setText("ODS 3");
             radioButton[1].setText("ODS 7");
             radioButton[2].setText("ODS 10");
             radioButton[3].setText("ODS 8");
         }
-        if (pregunta == 3) {
+        if (pregunta == 4) {
             label.setText("¿Que políticas y programas orientados a promover la inclusión laboral y mejorar las condiciones de trabajo se han implementado en Colombia?");
             radioButton[0].setText("Igualdad de oportunidades en el mercado laboral");
             radioButton[1].setText("Promocion del empleo formal");
             radioButton[2].setText("Proteccion de los derechos laborales");
             radioButton[3].setText("Todas las anteriores");
         }
-        if (pregunta == 4) {
+        if (pregunta == 5) {
             label.setText("¿En que otros ODS puede contribuir el ODS 1?");
             radioButton[0].setText("ODS 2");
             radioButton[1].setText("ODS 5");
             radioButton[2].setText("ODS 3");
             radioButton[3].setText("Todas las anteriores");
         }
-        if (pregunta == 5) {
+        if (pregunta == 6) {
             label.setText("¿Que genero la pandemia del covid-19 en el ODS 1?");
             radioButton[0].setText("Aumento las posibilidades de lograr este objetivo");
             radioButton[1].setText("Sigue de la misma manera que antes de que llegara la pandemia");
             radioButton[2].setText("Aumento de la pobreza y exacerbando las desigualdades");
             radioButton[3].setText("Ninguna de las anteriores");
         }
-        if (pregunta == 6) {
+        if (pregunta == 7) {
             label.setText("¿Que programas creo el gobierno nacional de Colombia para mitigar el aumento de la pobreza durante la pandemia?");
             radioButton[0].setText("Ingreso solidario y programa de apoyo al empleo formal (PAEF)");
             radioButton[1].setText("No creo ningun programa");
             radioButton[2].setText("Programa de apoyo al empleo informal");
             radioButton[3].setText("Servicio nacional de aprendizaje");
         }
-        if (pregunta == 7) {
+        if (pregunta == 8) {
             label.setText("¿Porque se aumento la inseguridad alimentaria en los niños al estar presente la pandemia?");
             radioButton[0].setText("No se aumento, siguió igual");
             radioButton[1].setText("Con la pandemia la inseguridad se vio en disminución");
             radioButton[2].setText("No podían contar con los alimentos que les brindaban las escuelas ya que por la pandemia estas estaban cerradas");
             radioButton[3].setText("Ninguna de las anteriores");
         }
-        if (pregunta == 8) {
+        if (pregunta == 9) {
             label.setText("¿Los indígenas al considerarse parte fundamental de la naturaleza, que logran hacer?");
             radioButton[0].setText("Conservación del medio");
             radioButton[1].setText("Restauración del medio ambiente");
             radioButton[2].setText("No afectan en nada ");
             radioButton[3].setText("Ninguna de las anteriores");
         }
-        if (pregunta == 9) {
+        if (pregunta == 10) {
             label.setText("¿Que implica el desarrollo sostenible en comunidades indígenas?");
             radioButton[0].setText("Respetar y valorar su cultura");
             radioButton[1].setText("Reconocer y fortalecer su cultura");
             radioButton[2].setText("A y B son correctas");
             radioButton[3].setText("Ninguna de las anteriores");
         }
-        if (pregunta == 10) {
+        if (pregunta == 11) {
             label.setText("¿Que se necesita para lograr un desarrollo sostenible en comunidades indígenas?");
             radioButton[0].setText("Promover su participación");
             radioButton[1].setText("Fortalecer sus capacidades y habilidades");
             radioButton[2].setText("Fomentar su participación en planeación");
             radioButton[3].setText("Todas las anteriores");
-        }
-        if (pregunta == 11) {
-            label.setText("¿Que implica el desarrollo sostenible en comunidades indígenas?");
-            radioButton[0].setText("Respetar y valorar su cultura");
-            radioButton[1].setText("Reconocer y fortalecer su cultura");
-            radioButton[2].setText("A y B son correctas");
-            radioButton[3].setText("Ninguna de las anteriores");
         }
         if (pregunta == 12) {
             label.setText("¿Que proyecto se genero en Córdoba, España a causa del covid-19?");
@@ -298,7 +315,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         }
         if (pregunta == 27) {
             label.setText("¿El ODS 1 quiere crear marcos normativos en?");
-            radioButton[0].setText("Ámbito naciona");
+            radioButton[0].setText("Ámbito nacional");
             radioButton[1].setText("Ámbito regional ");
             radioButton[2].setText("Ámbito internacional");
             radioButton[3].setText("Todas las anteriores");
@@ -321,6 +338,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         for (int i = 0, j = 0; i <= 90; i += 30, j++) {
             radioButton[j].setBounds(50, 80 + i, 60000, 20);
         }
+        guardar[cant_preg - 1] = label.getText();
     }
 
     //defino las respuestas correctas de las preguntas
@@ -423,6 +441,30 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         setVisible(false); // ocultar la ventana 
         dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
+    }
+
+    private void guardar() {
+        FileWriter fw = null;
+        boolean error = false;
+        try {
+            fw = new FileWriter("Puntajes.csv", true);
+        } catch (Exception e) {
+            error = true;
+            JOptionPane.showMessageDialog(null, "Error al crear o abrri el archivo Puntajes.csv");
+        }
+        if (!error) {
+
+            try {
+                fw.write(correctas + ";" + porcentaje + "\r\n");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al guardar en el archivo Puntajes.csv");
+            }
+            try {
+                fw.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al cerrar el archivo Puntajes.csv");
+            }
+        }
     }
 
     public static void main(String s[]) {

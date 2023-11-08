@@ -11,7 +11,6 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 public final class Encuesta extends JFrame {
 
-    // Humanidades hu = new Humanidades (this);
     Humanidades hu;
     JButton jbVolver;
 
@@ -19,7 +18,6 @@ public final class Encuesta extends JFrame {
         super("Encuesta");
         hu = obj;
         setSize(1000, 700);
-        //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);

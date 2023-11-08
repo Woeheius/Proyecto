@@ -1,6 +1,25 @@
+/*
+Proposito:
+Clase en la cual el usuario ingresara sus datos
+Autores:
+Angie Natalia Cobo Vasquez
+Juan Diego Rodriguez Ortiz
+Sebastian Henao Gamboa
+Santiago Ospina Gonzalez
+
+Version:
+2.0
+Fecha ultima actualizacion:
+08/11/2023
+Version JDK:
+ */
 package Menu;
 
+import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -11,15 +30,18 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 public class Datos extends JFrame {
 
-    JTextField jtNombre, jtApellido, jtCorreo, jtCodigo;
+    JTextField jtNombre, jtCorreo, jtCodigo;
     JComboBox<Object> jcCarrera;
-    JButton jbVolver, jbLimpiar, jbGuardar, jbSiguiente, jbAtras;
+    JButton jbVolver, jbLimpiar, jbGuardar;
+    Cuestionario_ods preg;
     private static final long serialVersionUID = 1L;
 
     public Datos() {
         super("Ingreso datos");
-        setSize(600, 500);
+        setSize(600, 350);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        getContentPane().setBackground(
+                new Color(41, 41, 41));
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null); //asignar un diseño libre
@@ -28,31 +50,34 @@ public class Datos extends JFrame {
     }
 
     public void crearGUI() {
-        JLabel jlApellido = new JLabel("Apellido");
-        jlApellido.setBounds(40, 70, 120, 30);
-        add(jlApellido);
-        jtApellido = new JTextField();
-        jtApellido.setBounds(160, 70, 200, 30);
-        add(jtApellido);
-        JLabel jlNombre = new JLabel("Nombre");
-        jlNombre.setBounds(40, 130, 120, 30);
+        JLabel jlNombre = new JLabel("Nombre y apellido");
+        jlNombre.setBounds(40, 30, 120, 30);
+        jlNombre.setOpaque(true);
+        jlNombre.setBackground(Color.DARK_GRAY);
+        jlNombre.setForeground(Color.white);
         add(jlNombre);
         jtNombre = new JTextField();
-        jtNombre.setBounds(160, 130, 200, 30);
+        jtNombre.setBounds(160, 30, 200, 30);
         add(jtNombre);
         JLabel jlCodigo = new JLabel("Codigo");
-        jlCodigo.setBounds(40, 190, 120, 30);
+        jlCodigo.setBounds(40, 90, 120, 30);
+        jlCodigo.setOpaque(true);
+        jlCodigo.setBackground(Color.DARK_GRAY);
+        jlCodigo.setForeground(Color.white);
         add(jlCodigo);
         jtCodigo = new JTextField();
-        jtCodigo.setBounds(160, 190, 200, 30);
+        jtCodigo.setBounds(160, 90, 200, 30);
         add(jtCodigo);
         JLabel jlCorreo = new JLabel("Correo");
-        jlCorreo.setBounds(40, 250, 120, 30);
+        jlCorreo.setBounds(40, 150, 120, 30);
+        jlCorreo.setOpaque(true);
+        jlCorreo.setBackground(Color.DARK_GRAY);
+        jlCorreo.setForeground(Color.white);
         add(jlCorreo);
         jtCorreo = new JTextField();
-        jtCorreo.setBounds(160, 250, 200, 30);
+        jtCorreo.setBounds(160, 150, 200, 30);
         add(jtCorreo);
-        jcCarrera = new JComboBox<>();
+        jcCarrera = new JComboBox<>(); //combobox para elegir la carrera
         jcCarrera.addItem("Seleccione su programa academico");
         jcCarrera.addItem("Licenciatura en ciencias sociales");
         jcCarrera.addItem("Licenciatura en educacion fisica");
@@ -70,71 +95,99 @@ public class Datos extends JFrame {
         jcCarrera.addItem("Contaduria publica");
         jcCarrera.addItem("Comercio internacional");
         jcCarrera.addItem("Administracion de empresas");
-        jcCarrera.setBounds(40, 310, 300, 30);
+        jcCarrera.setBounds(40, 210, 300, 30);
         add(jcCarrera);
         jbGuardar = new JButton("Guardar");
         jbGuardar.addActionListener((e) -> {
             evento_jbGuardar();
         });
-        jbGuardar.setBounds(40, 370, 150, 30);
+        jbGuardar.setBounds(40, 270, 150, 30);
         add(jbGuardar);
         jbLimpiar = new JButton("Limpiar");
         jbLimpiar.addActionListener((e) -> {
             evento_jbLimpiar();
         });
-        jbLimpiar.setBounds(200, 370, 150, 30);
+        jbLimpiar.setBounds(200, 270, 150, 30);
         add(jbLimpiar);
         jbVolver = new JButton("Volver al menu");
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
-        jbVolver.setBounds(360, 370, 150, 30);
+        jbVolver.setBounds(360, 270, 150, 30);
         add(jbVolver);
     }
 
-    private void evento_jbLimpiar() {
-        jtApellido.setText("");
+    private void evento_jbLimpiar() { //si se da click en el boton limpiar, los jtextField quedaran en balco y el combobox en su primera pocision
         jtNombre.setText("");
         jtCodigo.setText("");
         jtCorreo.setText("");
         jcCarrera.setSelectedIndex(0);
-        jtApellido.requestFocus();
+        jtNombre.requestFocus();
     }
 
-    private void evento_jbGuardar() {
-        FileWriter fw = null;
-        boolean error = false;
-        try {
-            fw = new FileWriter("Datos.csv", true);
-        } catch (Exception e) {
-            error = true;
-            JOptionPane.showMessageDialog(null, "Error al crear o abrri el archivo Datos.csv");
-        }
-        if (!error) {
-            try {
-                fw.write(jtApellido.getText() + ";" + jtNombre.getText() + ";" + jtCodigo.getText() + ";" + jtCorreo.getText() + ";" + jcCarrera.getSelectedItem() + "\r\n");
-                JOptionPane.showMessageDialog(null, "Se guardo con exito el registro");
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error al guardar en el archivo Datos.csv");
-            }
-            try {
-                fw.close();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error al cerrar el archivo Datos.csv");
-            }
-            setVisible(true);
+    private void evento_jbGuardar() { //se guardan los datos ingresados en un archivo .csv
+        if (jtNombre.getText().isEmpty() || jtCodigo.getText().isEmpty() || jtCorreo.getText().isEmpty() || jcCarrera.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "DEBES COMPLETAR TODOS LOS CAMPOS", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String codigo = jtCodigo.getText();
+            int contadorCodigo = 0;
 
-            Util util = new Util();
-            util.guardar_datos(jtNombre.getText(), jtApellido.getText(), jtCorreo.getText(), jtCodigo.getText(), jcCarrera.getSelectedItem().toString());
-            Cuestionario_ods c = new Cuestionario_ods("CUESTIONARIO HUMANIDADES");
-            c.setVisible(true);
-            dispose();
+            // Lee el archivo para contar cuántas veces aparece el código
+            try {
+                BufferedReader br = new BufferedReader(new FileReader("Datos.csv"));
+                String linea;
+
+                while ((linea = br.readLine()) != null) {
+                    String[] campos = linea.split(";");
+                    if (campos.length >= 4 && codigo.equals(campos[2])) {
+                        contadorCodigo++;
+                        if (contadorCodigo >= 2) {
+                            JOptionPane.showMessageDialog(null, "Lo siento, este codigo ya alcanzo el maximo de veces digitado", "ERROR", JOptionPane.ERROR_MESSAGE);
+                            br.close();
+                            return;
+                        }
+                    }
+                }
+
+                br.close();
+            } catch (Exception e) {
+            }
+            FileWriter fw = null;
+            boolean error = false;
+            try {
+                fw = new FileWriter("Datos.csv", true);
+            } catch (Exception e) {
+                error = true;
+                JOptionPane.showMessageDialog(null, "Error al crear o abrir el archivo Datos.csv");
+            }
+            if (!error) {
+                try {
+                    fw.write(jtNombre.getText() + ";" + jtCodigo.getText() + ";" + jtCorreo.getText() + ";" + jcCarrera.getSelectedItem() + "\r\n");
+                    JOptionPane.showMessageDialog(null, "Se guardo con exito el registro");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Error al guardar en el archivo Datos.csv");
+                }
+                try {
+                    fw.close();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Error al cerrar el archivo Datos.csv");
+                }
+                setVisible(true);
+                Correo co = new Correo();
+                co.test3();
+                Fin_Cuestionario f = new Fin_Cuestionario();
+                dispose();
+                f.setVisible(true);
+            }
+
         }
     }
 
     private void evento_jbVolver() {
-        setVisible(false); // ocultar la ventana de Matematicas
-        dispose(); // destruir la ventana de Matematicas
+        MenuPrincipal mp = new MenuPrincipal();
+        setVisible(false); // ocultar la ventana 
+        dispose(); // destruir la ventana 
+        mp.setVisible(true); // mostrar la ventana de menu principal 
     }
 
     public static void main(String[] args) {
