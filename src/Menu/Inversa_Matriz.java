@@ -12,6 +12,7 @@ public class Inversa_Matriz extends JFrame {
 
     JButton jbVolver;
     Alg al;
+    JComboBox<Integer> nComboBox;
 
     int n; // Tamaño de la matriz
     double[][] a; // Matriz a la que se calculará la inversa
@@ -42,6 +43,19 @@ public class Inversa_Matriz extends JFrame {
         // Crear una matriz de campos de texto para ingresar los coeficientes
         JPanel matrixPanel = new JPanel(new GridLayout(n, n));
         matrixFields = new JTextField[n][n];
+        
+        // Agregar un JComboBox para seleccionar "n"
+    nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 });
+    nComboBox.setSelectedItem(n);
+    nComboBox.setBounds(420, 545, 110, 20);
+    nComboBox.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            n = (int) nComboBox.getSelectedItem();
+            rebuildUI();
+        }
+    });
+
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -52,6 +66,7 @@ public class Inversa_Matriz extends JFrame {
 
         // Crear un botón para calcular la inversa
         JButton inverseButton = new JButton("Calcular Inversa");
+        inverseButton.setBounds(220, 545, 110, 20);
         inverseButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 readMatrix(); // Leer la matriz desde los campos de texto
@@ -76,6 +91,7 @@ public class Inversa_Matriz extends JFrame {
         buttonPanel.add(inverseButton);
 
         // Agregar los componentes a la ventana
+        add(nComboBox);
         add(matrixPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
         add(resultArea, BorderLayout.NORTH);
@@ -161,5 +177,52 @@ public void calculateInverse() {
         dispose(); // destruir la ventana de Matematicas
         al.setVisible(true); // mostrar la ventana de menu principal 
     }
+    // Método para reconstruir la interfaz gráfica cuando cambia el valor de "n"
+private void rebuildUI() {
+    getContentPane().removeAll(); // Elimina todos los componentes
+    getContentPane().invalidate();
+    getContentPane().revalidate();
+    getContentPane().repaint();
+
+    // Ahora, vuelva a construir la interfaz con el nuevo valor de "n"
+    int size = (int) nComboBox.getSelectedItem(); // Nuevo valor de "n"
+    n = size;
+    a = new double[n][n];
+    invA = new double[n][n];
+
+    JPanel matrixPanel = new JPanel(new GridLayout(n, n));
+    matrixFields = new JTextField[n][n];
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            matrixFields[i][j] = new JTextField(5);
+            matrixPanel.add(matrixFields[i][j]);
+        }
+    }
+        JButton inverseButton = new JButton("Calcular Inversa");
+        inverseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                readMatrix();
+                calculateInverse();
+                displayInverse();
+            }
+        });
+
+        jbVolver = new JButton("Volver");
+        jbVolver.setBounds(550, 545, 110, 20);
+        jbVolver.addActionListener((e) -> {
+            evento_jbVolver();
+        });
+
+        add(jbVolver);
+        add(nComboBox);
+        add(matrixPanel, BorderLayout.CENTER);
+        add(inverseButton, BorderLayout.SOUTH);
+        add(new JScrollPane(resultArea), BorderLayout.NORTH);
+    revalidate(); // Vuelve a validar la ventana
+    repaint(); // Vuelve a pintar la ventana
+}
+
 }
 
