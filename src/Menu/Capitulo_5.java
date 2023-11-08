@@ -22,7 +22,7 @@ public final class Capitulo_5 extends JFrame {
     JEditorPane editor;
     Capitulo_5 cap5;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_5;
+    JButton jbVolver, jbCapitulo_5,jbsig,jbant;
 
     public Capitulo_5(Capitulos obj) {
         super("Capitulo 5");
@@ -60,6 +60,21 @@ public final class Capitulo_5 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+        
+                
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+        
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -86,11 +101,14 @@ editor.setText(
  + "            <p><a href=\"https://puentesdigitales.com/2017/05/06/tecnologia-para-acabar-con-el-hambre-y-la-pobreza/\">Enlace 1</a></p>\n"
     + "            <p><a href=\"https://www.un.org/es/desa/forum-science-technology-innovation\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://www.bbva.com/es/como-usar-la-tecnologia-para-luchar-contra-la-pobreza-y-exclusion-social/\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"         
     + "        </font>\n"
     + "    </body>\n"
-    + "</html>");
+    + "</html>"
+);
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -121,5 +139,14 @@ editor.setText(
         cap5.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+        public void evento_jbsig(){
+        Capitulo_6 Capitulo_6 = new Capitulo_6(ca);
+        Capitulo_6.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_4 Capitulo_4 = new Capitulo_4(ca);
+        Capitulo_4.setVisible(true);
+        setVisible(false);
+    }
 }

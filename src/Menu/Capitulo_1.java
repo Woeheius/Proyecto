@@ -22,7 +22,7 @@ public final class Capitulo_1 extends JFrame {
     JEditorPane editor;
     Capitulo_1 cap1;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_1;
+    JButton jbVolver, jbCapitulo_1,jbsig,jbant;
 
     public Capitulo_1(Capitulos obj) {
         super("Capitulo 1");
@@ -60,46 +60,56 @@ public final class Capitulo_1 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+                                
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+        
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
         URL url = getClass().getResource("imagenes/logo_duke.png");
 
 editor.setText(
-    "<!DOCTYPE html>\n"
-    + "<html>\n"
-    + "    <head>\n"
-    + "        <title>capitulo e</title>\n"
-    + "    </head>\n"
-    + "    <body bgcolor=\"#181818\">\n"
-    + "        <font color=\"white\" face=\"Tahoma\"> <center><h1>Problemas en la implementación del ODS 1: Erradicar la pobreza en todas sus formas en el mundo</h1></center>\n"
-    + "        <hr>\n"
-    + "        <h2>Capitulo 4:</h2></font>\n"
-    + "        <font color=\"white\" face=\"Tahoma\" size=\"3\"><h3>Revisa las opciones métricas disponibles para medir la pobreza multidimensional y lograr que el Objetivo de Desarrollo Sostenible 1 de la Agenda 2030 sea universal y comprometa a todos los países. Se destaca la importancia de superar las limitaciones de la tradicional línea de pobreza monetaria y se presenta la metodología de Alkire y Foster como una alternativa flexible y completa.</h3></font>\n"
-    + "        <font color=\"white\" face=\"Tahoma\" size=\"3\">\n"
-    + "        <p>La metodología de Alkire y Foster se basa en la identificación de las dimensiones relevantes para medir la pobreza multidimensional, como la educación, la salud y el nivel de vida. A partir de estas dimensiones, se establecen umbrales que determinan si una persona es considerada pobre o no en cada una de ellas. Se aplican ponderaciones a cada dimensión para reflejar su importancia relativa en la medición de la pobreza. Finalmente, se utiliza una línea de corte para determinar si una persona es considerada pobre multidimensionalmente.</p></font>\n"
-    + "    <br>\n"
-    + "    <center><div>  <img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_WjhmmH4JA50hzsgxN9YD-gHf7ezDXXvCig&usqp=CAU\" width=\"340\"/></div>\n"
-    + "</center>\n"
-    + "<font color=\"white\" face=\"Tahoma\" size=\"3\">\n"
-    + "<p>Además de la metodología de Alkire y Foster, se presentan otras opciones métricas para medir la pobreza multidimensional, como el Índice de Pobreza Multidimensional (IPM) utilizado en América Latina y el Índice de Privación Material Severa (IPMS) utilizado en Europa. Estos índices también tienen en cuenta diferentes dimensiones y aplican diferentes metodologías para calcular la pobreza multidimensional. Se mencionan experiencias de medición de pobreza multidimensional en América Latina y Europa. En América Latina, se destaca la experiencia de México, que ha implementado el Índice de Pobreza Multidimensional (IPM) adaptado a su contexto nacional. Este índice considera diferentes dimensiones, como la educación, la salud y el nivel de vida, y ha permitido una mejor comprensión de la pobreza en el país.</p>\n"
-    + "<br>\n"
-    + "<center><img src=\"https://www.nueva-iso-14001.com/wp-content/uploads/2020/03/ODS.jpg\" width=\"440\"></center>\n"
-    + "<br>\n"
-    + "<br>\n"
-    + "<p>La medición de la pobreza multidimensional es esencial para comprender la complejidad de este problema y diseñar estrategias efectivas. Al considerar diversas dimensiones, como la salud, la educación y el nivel de vida, se obtiene una imagen más completa de la pobreza y se pueden tomar decisiones informadas.</p>\n"
-    + "<p>La erradicación de la pobreza es un objetivo global que requiere la colaboración de gobiernos, organizaciones internacionales y la sociedad civil. El ODS 1 de la Agenda 2030 es un llamado a la acción para abordar esta cuestión fundamental y mejorar la calidad de vida de las personas en todo el mundo.</p>\n"
+    "<html>"
+    + "<head>"
+    + "<title>Objetivo de Desarrollo Sostenible 1: Erradicar la Pobreza</title>"
+    + "</head>"
+    + "<body bgcolor=\"#181818\" style=\"color: white;\">"
+    + "<font face=\"Tahoma\">"
+    + "<h1>Objetivo de Desarrollo Sostenible 1: Erradicar la Pobreza</h1>"
+    + "<p>El ODS 1 se trata sobre la erradicación en todas sus formas de la pobreza y cuenta con ciertas metas, como las siguientes:</p>"
+    + "<ol>"
+    + "<li>Para 2030, erradicar la pobreza extrema para todas las personas en el mundo, actualmente medida por un ingreso por persona inferior a 1,25 dólares al día.</li>"
+    + "<li>Para 2030, reducir al menos a la mitad la proporción de hombres, mujeres y niños y niñas de todas las edades que viven en la pobreza en todas sus dimensiones con arreglo a las definiciones nacionales.</li>"
+    + "<li>Poner en práctica a nivel nacional sistemas y medidas apropiadas de protección social para todos y, para 2030, lograr una amplia cobertura de los pobres y los más vulnerables.</li>"
+    + "<li>Para 2030, garantizar que todos los hombres y mujeres, en particular los pobres y los más vulnerables, tengan los mismos derechos a los recursos económicos, así como acceso a los servicios básicos, la propiedad y el control de las tierras y otros bienes, la herencia, los recursos naturales, las nuevas tecnologías y los servicios económicos, incluida la microfinanciación.</li>"
+    + "<li>Para 2030, fomentar la resiliencia de los pobres y las personas que se encuentran en situaciones vulnerables y reducir su exposición y vulnerabilidad a los fenómenos extremos relacionados con el clima y a otros desastres económicos, sociales y ambientales.</li>"
+    + "<li>Garantizar una movilización importante de recursos procedentes de diversas fuentes, incluso mediante la mejora de la cooperación para el desarrollo, a fin de proporcionar medios suficientes y previsibles para los países en desarrollo, en particular los países menos adelantados, para poner en práctica programas y políticas encaminados a poner fin a la pobreza en todas sus dimensiones.</li>"
+    + "<li>Crear marcos normativos sólidos en el ámbito nacional, regional e internacional, sobre la base de estrategias de desarrollo en favor de los pobres que tengan en cuenta las cuestiones de género, a fin de apoyar la inversión acelerada en medidas para erradicar la pobreza.</li>"
     + "<p><strong>Recursos adicionales:</strong></p>\n"
-    + "<p><a href=\"https://www.un.org/esa/socdev/unpfii/documents/2016/Docs-updates/SPANISH_Backgrounder_2030_Agenda.pdf\">Enlace 1</a></p>\n"
-    + "<p><a href=\"https://elpais.com/elpais/2019/08/10/3500_millones/1565448989_143006.html\">Enlace 2</a></p>\n"
-    + "<p><a href=\"https://www.iwgia.org/es/ip-i-mi/3776-mi-2020-ods.html\">Enlace 3</a></p>\n"
-    + "</font>\n"
-    + "</body>\n"
+    + "<p><a href=\"https://www.un.org/esa/socdev/unpfii/documents/2016/Docs-updates/SPANISH_Backgrounder_2030_Agenda.pdf\" style=\"color: white;\">Enlace 1</a></p>\n"
+    + "<p><a href=\"https://elpais.com/elpais/2019/08/10/3500_millones/1565448989_143006.html\" style=\"color: white;\">Enlace 2</a></p>\n"
+    + "<p><a href=\"https://www.iwgia.org/es/ip-i-mi/3776-mi-2020-ods.html\" style=\"color: white;\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=20saxk4DU2s\"style=\"color: white;\">VIDEO</a></p>\n"
+                + "</ol>"
+    + "        </font>\n"
+    + "    </body>\n"
     + "</html>"
 );
 
         editor.setEditable(false);//mostrar solo codigo HTML
-
+                editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -128,6 +138,16 @@ editor.setText(
     public void evento_jbCapitulo_1() {
         cap1.setVisible(true);
         setVisible(false); // ocultar la ventana 
+    }
+            public void evento_jbsig(){
+        Capitulo_2 Capitulo_2 = new Capitulo_2(ca);
+        Capitulo_2.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_10 Capitulo_10 = new Capitulo_10(ca);
+        Capitulo_10.setVisible(true);
+        setVisible(false);
     }
 
 }

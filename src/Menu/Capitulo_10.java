@@ -22,7 +22,7 @@ public final class Capitulo_10 extends JFrame {
     JEditorPane editor;
     Capitulo_10 cap10;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_10;
+    JButton jbVolver, jbCapitulo_10,jbsig,jbant,jbencuesta;
 
     public Capitulo_10(Capitulos obj) {
         super("Capitulo 10");
@@ -60,6 +60,25 @@ public final class Capitulo_10 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+        jbencuesta = new JButton("Encuesta");
+        jbencuesta.setBounds(570, 630, 100, 30);
+        jbencuesta.addActionListener((e) -> {
+            evento_jbEncuesta();
+        });
+        add(jbencuesta);
+        
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -93,6 +112,9 @@ editor.setText(
  + "            <p><a href=\"https://mexico.un.org/es/229749-am%C3%A9rica-latina-y-el-caribe-en-la-mitad-del-camino-hacia-2030-avances-y-propuestas-de\">Enlace 1</a></p>\n"
     + "            <p><a href=\"https://www.rimisp.org/wp-content/files_mf/1516211535DocumentodePosicionIRFfinalESP.pdf\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://repositorio.cepal.org/server/api/core/bitstreams/cb30a4de-7d87-4e79-8e7a-ad5279038718/content\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+            
     + "        </font>\n"
     + "    </body>\n"
     + "</html>"
@@ -100,7 +122,7 @@ editor.setText(
 
 
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -130,6 +152,21 @@ editor.setText(
     public void evento_jbCapitulo_6() {
         cap10.setVisible(true);
         setVisible(false); // ocultar la ventana 
+    }
+    public void evento_jbsig(){
+        Capitulo_1 Capitulo_1 = new Capitulo_1(ca);
+        Capitulo_1.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_9 Capitulo_9 = new Capitulo_9(ca);
+        Capitulo_9.setVisible(true);
+        setVisible(false);
+    }
+        public void evento_jbEncuesta() {
+        Datos d = new Datos();
+        setVisible(false); // ocultar la ventana de menu principal
+        d.setVisible(true);
     }
 
 }

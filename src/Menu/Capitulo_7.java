@@ -22,7 +22,7 @@ public final class Capitulo_7 extends JFrame {
     JEditorPane editor;
     Capitulo_7 cap7;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_7;
+    JButton jbVolver, jbCapitulo_7,jbsig,jbant;
 
     public Capitulo_7(Capitulos obj) {
         super("Capitulo 7");
@@ -60,6 +60,20 @@ public final class Capitulo_7 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+        
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+        
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -88,13 +102,16 @@ editor.setText(
  + "            <p><a href=\"https://www.bancomundial.org/es/news/feature/2021/12/20/year-2021-in-review-the-inequality-pandemic\">Enlace 1</a></p>\n"
     + "            <p><a href=\"https://www.cepal.org/es/comunicados/pandemia-provoca-aumento-niveles-pobreza-sin-precedentes-ultimas-decadas-impacta#:~:text=Temas-,Pandemia%20provoca%20aumento%20en%20los%20niveles%20de%20pobreza%20sin%20precedentes,la%20desigualdad%20y%20el%20empleo&text=En%20un%20nuevo%20informe%20anual,m%C3%A1s%20que%20el%20a%C3%B1o%20anterior\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://www.cidob.org/articulos/anuario_internacional_cidob/2022/el_impacto_de_la_pandemia_sobre_la_pobreza_mayor_gravedad_y_por_mas_tiempo\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=OSco5uIVaj0\">VIDEO</a></p>\n"
+            
     + "        </font>\n"
     + "    </body>\n"
     + "</html>"
 );
 
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -124,6 +141,16 @@ editor.setText(
     public void evento_jbCapitulo_6() {
         cap7.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
+    }
+    public void evento_jbsig(){
+        Capitulo_8 Capitulo_8 = new Capitulo_8(ca);
+        Capitulo_8.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_6 Capitulo_6 = new Capitulo_6(ca);
+        Capitulo_6.setVisible(true);
+        setVisible(false);
     }
 
 }

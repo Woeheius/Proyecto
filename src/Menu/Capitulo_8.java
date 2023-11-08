@@ -22,7 +22,7 @@ public final class Capitulo_8 extends JFrame {
     JEditorPane editor;
     Capitulo_8 cap8;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_8;
+    JButton jbVolver, jbCapitulo_8,jbsig,jbant;
 
     public Capitulo_8(Capitulos obj) {
         super("Capitulo 8");
@@ -60,6 +60,21 @@ public final class Capitulo_8 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+        
+        
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+        
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -89,6 +104,9 @@ editor.setText(
     + "            <p><a href=\"https://biblioteca.clacso.edu.ar/clacso/gt/20101029064158/6ziccardi.pdf\">Enlace 1</a></p>\n"
     + "            <p><a href=\"https://www.educo.org/blog/claves-para-acabar-pobreza-con-educacion\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://www.un.org/es/chronicle/article/acabar-con-la-pobreza-mediante-la-educacion-el-desafio-de-la-educacion-para-todos\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+            
     + "        </font>\n"
     + "    </body>\n"
     + "</html>"
@@ -96,7 +114,7 @@ editor.setText(
 
 
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -126,6 +144,16 @@ editor.setText(
     public void evento_jbCapitulo_6() {
         cap8.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
+    }
+            public void evento_jbsig(){
+        Capitulo_9 Capitulo_9 = new Capitulo_9(ca);
+        Capitulo_9.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_7 Capitulo_7 = new Capitulo_7(ca);
+        Capitulo_7.setVisible(true);
+        setVisible(false);
     }
 
 }

@@ -22,7 +22,7 @@ public final class Capitulo_9 extends JFrame {
     JEditorPane editor;
     Capitulo_9 cap9;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_9;
+    JButton jbVolver, jbCapitulo_9,jbsig,jbant;
 
     public Capitulo_9(Capitulos obj) {
         super("Capitulo 9");
@@ -60,6 +60,20 @@ public final class Capitulo_9 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+        
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+        
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -73,7 +87,7 @@ editor.setText(
     + "    </head>\n"
     + "    <body bgcolor=\"#181818\">\n"
     + "        <font color=\"white\" face=\"Tahoma\">\n"
-    + "            <center><h1>Desafíos en la Implementación del ODS 1: Erradicar la Pobreza en Todas sus Formas en el Mundo</h1></center>\n"
+    + "            <center><h1>Desafíos en la Implementación del ODS 1</h1></center>\n"
     + "        </font>\n"
     + "        <hr>\n"
     + "        <font color=\"white\" face=\"Tahoma\" size=\"3\">\n"
@@ -86,13 +100,16 @@ editor.setText(
  + "            <p><a href=\"https://news.un.org/es/story/2019/10/1463292\">Enlace 1</a></p>\n"
     + "            <p><a href=\"https://revista.une.org/11/ods-1-fin-de-la-pobreza.html\">Enlace 2</a></p>\n"
     + "            <p><a href=\"http://www.lineaverdehuelva.com/lv/consejos-ambientales/conciencia-ambientual/Que-es-el-desarrollo-sostenible.asp\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+            
     + "        </font>\n"
     + "    </body>\n"
     + "</html>"
 );
 
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -122,6 +139,16 @@ editor.setText(
     public void evento_jbCapitulo_6() {
         cap9.setVisible(true);
         setVisible(false); // ocultar la ventana 
+    }
+        public void evento_jbsig(){
+        Capitulo_10 Capitulo_10 = new Capitulo_10(ca);
+        Capitulo_10.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_8 Capitulo_8 = new Capitulo_8(ca);
+        Capitulo_8.setVisible(true);
+        setVisible(false);
     }
 
 }

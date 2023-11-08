@@ -22,7 +22,7 @@ public final class Capitulo_4 extends JFrame {
     JEditorPane editor;
     Capitulo_4 cap4;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_4;
+    JButton jbVolver, jbCapitulo_4,jbsig,jbant;
 
     public Capitulo_4(Capitulos obj) {
         super("Capitulo 4");
@@ -59,6 +59,21 @@ public final class Capitulo_4 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+                
+                
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+       
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -89,11 +104,15 @@ public final class Capitulo_4 extends JFrame {
  + "            <p><a href=\"https://www.iwgia.org/es/ip-i-mi/3776-mi-2020-ods.html\">Enlace 1</a></p>\n"
     + "            <p><a href=\"https://elpais.com/elpais/2019/08/10/3500_millones/1565448989_143006.html\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://www.un.org/esa/socdev/unpfii/documents/2016/Docs-updates/SPANISH_Backgrounder_2030_Agenda.pdf\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+            
     + "        </font>\n"
     + "    </body>\n"
-    + "</html>");
+    + "</html>"
+);
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -123,6 +142,16 @@ public final class Capitulo_4 extends JFrame {
     public void evento_jbCapitulo_4() {
         cap4.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
+    }
+    public void evento_jbsig(){
+        Capitulo_5 Capitulo_5 = new Capitulo_5(ca);
+        Capitulo_5.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_3 Capitulo_3 = new Capitulo_3(ca);
+        Capitulo_3.setVisible(true);
+        setVisible(false);
     }
 
 }

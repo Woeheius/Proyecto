@@ -22,7 +22,7 @@ public final class Capitulo_3 extends JFrame {
     JEditorPane editor;
     Capitulo_3 cap3;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_3;
+    JButton jbVolver, jbCapitulo_3,jbsig,jbant;
 
     public Capitulo_3(Capitulos obj) {
         super("Capitulo 3");
@@ -60,6 +60,19 @@ public final class Capitulo_3 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+                
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -74,7 +87,6 @@ public final class Capitulo_3 extends JFrame {
                 + "    <body bgcolor=\"#181818\">\n"
                 + "        <font color='white' face='Tahoma'> <center><h1>Problemas en la implementación del ODS 1: Erradicar la pobreza en todas sus formas en el mundo</h1></center>\n"
                 + "        <hr>\n"
-                + "        <h2><font color='white'>Capitulo 4:</font></h2></font>\n"
                 + "        <font color='white' face='Tahoma' size='3'><h3><font color='white'>Revisa las opciones métricas disponibles para medir la pobreza multidimensional y lograr que el Objetivo de Desarrollo Sostenible 1 de la Agenda 2030 sea universal y comprometa a todos los países. Se destaca la importancia de superar las limitaciones de la tradicional línea de pobreza monetaria y se presenta la metodología de Alkire y Foster como una alternativa flexible y completa.</font></h3></font>\n"
                 + "        <font color='white' face='Tahoma' size='3'>\n"
                 + "        <p>La metodología de Alkire y Foster se basa en la identificación de las dimensiones relevantes para medir la pobreza multidimensional, como la educación, la salud y el nivel de vida. A partir de estas dimensiones, se establecen umbrales que determinan si una persona es considerada pobre o no en cada una de ellas. Se aplican ponderaciones a cada dimensión para reflejar su importancia relativa en la medición de la pobreza. Finalmente, se utiliza una línea de corte para determinar si una persona es considerada pobre multidimensionalmente.</p></font>\n"
@@ -87,19 +99,19 @@ public final class Capitulo_3 extends JFrame {
                 + "        <center><img src=\"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg\" width=\"440\"></center>\n"
                 + "        <br>\n"
                 + "        <br>\n"
-                + "        <h3><p>Información extra sobre el tema</p></h3>\n"
-                + "        <a target=\"_blank\" href=\"https://minciencias.gov.co/sites/default/files/ctei_y_ods_-_documento_de_trabajo.pdf\">Los Objetivos de Desarrollo Sostenible en Colombia y el aporte de la ciencia, la tecnología y la innovación</a>\n"
-                + "        <br>\n"
-                + "        <br>\n"
-                + "        <a target=\"_blank\" href=\"https://www.fao.org/3/ca5162es/ca5162es.pdf\">El estado de la seguridad alimentaria y la nutrición en el mundo</a>\n"
-                + "        <a target=\"_blank\" href=\"https://www.cadep.org.py/uploads/2022/05/Seguimiento-ODS-Marti%CC%81nez-y-Serafini-2021.pdf\">PARAGUAY. SEGUIMIENTO A LOS ODS 1, 2, 10 y 13. 2015-2020</a>\n"
-                + "    </font>\n"
-                + "    </body>\n"
-                + "</html>"
-        );
-
+                         + "            <p><strong>Recursos adicionales:</strong></p>\n"
+ + "            <p><a href=\"https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/#:~:text=Los%20Objetivos%20de%20desarrollo%20sostenible%20son%20el%20plan%20maestro%20para,la%20paz%20y%20la%20justicia\">Enlace 1</a></p>\n"
+    + "            <p><a href=\"https://www.dnp.gov.co/Prensa_/Noticias/Paginas/colombia-avanza-en-mas-del-72-de-cumplimiento-de-los-ods.aspx\">Enlace 2</a></p>\n"
+    + "            <p><a href=\"https://minciencias.gov.co/sites/default/files/objetivos_de_desarrollo_sostenible_y_aporte_a_la_cti_v_3.5.pdf\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+            
+    + "        </font>\n"
+    + "    </body>\n"
+    + "</html>"
+);
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -130,5 +142,14 @@ public final class Capitulo_3 extends JFrame {
         cap3.setVisible(true);
         setVisible(false); // ocultar la ventana 
     }
-
+    public void evento_jbsig(){
+        Capitulo_4 Capitulo_4 = new Capitulo_4(ca);
+        Capitulo_4.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_2 Capitulo_2 = new Capitulo_2(ca);
+        Capitulo_2.setVisible(true);
+        setVisible(false);
+    }
 }

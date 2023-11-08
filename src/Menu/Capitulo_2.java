@@ -22,7 +22,7 @@ public final class Capitulo_2 extends JFrame {
     JEditorPane editor;
     Capitulo_2 cap2;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_2;
+    JButton jbVolver, jbCapitulo_2,jbsig,jbant;
 
     public Capitulo_2(Capitulos obj) {
         super("Capitulo 2");
@@ -59,6 +59,20 @@ public final class Capitulo_2 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+                        
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+        
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -83,11 +97,17 @@ public final class Capitulo_2 extends JFrame {
  + "            <p><a href=\"https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/#:~:text=Los%20Objetivos%20de%20desarrollo%20sostenible%20son%20el%20plan%20maestro%20para,la%20paz%20y%20la%20justicia\">Enlace 1</a></p>\n"
     + "            <p><a href=\"https://www.dnp.gov.co/Prensa_/Noticias/Paginas/colombia-avanza-en-mas-del-72-de-cumplimiento-de-los-ods.aspx\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://minciencias.gov.co/sites/default/files/objetivos_de_desarrollo_sostenible_y_aporte_a_la_cti_v_3.5.pdf\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=YuQHEAwaj6c&t=168s\"style=\"color: white;\">VIDEO</a></p>\n"
+                + "</ol>"
     + "        </font>\n"
     + "    </body>\n"
-    + "</html>");
+    + "</html>"
+);
+        
+        
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -116,6 +136,16 @@ public final class Capitulo_2 extends JFrame {
     public void evento_jbCapitulo_2() {
         cap2.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
+    }
+        public void evento_jbsig(){
+        Capitulo_3 Capitulo_3 = new Capitulo_3(ca);
+        Capitulo_3.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_1 Capitulo_1 = new Capitulo_1(ca);
+        Capitulo_1.setVisible(true);
+        setVisible(false);
     }
 
 }

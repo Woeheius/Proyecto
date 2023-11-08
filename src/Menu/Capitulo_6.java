@@ -22,7 +22,7 @@ public final class Capitulo_6 extends JFrame {
     JEditorPane editor;
     Capitulo_6 cap6;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_6;
+    JButton jbVolver, jbCapitulo_6,jbsig,jbant;
 
     public Capitulo_6(Capitulos obj) {
         super("Capitulo 6");
@@ -59,7 +59,21 @@ public final class Capitulo_6 extends JFrame {
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
-        add(jbVolver);
+        add(jbVolver); 
+        
+        jbsig = new JButton("Siguiente");
+        jbsig.setBounds(350, 630, 200, 30);
+        jbsig.addActionListener((e) -> {
+            evento_jbsig();
+        });
+        add(jbsig);
+        jbant = new JButton("Anterior");
+        jbant.setBounds(100, 630, 200, 30);
+        jbant.addActionListener((e) -> {
+            evento_jbant();
+        });
+        add(jbant);
+        
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -87,13 +101,16 @@ editor.setText(
  + "            <p><a href=\"https://expeditiorepositorio.utadeo.edu.co/bitstream/handle/20.500.12010/24662/Catherine%20Valencia%20Final.pdf?sequence=1&isAllowed=y\">Enlace 1</a></p>\n"
     + "            <p><a href=\"https://www.fundacioncarolina.es/wp-content/uploads/2020/05/DT_FC_Especial2.pdf\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://ayudaenaccion.org/blog/solidaridad/como-se-mide-la-pobreza/\">Enlace 3</a></p>\n"
+    + "<p><strong>Video relacionado:</strong></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+            
     + "        </font>\n"
     + "    </body>\n"
     + "</html>"
 );
 
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -123,6 +140,16 @@ editor.setText(
     public void evento_jbCapitulo_6() {
         cap6.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
+    }
+        public void evento_jbsig(){
+        Capitulo_7 Capitulo_7 = new Capitulo_7(ca);
+        Capitulo_7.setVisible(true);
+        setVisible(false);
+    }
+    public void evento_jbant(){
+        Capitulo_5 Capitulo_5 = new Capitulo_5(ca);
+        Capitulo_5.setVisible(true);
+        setVisible(false);
     }
 
 }
