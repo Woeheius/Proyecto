@@ -39,7 +39,7 @@ public final class Vectores extends JFrame {
         setLayout(null); // asignar un diseño libre
         crearGUI();
         
-        setVisible(true);
+        setVisible(true);//a
     }
     
     public void crearGUI() {
