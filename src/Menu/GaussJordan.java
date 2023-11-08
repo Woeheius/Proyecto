@@ -11,16 +11,18 @@ public class GaussJordan extends JFrame {
     JButton jbVolver;
     Alg al;
 
-    int n = 3; // Tamaño de la matriz (3x3)
-    double[][] a = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
-    double[] x = new double[n + 1]; // Soluciones
-
+    //int n = 3; // Tamaño de la matriz (3x3)
+    //double[][] a = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
+    //double[] x = new double[n + 1]; // Soluciones
+      
     //int n = 4; // Tamaño de la matriz (4x4)
     //double[][] a = {{1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
     //double[] x = new double[n]; // Soluciones
-    //int n = 5; // Tamaño de la matriz (5x5)
-    //double[][] a = {{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
-    //double[] x = new double[n]; // Soluciones
+    
+    int n = 5; // Tamaño de la matriz (5x5)
+    double[][] a = {{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
+    double[] x = new double[n]; // Soluciones
+    
     private JTextField[][] matrixFields; // Campos de entrada para la matriz
     private JTextArea resultArea; // Área para mostrar los resultados
     private DecimalFormat decimalFormat; // Formateador de números decimales

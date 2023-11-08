@@ -13,9 +13,10 @@ import javax.swing.plaf.ColorUIResource;
 public final class Alg extends JFrame {
 
     MenuPrincipal mp;
-    JButton jbVolver, jbMatrices, jbSistema, jbDeterminantes,jbInversa_Matriz;
+    JButton jbVolver, jbMatrices, jbSistema, jbDeterminantes_d,jbInversa_Matriz,jbCalculadoraDeterminantes;
     GaussJordan gau = new GaussJordan(this);
     Inversa_Matriz inv = new Inversa_Matriz(this);
+    Determinantes de = new Determinantes(this);
 
     public Alg(MenuPrincipal obj) {
         super("Area de Algebra Lineal");
@@ -66,12 +67,12 @@ public final class Alg extends JFrame {
  
         ImageIcon i_deter = new ImageIcon(
                 getClass().getResource("/imagenes/deter.png"));
-        jbDeterminantes = new JButton("Determinantes", i_deter);
-        jbDeterminantes.setBounds(100, 300, 300, 50);
-        jbDeterminantes.addActionListener((e) -> {
-            evento_jbDeterminantes();
+        jbDeterminantes_d = new JButton("Determinantes", i_deter);
+        jbDeterminantes_d.setBounds(100, 300, 300, 50);
+        jbDeterminantes_d.addActionListener((e) -> {
+            evento_jbDeterminantes_d();
         });
-        add(jbDeterminantes);
+        add(jbDeterminantes_d);
 
         jbSistema = new JButton("Calculadora de sistema de Ecuaciones ");
         jbSistema.setBounds((1825 - 610) / 2, 170, 250, 40);
@@ -82,11 +83,19 @@ public final class Alg extends JFrame {
         
         
         jbInversa_Matriz = new JButton("Calculadora Inversa Matriz");
-        jbInversa_Matriz.setBounds((1825 - 610) / 2, 310, 250, 40);
+        jbInversa_Matriz.setBounds((1825 - 610) / 2, 460, 250, 40);
         jbInversa_Matriz.addActionListener((e) -> {
             evento_jbInversa_Matriz();
         });
         add(jbInversa_Matriz);
+        
+        
+        jbCalculadoraDeterminantes = new JButton("Calculadora Determinante Matriz");
+        jbCalculadoraDeterminantes.setBounds((1825 - 610) / 2, 310, 250, 40);
+        jbCalculadoraDeterminantes.addActionListener((e) -> {
+            evento_jbCalculadoraDeterminantes();
+        });
+        add(jbCalculadoraDeterminantes);
 
     }
 
@@ -104,8 +113,12 @@ public final class Alg extends JFrame {
         setVisible(false); // ocultar la ventana de menu principal
     }
 
-    public void evento_jbDeterminantes() {
-        Determinantes det = new Determinantes(this);
+    public void evento_jbDeterminantes_d() {
+        Determinantes_d det = new Determinantes_d(this);
+        setVisible(false); // ocultar la ventana de menu principal
+    }
+        public void evento_jbCalculadoraDeterminantes() {
+         de.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
 

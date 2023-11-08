@@ -23,7 +23,7 @@ public class Inversa_Matriz extends JFrame {
     public Inversa_Matriz(Alg obj) {
         super("Inversa de una Matriz");
         al = obj;
-        int size = 4; // Cambia el tamaño de la matriz según tus necesidades
+        int size = 5; // Cambia el tamaño de la matriz según tus necesidades
         n = size;
         a = new double[n][n];
         invA = new double[n][n];
