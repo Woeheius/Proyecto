@@ -7,7 +7,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class GraficVectores extends JFrame {
-
+    JButton jbVolver;
+    Fisica fs;
     // Lista para almacenar los vectores ingresados por el usuario
     private ArrayList<Vector> vectors = new ArrayList<>();
 
@@ -19,10 +20,14 @@ public class GraficVectores extends JFrame {
     private JTextField yField; // Campo de entrada para la coordenada Y
     private int gridSize = 10; // Tamaño de la cuadrícula
 
-    public GraficVectores() {
+    public GraficVectores(Fisica obj) {
         setTitle("Plano Cartesiano");
+        fs = obj;
         setSize(600, 600);
         setResizable(false); // La ventana no se puede redimensionar
+        Image im = new ImageIcon(
+                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        setIconImage(im);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         // Panel de dibujo personalizado
@@ -43,8 +48,15 @@ public class GraficVectores extends JFrame {
         yField = new JTextField(5);
         JButton drawButton = new JButton("Graficar");
         JButton sumButton = new JButton("Sumar Vectores");
-
-        // ActionListener para el botón "Graficar"
+        
+        jbVolver = new JButton("Volver");
+        jbVolver.setBounds(475, 548, 110, 20);
+        jbVolver.addActionListener((e) -> {
+            evento_jbVolver();
+        });
+        add(jbVolver);
+        
+       // ActionListener para el botón "Graficar"
         drawButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,6 +85,7 @@ public class GraficVectores extends JFrame {
                 }
             }
         });
+        
 
         inputPanel.add(new JLabel("X:"));
         inputPanel.add(xField);
@@ -138,13 +151,18 @@ public class GraficVectores extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new GraficVectores().setVisible(true);
-            }
+       SwingUtilities.invokeLater(() -> {
+            GraficVectores frame = new GraficVectores(new Fisica(new MenuPrincipal()));
+            frame.setVisible(true);
         });
+      
     }
+    public void evento_jbVolver() {
+        setVisible(false); // ocultar la ventana de Matematicas
+        dispose(); // destruir la ventana de Matematicas
+        fs.setVisible(true); // mostrar la ventana de menu principal 
+    }
+
 }
 
 class Vector {

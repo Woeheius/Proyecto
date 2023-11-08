@@ -166,7 +166,7 @@ public class Tgs extends JFrame {
         );
 
         editor.setEditable(false);//mostrar solo codigo HTML
-
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {

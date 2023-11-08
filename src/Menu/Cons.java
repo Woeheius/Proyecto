@@ -21,7 +21,7 @@ public class Cons extends JFrame {
 
     JEditorPane editor;
     MenuPrincipal mp;
-    JButton jbVolver;
+    JButton jbVolver,jbDerechos;
 
     public Cons(MenuPrincipal obj) {
         super("Area de Constitucion Politica");
@@ -60,6 +60,13 @@ public class Cons extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
+        
+        jbDerechos = new JButton("Derechos Fundamentales");
+        jbDerechos.setBounds(100, 630, 200, 30);
+        jbDerechos.addActionListener((e) -> {
+            evento_jbDerechos();
+        });
+        add(jbDerechos);
 
         editor = new JEditorPane();
         editor.setContentType("text/html");
@@ -112,11 +119,19 @@ public class Cons extends JFrame {
                 + "        <center><div> <img src=\"https://img.freepik.com/fotos-premium/bandera-colombia-pintada-concepto-protesta-fuerza-puno-cerrado_601748-9322.jpg\" width=\"300\"/></div>\n"
                 + " </center>\n"
                 + " <p>Estos son algunos de los mecanismos de protección en Colombia, la protección de los derechos humanos y las libertades es un aspecto fundamental en el marco legal del país, dada su historia de conflicto y la importancia de garantizar el respeto a los derechos fundamentales de sus ciudadanos.</p>\n"
-                + " </font>\n"
-                + " </body>\n"
+                + "        <h3><p>Información extra sobre el tema</p></h3>\n"
+                + "        <br>\n"
+                + "        <a target=\"_blank\" href=\"https://www.minenergia.gov.co/es/servicio-al-ciudadano/mecanismos-ciudadanos\"\n>Mecanismos Constitucionales</a>\n"
+                + "        <br>\n"
+                + "        <br>\n"
+                + "        <a target=\"_blank\" href=\"https://www.ens.org.co/wp-content/uploads/2016/11/Escuela-de-Liderazgo-Sindical-Democr%C3%A1tico-Mecanismos-Const-y-Legales-para-la-def-de-los-derechos-fundamentales-de-los-trabajadores-2007.pdf\">Mecanismos</a>\n"
+                + "      </font>\n"
+                + "    </body>\n"
                 + "</html>");
-
+                        
+               
         editor.setEditable(false);//mostrar solo codigo HTML
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -140,5 +155,9 @@ public class Cons extends JFrame {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
+    }
+    public void evento_jbDerechos() {
+        Derechos de = new Derechos(this);
+        setVisible(false); // ocultar la ventana de menu principal
     }
 }

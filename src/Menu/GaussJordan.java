@@ -5,22 +5,25 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 public class GaussJordan extends JFrame {
 
     JButton jbVolver;
     Alg al;
-
-    int n = 3; // Tamaño de la matriz (3x3)
-    double[][] a = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
-    double[] x = new double[n + 1]; // Soluciones
-
+    JComboBox<Integer> nComboBox; // Agrega un JComboBox para seleccionar "n"
+    //int n = 3; // Tamaño de la matriz (3x3)
+    //double[][] a = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
+    //double[] x = new double[n + 1]; // Soluciones
+      
     //int n = 4; // Tamaño de la matriz (4x4)
     //double[][] a = {{1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
     //double[] x = new double[n]; // Soluciones
-    //int n = 5; // Tamaño de la matriz (5x5)
-    //double[][] a = {{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
-    //double[] x = new double[n]; // Soluciones
+    
+    int n = 5; // Tamaño de la matriz (5x5)
+    double[][] a = {{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
+    double[] x = new double[n]; // Soluciones
+    
     private JTextField[][] matrixFields; // Campos de entrada para la matriz
     private JTextArea resultArea; // Área para mostrar los resultados
     private DecimalFormat decimalFormat; // Formateador de números decimales
@@ -42,7 +45,19 @@ public class GaussJordan extends JFrame {
         // Crear una matriz de campos de texto para ingresar los coeficientes
         JPanel matrixPanel = new JPanel(new GridLayout(n, n + 1));
         matrixFields = new JTextField[n][n + 1];
-
+        
+        // Crear un JComboBox 
+        nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 });
+        nComboBox.setSelectedItem(n); // Establecer el valor inicial
+        nComboBox.setBounds(420, 545, 110, 20);
+        nComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                n = (int) nComboBox.getSelectedItem();
+                // Limpia la interfaz gráfica y reconstruye los campos de entrada y resultados
+                rebuildUI();
+            }
+        });
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= n; j++) {
                 matrixFields[i][j] = new JTextField(5);
@@ -76,6 +91,7 @@ public class GaussJordan extends JFrame {
         buttonPanel.add(solveButton);
 
         // Agregar los componentes a la ventana
+        add(nComboBox);
         add(matrixPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
         add(resultArea, BorderLayout.NORTH);
@@ -166,4 +182,70 @@ public class GaussJordan extends JFrame {
         dispose(); // destruir la ventana de Matematicas
         al.setVisible(true); // mostrar la ventana de menu principal 
     }
+    // Método para reconstruir la interfaz gráfica cuando cambia el valor de "n"
+private void rebuildUI() {
+    getContentPane().removeAll(); // Elimina todos los componentes
+    getContentPane().invalidate();
+    getContentPane().revalidate();
+    getContentPane().repaint();
+    
+    // Ahora, vuelva a construir la interfaz con el nuevo valor de "n"
+    decimalFormat = new DecimalFormat("#.##");
+
+    JPanel matrixPanel = new JPanel(new GridLayout(n, n + 1));
+    matrixFields = new JTextField[n][n + 1];
+// Crear un JComboBox 
+        nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 });
+        nComboBox.setSelectedItem(n); // Establecer el valor inicial
+        nComboBox.setBounds(420, 545, 110, 20);
+        nComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                n = (int) nComboBox.getSelectedItem();
+                // Limpia la interfaz gráfica y reconstruye los campos de entrada y resultados
+                rebuildUI();
+            }
+        });
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= n; j++) {
+                matrixFields[i][j] = new JTextField(5);
+                matrixPanel.add(matrixFields[i][j]);
+            }
+        }
+
+        // Crear un botón para resolver el sistema
+        JButton solveButton = new JButton("Resolver");
+        solveButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                readMatrix(); // Leer la matriz desde los campos de texto
+                solve(); // Resolver el sistema de ecuaciones
+                displayResults(); // Mostrar las soluciones en el área de resultados
+            }
+        });
+
+        jbVolver = new JButton("Volver");
+        jbVolver.setBounds(550, 545, 110, 20);
+        jbVolver.addActionListener((e) -> {
+            evento_jbVolver();
+        });
+        add(jbVolver);
+
+        // Crear un área de texto para mostrar los resultados
+        resultArea = new JTextArea(5, 20);
+        resultArea.setEditable(false);
+
+        // Crear un panel para el botón de resolver
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(solveButton);
+
+    // Agregar los componentes actualizados a la ventana
+    add(nComboBox);
+    add(matrixPanel, BorderLayout.CENTER);
+    add(buttonPanel, BorderLayout.SOUTH);
+    add(resultArea, BorderLayout.NORTH);
+
+    revalidate(); // Vuelve a validar la ventana
+    repaint(); // Vuelve a pintar la ventana
+}
+
 }

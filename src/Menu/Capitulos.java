@@ -45,7 +45,7 @@ public final class Capitulos extends JFrame {
 
     public void crearGUI() {
 
-        JLabel jlTitulo = new JLabel("Capitulos");
+        JLabel jlTitulo = new JLabel("Capitulos ODS 1");
         jlTitulo.setBounds(0, 0, 1000, 60);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);

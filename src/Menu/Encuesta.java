@@ -11,13 +11,15 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 public final class Encuesta extends JFrame {
 
+    // Humanidades hu = new Humanidades (this);
     Humanidades hu;
     JButton jbVolver;
 
     public Encuesta(Humanidades obj) {
         super("Encuesta");
         hu = obj;
-        setSize(1000, 700);
+        setSize(900, 600);
+        //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setResizable(false);
@@ -33,7 +35,7 @@ public final class Encuesta extends JFrame {
 
     public void crearGUI() {
         JLabel jlTitulo = new JLabel("Encuesta");
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 900, 80);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);

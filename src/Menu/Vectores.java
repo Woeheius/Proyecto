@@ -39,12 +39,12 @@ public final class Vectores extends JFrame {
         setLayout(null); // asignar un diseño libre
         crearGUI();
         
-        setVisible(true);
+        setVisible(true);//a
     }
     
     public void crearGUI() {
         JLabel jlTitulo = new JLabel("Vectores");
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 1000, 60);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);
@@ -53,7 +53,7 @@ public final class Vectores extends JFrame {
         add(jlTitulo);
         
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(400, 600, 500, 30);
+        jbVolver.setBounds(700, 630, 200, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });

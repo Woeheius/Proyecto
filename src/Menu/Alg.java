@@ -13,13 +13,15 @@ import javax.swing.plaf.ColorUIResource;
 public final class Alg extends JFrame {
 
     MenuPrincipal mp;
-    JButton jbVolver, jbMatrices, jbSistema, jbDeterminantes;
+    JButton jbVolver, jbMatrices, jbSistema, jbDeterminantes_d,jbInversa_Matriz,jbCalculadoraDeterminantes,jbd_inversa;
     GaussJordan gau = new GaussJordan(this);
+    Inversa_Matriz inv = new Inversa_Matriz(this);
+    Determinantes de = new Determinantes(this);
 
     public Alg(MenuPrincipal obj) {
         super("Area de Algebra Lineal");
         mp = obj;
-        setSize(1000, 700);
+        setSize(900, 600);
         //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -39,7 +41,7 @@ public final class Alg extends JFrame {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/lineall.png"));
         JLabel jlTitulo = new JLabel("Area de Algebra Lineal", ic, JLabel.CENTER);
-        jlTitulo.setBounds(0, 0, 1000, 80);
+        jlTitulo.setBounds(0, 0, 900, 80);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.darkGray);
         jlTitulo.setForeground(Color.WHITE);
@@ -48,32 +50,62 @@ public final class Alg extends JFrame {
         add(jlTitulo);
 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(400, 600, 500, 30);
+        jbVolver.setBounds(570, 530, 300, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
         add(jbVolver);
 
-        jbMatrices = new JButton("Sistema de Ecuaciones");
-        jbMatrices.setBounds((1015 - 510) / 2, 160, 300, 80);
+        ImageIcon i_sist = new ImageIcon(
+                getClass().getResource("/imagenes/sist.png"));
+        jbMatrices= new JButton("Sistema de Ecuaciones", i_sist);
+        jbMatrices.setBounds(100, 300, 300, 50);
         jbMatrices.addActionListener((e) -> {
             evento_jbMatrices();
         });
         add(jbMatrices);
-
-        jbDeterminantes = new JButton("Determinantes");
-        jbDeterminantes.setBounds((1015 - 510) / 2, 350, 300, 80);
-        jbDeterminantes.addActionListener((e) -> {
-            evento_jbDeterminantes();
+ 
+        ImageIcon i_deter = new ImageIcon(
+                getClass().getResource("/imagenes/deter.png"));
+        jbDeterminantes_d = new JButton("Determinantes", i_deter);
+        jbDeterminantes_d.setBounds(100, 160, 300, 50);
+        jbDeterminantes_d.addActionListener((e) -> {
+            evento_jbDeterminantes_d();
         });
-        add(jbDeterminantes);
+        add(jbDeterminantes_d);
 
         jbSistema = new JButton("Calculadora de sistema de Ecuaciones ");
-        jbSistema.setBounds((1825 - 610) / 2, 180, 250, 40);
+        jbSistema.setBounds((1825 - 610) / 2, 310, 250, 40);
         jbSistema.addActionListener((e) -> {
             evento_jbSistema();
         });
         add(jbSistema);
+        
+        
+        jbInversa_Matriz = new JButton("Calculadora Inversa Matriz");
+        jbInversa_Matriz.setBounds((1825 - 610) / 2, 460, 250, 40);
+        jbInversa_Matriz.addActionListener((e) -> {
+            evento_jbInversa_Matriz();
+        });
+        add(jbInversa_Matriz);
+        
+        
+        jbCalculadoraDeterminantes = new JButton("Calculadora Determinante Matriz");
+        jbCalculadoraDeterminantes.setBounds((1825 - 610) / 2, 170, 250, 40);
+        jbCalculadoraDeterminantes.addActionListener((e) -> {
+            evento_jbCalculadoraDeterminantes();
+        });
+        add(jbCalculadoraDeterminantes);
+        
+        
+        ImageIcon i_inver = new ImageIcon(
+                getClass().getResource("/imagenes/inversa.png"));
+        jbd_inversa= new JButton("Matriz Inversa", i_inver);
+        jbd_inversa.setBounds(100, 460, 300, 50);
+        jbd_inversa.addActionListener((e) -> {
+            evento_jbd_inversa();
+        });
+        add(jbd_inversa);
 
     }
 
@@ -86,9 +118,21 @@ public final class Alg extends JFrame {
         gau.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+     public void evento_jbInversa_Matriz() {
+        inv.setVisible(true);
+        setVisible(false); // ocultar la ventana de menu principal
+    }
 
-    public void evento_jbDeterminantes() {
-        Determinantes det = new Determinantes(this);
+    public void evento_jbDeterminantes_d() {
+        Determinantes_d det = new Determinantes_d(this);
+        setVisible(false); // ocultar la ventana de menu principal
+    }
+        public void evento_jbCalculadoraDeterminantes() {
+         de.setVisible(true);
+        setVisible(false); // ocultar la ventana de menu principal
+    }
+     public void evento_jbd_inversa() {
+        d_inversa inver = new d_inversa(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
 

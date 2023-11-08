@@ -1,6 +1,5 @@
 package Menu;
 
-import Menu.PlanoCartesiano;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -14,13 +13,12 @@ public class Matematicas extends JFrame {
     MenuPrincipal mp;
     JButton jbVolver, jbDeri, jbFun, jbCalculadoraDerivadas, jbGrafi;
     CalculadoraDerivadas c = new CalculadoraDerivadas(this);
-    PlanoCartesiano p = new PlanoCartesiano();
-    VentanaFunciones v = new VentanaFunciones(p);
+    VentanaGraficar ven = new VentanaGraficar(this);
 
     public Matematicas(MenuPrincipal obj) {
         super("Area de Matematicas");
         mp = obj;
-        setSize(1000, 700);
+        setSize(900, 600);
         //setLocation(1000, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -40,7 +38,7 @@ public class Matematicas extends JFrame {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/calcula.png"));
         JLabel jlTitulo = new JLabel("Area de Matematicas", ic, JLabel.CENTER);
-        jlTitulo.setBounds(0, 0, 1000, 60);
+        jlTitulo.setBounds(0, 0, 900, 60);
         jlTitulo.setOpaque(true);
         jlTitulo.setBackground(Color.DARK_GRAY);
         jlTitulo.setForeground(Color.white);
@@ -49,21 +47,26 @@ public class Matematicas extends JFrame {
         add(jlTitulo);
 
         jbVolver = new JButton("Volver al menu principal");
-        jbVolver.setBounds(400, 600, 500, 30);
+        jbVolver.setBounds(570, 530, 300, 30);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
         add(jbVolver);
-
-        jbFun = new JButton("Funciones");
-        jbFun.setBounds((1215 - 510) / 2, 160, 300, 65);
+        
+        
+          ImageIcon i_func = new ImageIcon(
+                getClass().getResource("/imagenes/func.png"));
+        jbFun= new JButton("Funciones", i_func);
+        jbFun.setBounds(100, 160, 300, 50);
         jbFun.addActionListener((e) -> {
             evento_jbFun();
         });
         add(jbFun);
-
-        jbDeri = new JButton("Derivadas");
-        jbDeri.setBounds((1215 - 510) / 2, 350, 300, 65);
+         
+          ImageIcon i_deriv = new ImageIcon(
+                getClass().getResource("/imagenes/deriv.png"));
+        jbDeri = new JButton("Derivadas", i_deriv);
+        jbDeri.setBounds(100, 350, 300, 50);
         jbDeri.addActionListener((e) -> {
             evento_jbDeri();
         });
@@ -77,8 +80,8 @@ public class Matematicas extends JFrame {
             evento_jbCalculadoraDerivadas();
         });
         add(jbCalculadoraDerivadas);
+       
         jbGrafi = new JButton("Graficadora");
-
         jbGrafi.setBounds((2025 - 610) / 2, 172, 100, 40);
         jbGrafi.addActionListener((e) -> {
             evento_jbGraficadora();
@@ -107,11 +110,9 @@ public class Matematicas extends JFrame {
     }
 
     public void evento_jbGraficadora() {
-        PlanoCartesiano plano = new PlanoCartesiano(); // crea una instancia de PlanoCartesiano
-        v = new VentanaFunciones(plano); // pasa la instancia de PlanoCartesiano al constructor de VentanaFunciones
-        p.setVisible(true);
-        v.setVisible(true);
+        ven.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+    }
 
-}
+
