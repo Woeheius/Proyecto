@@ -8,21 +8,17 @@ import java.text.DecimalFormat;
 
 public class Determinantes extends JFrame {
 
-    /*Aquí se declaran las variables y componentes 
-    que se utilizarán en la ventana, como botones, matrices, campos de entrada y áreas de texto.*/
-    
     JButton jbVolver;
     Alg al;
+    JComboBox<Integer> nComboBox; // ComboBox para seleccionar el tamaño de la matriz
 
     int n; // Tamaño de la matriz
-    double[][] a; // Matriz para la que se calculará el determinante
+    double[][] a; // Matriz para calcular el determinante
     private JTextField[][] matrixFields; // Campos de entrada para la matriz
     private JTextArea resultArea; // Área para mostrar el resultado
     private DecimalFormat decimalFormat; // Formateador de números decimales
 
-    /*Este es el constructor de la clase DeterminanteMatriz, que toma a
-      Alg como argumento, que se utiliza para volver a la ventana del menú principal cuando sea necesario.*/
-   
+    // Constructor de la ventana
     public Determinantes(Alg obj) {
         super("Determinante de una Matriz");
         al = obj;
@@ -34,28 +30,34 @@ public class Determinantes extends JFrame {
         setSize(700, 600);
         setLocation(330, 70);
         setResizable(false);
-        Image im = new ImageIcon(
-                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        Image im = new ImageIcon(getClass().getResource("/imagenes/aaaa.png")).getImage();
         setIconImage(im);
-        
 
-        /*Se configura un formato decimal para mostrar los resultados con dos decimales. Luego, se crean 
-        campos de entrada en forma de una matriz de JTextField para que el usuario ingrese los coeficientes de la matriz.*/
-        
         decimalFormat = new DecimalFormat("#.##"); // Establece el formato a dos decimales
 
+        // Panel para organizar los campos de entrada en una cuadrícula
         JPanel matrixPanel = new JPanel(new GridLayout(n, n));
         matrixFields = new JTextField[n][n];
+        
+        nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 }); // Valores disponibles para el tamaño de la matriz
+        nComboBox.setSelectedItem(n);
+        nComboBox.setBounds(100, 545, 110, 20);
+        nComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                n = (int) nComboBox.getSelectedItem();
+                rebuildUI(); // Reconstruir la interfaz con el nuevo tamaño de matriz
+            }
+        });
+        add(nComboBox);
 
+        // Crear campos de entrada para la matriz en una cuadrícula
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 matrixFields[i][j] = new JTextField(5);
                 matrixPanel.add(matrixFields[i][j]);
             }
         }
-
-        /* Se crea un botón que, cuando se hace clic, ejecuta las acciones 
-        de leer la matriz, calcular el determinante y mostrar el resultado*/
 
         JButton determinantButton = new JButton("Calcular Determinante");
         determinantButton.addActionListener(new ActionListener() {
@@ -69,27 +71,25 @@ public class Determinantes extends JFrame {
         jbVolver = new JButton("Volver");
         jbVolver.setBounds(550, 545, 110, 20);
         jbVolver.addActionListener((e) -> {
-            evento_jbVolver();
+            evento_jbVolver(); // Manejar el evento de volver
         });
         add(jbVolver);
 
-        /*Se crea un área de texto que se utiliza para mostrar el resultado, 
-        y se configura como no editable para que el usuario no pueda modificarlo.*/
-        
         resultArea = new JTextArea(5, 20);
         resultArea.setEditable(false);
 
-        // Crear un panel para el botón de calcular determinante
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(determinantButton);
 
         // Agregar los componentes a la ventana
-        add(matrixPanel, BorderLayout.CENTER);
-        add(buttonPanel, BorderLayout.SOUTH);
-        add(resultArea, BorderLayout.NORTH);
+        add(nComboBox); // Agregar el ComboBox
+        add(matrixPanel, BorderLayout.CENTER); // Agregar los campos de entrada
+        add(buttonPanel, BorderLayout.SOUTH); // Agregar el botón para calcular
+        add(resultArea, BorderLayout.NORTH); // Agregar el área de resultados
     }
 
-    // Este método se utiliza para leer la matriz desde los campos de entrada y almacenarla en la matriz a.
+    /*Este método se utiliza para leer los valores de la matriz desde los campos de entrada 
+    y almacenarlos en la matriz a. Itera a través de los campos de entrada y maneja las entradas inválidas como cero.*/
     public void readMatrix() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -102,41 +102,98 @@ public class Determinantes extends JFrame {
         }
     }
 
-   // Este método calcula el determinante de la matriz utilizando el método de eliminación de Gauss.
-public double calculateDeterminant() {
-    double determinant = 1.0;
+  /*Este método calcula el determinante de la matriz utilizando el método de eliminación de Gauss. Itera a través de la matriz y realiza operaciones para llevar 
+  la matriz a una forma triangular superior, y luego calcula el determinante a partir de los elementos de la diagonal.*/
+    public double calculateDeterminant() {
+        double determinant = 1.0;
 
-    for (int j = 0; j < n; j++) {
-        for (int i = j + 1; i < n; i++) {
-            double factor = a[i][j] / a[j][j];
+        for (int j = 0; j < n; j++) {
+            for (int i = j + 1; i < n; i++) {
+                double factor = a[i][j] / a[j][j];
 
-            for (int k = j; k < n; k++) {
-                a[i][k] -= factor * a[j][k];
+                for (int k = j; k < n; k++) {
+                    a[i][k] -= factor * a[j][k];
+                }
             }
+            determinant *= a[j][j];
         }
-        determinant *= a[j][j];
+
+        return determinant;
     }
 
-    return determinant;
-}
-
-
-    // Este método muestra el determinante calculado en el área de resultados con un formato específico.
-
+   /*Este método muestra el determinante calculado en 
+   el área de resultados con un formato específico. Utiliza el decimalFormat para mostrar el valor con dos decimales.*/
     public void displayDeterminant(double determinant) {
         resultArea.setText("Determinante de la Matriz: " + decimalFormat.format(determinant));
     }
 
+    // Método main para iniciar la aplicación Swing
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             Determinantes frame = new Determinantes(new Alg(new MenuPrincipal()));
-            frame.setVisible(true);
+            frame.setVisible(true); // Hacer visible la ventana
         });
     }
 
+    // Método para manejar el evento de volver
     public void evento_jbVolver() {
-        setVisible(false); // Ocultar la ventana de Matemáticas
-        dispose(); // Destruir la ventana de Matemáticas
+        setVisible(false);
+        dispose(); // Ocultar y destruir la ventana actual
         al.setVisible(true); // Mostrar la ventana del menú principal
+    }
+
+   /*Este método se utiliza para reconstruir la interfaz gráfica cuando cambia el valor seleccionado en el ComboBox. 
+     Elimina y recrea los campos de entrada y otros componentes 
+     según el nuevo tamaño de la matriz seleccionado. Luego, vuelve a validar y repintar la ventana para reflejar los cambios.*/
+    private void rebuildUI() {
+        getContentPane().removeAll();
+        getContentPane().invalidate();
+        getContentPane().revalidate();
+        getContentPane().repaint();
+
+        decimalFormat = new DecimalFormat("#.##");
+
+        // Panel para organizar los campos de entrada en una cuadrícula
+        JPanel matrixPanel = new JPanel(new GridLayout(n, n));
+        matrixFields = new JTextField[n][n];
+
+        // Crear campos de entrada para la matriz en una cuadrícula
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrixFields[i][j] = new JTextField(5);
+                matrixPanel.add(matrixFields[i][j]);
+            }
+        }
+
+        JButton determinantButton = new JButton("Calcular Determinante");
+        determinantButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                readMatrix();
+                double determinant = calculateDeterminant();
+                displayDeterminant(determinant);
+            }
+        });
+
+        jbVolver = new JButton("Volver");
+        jbVolver.setBounds(550, 545, 110, 20);
+        jbVolver.addActionListener((e) -> {
+            evento_jbVolver();
+        });
+        add(jbVolver);
+
+        resultArea = new JTextArea(5, 20);
+        resultArea.setEditable(false);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(determinantButton);
+        
+        // Agregar los componentes actualizados a la ventana
+        add(nComboBox);
+        add(matrixPanel, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
+        add(resultArea, BorderLayout.NORTH);
+
+        revalidate(); // Vuelve a validar la ventana
+        repaint(); // Vuelve a pintar la ventana
     }
 }

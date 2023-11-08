@@ -24,7 +24,8 @@ public class Inversa_Matriz extends JFrame {
     private DecimalFormat decimalFormat; // Formateador de números decimales
 
      
-//Este es el constructor de la clase Inversa_Matriz, que toma un objeto de tipo Alg como argumento. La clase Alg parece estar relacionada con el manejo de la interfaz de usuario.
+  /*Este es el constructor de la clase Inversa_Matriz, que toma un objeto de tipo Alg como argumento. 
+    La clase Alg parece estar relacionada con el manejo de la interfaz de usuario.*/
     public Inversa_Matriz(Alg obj) {
         super("Inversa de una Matriz");
         al = obj;

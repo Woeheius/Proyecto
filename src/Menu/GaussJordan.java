@@ -28,6 +28,8 @@ public class GaussJordan extends JFrame {
     private JTextArea resultArea; // Área para mostrar los resultados
     private DecimalFormat decimalFormat; // Formateador de números decimales
 
+    /*Se declaran las variables de clase que se utilizarán en toda la clase, 
+    como botones, matrices, campos de entrada y áreas de texto*/
     public GaussJordan(Alg obj) {
         super("Sistema de Ecuaciones");
         al = obj;
@@ -49,7 +51,7 @@ public class GaussJordan extends JFrame {
         // Crear un JComboBox 
         nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 });
         nComboBox.setSelectedItem(n); // Establecer el valor inicial
-        nComboBox.setBounds(420, 545, 110, 20);
+        nComboBox.setBounds(100, 545, 110, 20);
         nComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
