@@ -236,7 +236,7 @@ private void rebuildUI() {
 // Crear un JComboBox 
         nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 });
         nComboBox.setSelectedItem(n); // Establecer el valor inicial
-        nComboBox.setBounds(420, 545, 110, 20);
+        nComboBox.setBounds(100, 545, 110, 20);
         nComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

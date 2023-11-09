@@ -19,7 +19,7 @@ public class InterfazFisica extends JFrame   {
     // Etiqueta para mostrar el título de la sección de Física
     JLabel jlTexto, jlImagen, jlTextoImg;
     // Botones para realizar cálculos y volver al menú principal
-    JButton jbMovimiento,jbVolver; 
+    JButton jbMovimiento,jbVolver,jbCaida; 
         // Referencia a la ventana del menú principal
     Fisica fs; 
     
@@ -55,7 +55,7 @@ public class InterfazFisica extends JFrame   {
         add(jlTexto);
                 
         jbMovimiento = new JButton("Calculos");
-        jbMovimiento.setBounds(400, 500, 100, 30);
+        jbMovimiento.setBounds(200, 500, 100, 30);
         jbMovimiento.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,8 +65,19 @@ public class InterfazFisica extends JFrame   {
         });
         add(jbMovimiento);
         
+        jbCaida = new JButton("Caida Libre");
+        jbCaida.setBounds(498, 500, 100, 30);
+        jbCaida.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Evento_JbCaida();
+                setVisible(false);
+            }
+        });
+        add(jbCaida);
+        
         jbVolver = new JButton("Volver");
-        jbVolver.setBounds(290, 500, 100, 30);
+        jbVolver.setBounds(348, 500, 100, 30);
         jbVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,11 +102,11 @@ public class InterfazFisica extends JFrame   {
         INTERFAZSF INTERFAZSF = new INTERFAZSF(this);
         INTERFAZSF.setVisible(true);
     }
-    /**
-     * Método principal que crea una instancia de la clase InterfazFisica
-     * y la hace visible.
-     * @param args Los argumentos de la línea de comandos (no se utilizan).
-     */
+    
+    public void Evento_JbCaida(){
+        Ventana Ventana = new Ventana(this);
+        Ventana.setVisible(true);
+    }
     public static void main(String[] args) {
         InterfazFisica ej = new InterfazFisica(new Fisica(new MenuPrincipal()));
         ej.setVisible(true);
