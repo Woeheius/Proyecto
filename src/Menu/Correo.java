@@ -1,4 +1,3 @@
-
 /**
  * Propósito: Clase en la cual se enviara un correo al docente
  *
@@ -12,7 +11,6 @@
  * Fecha última actualización: 8/11/2023
  * Versión JDK: 12
  */
-
 package Menu;
 
 import java.io.BufferedReader;
@@ -28,6 +26,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.swing.JOptionPane;
+
 /**
  * Clase que representa la ventana de "Correo".
  */
@@ -37,8 +36,10 @@ public class Correo {
     String correo;
     String codigo;
     int respuestasCorrectas;
+
     /**
-     * Lee los datos del último registro en "Datos.csv" y "Puntajes.csv" para preparar el envío de correos.
+     * Lee los datos del último registro en "Datos.csv" y "Puntajes.csv" para
+     * preparar el envío de correos.
      */
     public void leerDatos() {
         // Variables para almacenar los datos
@@ -79,11 +80,12 @@ public class Correo {
             e.printStackTrace();
         }
     }
+
     /**
      * Envía un correo electrónico con los parámetros especificados.
      *
-     * @param parametros Un arreglo de parámetros que incluye el remitente, correo remitente, contraseña,
-     *                   asunto y mensaje del correo.
+     * @param parametros Un arreglo de parámetros que incluye el remitente,
+     * correo remitente, contraseña, asunto y mensaje del correo.
      */
     public void enviar(String parametros[]) {
         try {
@@ -134,12 +136,15 @@ public class Correo {
             System.exit(0);
         }
     }
- /**
-     * Envía un correo electrónico a múltiples destinatarios con los parámetros especificados.
+
+    /**
+     * Envía un correo electrónico a múltiples destinatarios con los parámetros
+     * especificados.
      *
-     * @param parametros            Un arreglo de parámetros que incluye el remitente, correo remitente, contraseña,
-     *                             asunto y mensaje del correo.
-     * @param correosDestinatarios  Un arreglo de direcciones de correo de los destinatarios.
+     * @param parametros Un arreglo de parámetros que incluye el remitente,
+     * correo remitente, contraseña, asunto y mensaje del correo.
+     * @param correosDestinatarios Un arreglo de direcciones de correo de los
+     * destinatarios.
      */
     public void enviar(String parametros[], String correosDestinatarios[]) {
         try {
@@ -195,7 +200,8 @@ public class Correo {
             System.exit(0);
         }
     }
-     /* Envía un correo electrónico a múltiples destinatarios con archivos adjuntos.
+
+    /* Envía un correo electrónico a múltiples destinatarios con archivos adjuntos.
      *
      * @param parametros             Un arreglo de parámetros que incluye el remitente, correo remitente, contraseña,
      *                              asunto y mensaje del correo.
@@ -267,8 +273,10 @@ public class Correo {
             System.exit(0);
         }
     }
+
     /**
-     * Método de prueba para enviar un correo a varios destinatarios con archivos adjuntos.
+     * Método de prueba para enviar un correo a varios destinatarios con
+     * archivos adjuntos.
      */
     public void test3() { // enviar correo a varios destinatarios con archivos adjuntos
         /*LeerDatos l = new LeerDatos();

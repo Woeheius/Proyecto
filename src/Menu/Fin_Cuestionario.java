@@ -20,15 +20,18 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
 /**
- * Esta clase representa la ventana final del cuestionario de humanidades. Aquí, el usuario puede ver su calificación,
- * volver a jugar, guardar su calificación y ver el ranking de calificaciones.
+ * Esta clase representa la ventana final del cuestionario de humanidades. Aquí,
+ * el usuario puede ver su calificación, volver a jugar, guardar su calificación
+ * y ver el ranking de calificaciones.
  */
 public class Fin_Cuestionario extends JFrame {
 
     JButton jb_Volver, jb_Calificar, jb_Jugar, jb_guardar, jb_Ranking;
     JTextField Calif;
     int calificacion;
+
     /**
      * Constructor de la ventana de fin de cuestionario.
      */
@@ -44,6 +47,7 @@ public class Fin_Cuestionario extends JFrame {
         crearGUI();
         setVisible(false);
     }
+
     /**
      * Crea la interfaz gráfica de la ventana de fin de cuestionario.
      */
@@ -101,6 +105,7 @@ public class Fin_Cuestionario extends JFrame {
         jb_Ranking.setBounds(220, 300, 150, 30);
         add(jb_Ranking);
     }
+
     /**
      * Maneja el evento de volver a jugar el cuestionario.
      */
@@ -110,6 +115,7 @@ public class Fin_Cuestionario extends JFrame {
         dispose();
         preg.setVisible(true);
     }
+
     /**
      * Maneja el evento de volver al menú principal.
      */
@@ -119,6 +125,7 @@ public class Fin_Cuestionario extends JFrame {
         dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
+
     /**
      * Maneja el evento de calificar el cuestionario.
      */
@@ -129,6 +136,7 @@ public class Fin_Cuestionario extends JFrame {
         jb_Ranking.setEnabled(false);
         jb_guardar.setEnabled(true);
     }
+
     /**
      * Maneja el evento de guardar la calificación del usuario.
      */
@@ -168,6 +176,7 @@ public class Fin_Cuestionario extends JFrame {
         }
 
     }
+
     /**
      * Maneja el evento de ver el ranking de calificaciones.
      */

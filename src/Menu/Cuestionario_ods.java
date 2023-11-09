@@ -11,7 +11,6 @@
  * Fecha última actualización: 8/11/2023
  * Versión JDK: 12
  */
-
 package Menu;
 
 import java.awt.Color;
@@ -40,6 +39,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     int m[] = new int[10];
     private String[] guardar = new String[6];
     boolean[] salio = new boolean[30]; //arreglo para controlar las preguntas que salen
+
     /**
      * Constructor de la clase Cuestionario_ods.
      *
@@ -99,8 +99,9 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     }
 
     //manejar todas las acciones basadas en el evento
-        /**
-     * Maneja las acciones basadas en eventos, principalmente para el botón "Siguiente".
+    /**
+     * Maneja las acciones basadas en eventos, principalmente para el botón
+     * "Siguiente".
      *
      * @param e Evento de acción.
      */
@@ -126,8 +127,9 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     }
 
     // Seteando preguntas con sus respuestas
-        /**
-     * Controla la configuración de las preguntas y respuestas, mostrándolas en la interfaz gráfica.
+    /**
+     * Controla la configuración de las preguntas y respuestas, mostrándolas en
+     * la interfaz gráfica.
      */
     private void set() {
         do {
@@ -353,10 +355,12 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     }
 
     //defino las respuestas correctas de las preguntas
-        /**
-     * Comprueba si las respuestas seleccionadas son correctas y aumenta el contador de respuestas correctas.
+    /**
+     * Comprueba si las respuestas seleccionadas son correctas y aumenta el
+     * contador de respuestas correctas.
      *
-     * @return `true` si la respuesta seleccionada es correcta, de lo contrario `false`.
+     * @return `true` si la respuesta seleccionada es correcta, de lo contrario
+     * `false`.
      */
     boolean check() {
         if (pregunta == 0) {
@@ -451,6 +455,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         }
         return false;
     }
+
     /**
      * Maneja el evento de volver al menú principal.
      */
@@ -460,6 +465,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
+
     /**
      * Guarda el puntaje obtenido en un archivo CSV.
      */
@@ -486,6 +492,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
             }
         }
     }
+
     /**
      * Método principal para ejecutar el cuestionario.
      *

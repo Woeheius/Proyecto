@@ -26,14 +26,17 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.table.DefaultTableCellRenderer;
+
 /**
- * La clase Ranking se utiliza para mostrar un ranking de puntajes en una ventana de JavaSwing.
+ * La clase Ranking se utiliza para mostrar un ranking de puntajes en una
+ * ventana de JavaSwing.
  */
 public class Ranking extends JFrame {
 
     JButton jb_Volver;
     ModeloTabla mt;
     JTable tabla;
+
     /**
      * Constructor de la clase Ranking.
      */
@@ -50,6 +53,7 @@ public class Ranking extends JFrame {
         llenar();
         setVisible(false);
     }
+
     /**
      * Crea la interfaz gráfica de la ventana de ranking.
      */
@@ -94,6 +98,7 @@ public class Ranking extends JFrame {
         });
         add(jb_Volver);
     }
+
     /**
      * Llena la tabla con los datos de los puntajes.
      */
@@ -144,6 +149,7 @@ public class Ranking extends JFrame {
             }
         }
     }
+
     /**
      * Evento al presionar el botón "Volver al menú".
      */
@@ -153,6 +159,7 @@ public class Ranking extends JFrame {
         dispose(); // destruir la ventana 
         f.setVisible(true); // mostrar la ventana de menu principal 
     }
+
     /**
      * Método principal para ejecutar la ventana de ranking.
      *
