@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase la cual se mostrara informacion sobre las funciones y sus aplicaciones
+ * Propósito:Clase la cual se mostrará información sobre las funciones y sus aplicaciones
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -29,13 +29,16 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
  * Clase que representa la ventana de información sobre Funciones Matemáticas.
  */
 public final class Fun extends JFrame {
+
     JEditorPane editor;
     Matematicas ma;
     JButton jbVolver;
+
     /**
      * Constructor de la clase Fun.
      *
@@ -59,8 +62,10 @@ public final class Fun extends JFrame {
 
         setVisible(true);
     }
+
     /**
-     * Método para crear la interfaz gráfica de la ventana y cargar información sobre Funciones Matemáticas.
+     * Método para crear la interfaz gráfica de la ventana y cargar información
+     * sobre Funciones Matemáticas.
      */
     public void crearGUI() {
 
@@ -79,44 +84,42 @@ public final class Fun extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
-       
+
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
         URL url = getClass().getResource("imagenes/logo_duke.png");
-        
+
         editor.setText(
-    "<html>" +
-    "<head>" +
-    "<style>" +
-    "body {" +
-    "   background-color: #2C2C2C;" +
-    "   color: white;" +
-    "}" +
-    "</style>" +
-    "</head>" +
-    "<body>" +
-    "<h1>Funciones Matemáticas: Conceptos Fundamentales y Aplicaciones en la Vida Real</h1>" +
-    "<p>Las funciones matemáticas son conceptos fundamentales en el ámbito de las matemáticas y tienen una amplia variedad de aplicaciones en diversas disciplinas. En términos simples, una función es una relación matemática que asigna a cada elemento de un conjunto de entrada (llamado dominio) exactamente un elemento en un conjunto de salida (llamado codominio). Estas relaciones se expresan generalmente en términos de una regla o fórmula matemática que describe cómo los elementos del dominio se relacionan con los elementos del codominio.</p>" +
-    "<p>Las funciones se representan generalmente mediante una notación específica, como f(x), donde \"f\" es el nombre de la función y \"x\" es la variable de entrada. La función f(x) nos dice cómo se relaciona cada valor de \"x\" en el dominio con un valor correspondiente en el codominio.</p>" +
-    "<p>Las funciones cumplen varias funciones esenciales en matemáticas y en la vida cotidiana:</p>" +
-    "<ul>" +
-    "   <li><strong>Modelización y representación:</strong> Las funciones se utilizan para representar y modelar una amplia gama de situaciones del mundo real. Por ejemplo, en física, las funciones se utilizan para describir el movimiento de objetos, el crecimiento de poblaciones y la propagación de ondas. En economía, se emplean para analizar relaciones de oferta y demanda, costos de producción y ganancias.</li>" +
-    "   <li><strong>Resolución de ecuaciones:</strong> Las funciones son fundamentales para resolver ecuaciones. Dado que expresan relaciones entre variables, se pueden utilizar para encontrar el valor de una variable desconocida en función de otras variables conocidas. Esto es esencial en campos como la trigonometría, el cálculo y la álgebra.</li>" +
-    "   <li><strong>Análisis de datos:</strong> En estadísticas, las funciones se utilizan para analizar datos y describir cómo se relacionan diferentes variables. Esto permite comprender tendencias, patrones y correlaciones en los conjuntos de datos.</li>" +
-    "   <li><strong>Optimización:</strong> Las funciones son esenciales en la optimización de problemas, donde se busca maximizar o minimizar ciertas cantidades. Por ejemplo, se utilizan en la optimización de costos, la maximización de ingresos y la minimización de tiempos de viaje.</li>" +
-    "   <li><strong>Programación y ciencias de la computación:</strong> En la informática, las funciones se utilizan para diseñar algoritmos y programas. Las funciones permiten modularizar el código, lo que facilita el desarrollo, la depuración y el mantenimiento de software.</li>" +
-    "   <li><strong>Ingeniería y diseño:</strong> En ingeniería y diseño, las funciones son esenciales para crear modelos de sistemas y estructuras. Se utilizan para predecir el comportamiento de componentes, como puentes, circuitos eléctricos y sistemas de control.</li>" +
-    "</ul>" +
-    "<p>En resumen, las funciones matemáticas son un pilar fundamental en las matemáticas y tienen un impacto significativo en una amplia variedad de campos, desde la física y la economía hasta la informática y la ingeniería. Son herramientas poderosas que nos permiten comprender, modelar y resolver problemas en el mundo real, lo que las convierte en un concepto clave en la educación y la investigación matemática, así como en la vida cotidiana.</p>" +
-    "</body>" +
-    "</html>"
-);
-
-
+                "<html>"
+                + "<head>"
+                + "<style>"
+                + "body {"
+                + "   background-color: #2C2C2C;"
+                + "   color: white;"
+                + "}"
+                + "</style>"
+                + "</head>"
+                + "<body>"
+                + "<h1>Funciones Matemáticas: Conceptos Fundamentales y Aplicaciones en la Vida Real</h1>"
+                + "<p>Las funciones matemáticas son conceptos fundamentales en el ámbito de las matemáticas y tienen una amplia variedad de aplicaciones en diversas disciplinas. En términos simples, una función es una relación matemática que asigna a cada elemento de un conjunto de entrada (llamado dominio) exactamente un elemento en un conjunto de salida (llamado codominio). Estas relaciones se expresan generalmente en términos de una regla o fórmula matemática que describe cómo los elementos del dominio se relacionan con los elementos del codominio.</p>"
+                + "<p>Las funciones se representan generalmente mediante una notación específica, como f(x), donde \"f\" es el nombre de la función y \"x\" es la variable de entrada. La función f(x) nos dice cómo se relaciona cada valor de \"x\" en el dominio con un valor correspondiente en el codominio.</p>"
+                + "<p>Las funciones cumplen varias funciones esenciales en matemáticas y en la vida cotidiana:</p>"
+                + "<ul>"
+                + "   <li><strong>Modelización y representación:</strong> Las funciones se utilizan para representar y modelar una amplia gama de situaciones del mundo real. Por ejemplo, en física, las funciones se utilizan para describir el movimiento de objetos, el crecimiento de poblaciones y la propagación de ondas. En economía, se emplean para analizar relaciones de oferta y demanda, costos de producción y ganancias.</li>"
+                + "   <li><strong>Resolución de ecuaciones:</strong> Las funciones son fundamentales para resolver ecuaciones. Dado que expresan relaciones entre variables, se pueden utilizar para encontrar el valor de una variable desconocida en función de otras variables conocidas. Esto es esencial en campos como la trigonometría, el cálculo y la álgebra.</li>"
+                + "   <li><strong>Análisis de datos:</strong> En estadísticas, las funciones se utilizan para analizar datos y describir cómo se relacionan diferentes variables. Esto permite comprender tendencias, patrones y correlaciones en los conjuntos de datos.</li>"
+                + "   <li><strong>Optimización:</strong> Las funciones son esenciales en la optimización de problemas, donde se busca maximizar o minimizar ciertas cantidades. Por ejemplo, se utilizan en la optimización de costos, la maximización de ingresos y la minimización de tiempos de viaje.</li>"
+                + "   <li><strong>Programación y ciencias de la computación:</strong> En la informática, las funciones se utilizan para diseñar algoritmos y programas. Las funciones permiten modularizar el código, lo que facilita el desarrollo, la depuración y el mantenimiento de software.</li>"
+                + "   <li><strong>Ingeniería y diseño:</strong> En ingeniería y diseño, las funciones son esenciales para crear modelos de sistemas y estructuras. Se utilizan para predecir el comportamiento de componentes, como puentes, circuitos eléctricos y sistemas de control.</li>"
+                + "</ul>"
+                + "<p>En resumen, las funciones matemáticas son un pilar fundamental en las matemáticas y tienen un impacto significativo en una amplia variedad de campos, desde la física y la economía hasta la informática y la ingeniería. Son herramientas poderosas que nos permiten comprender, modelar y resolver problemas en el mundo real, lo que las convierte en un concepto clave en la educación y la investigación matemática, así como en la vida cotidiana.</p>"
+                + "</body>"
+                + "</html>"
+        );
 
         editor.setEditable(false);//mostrar solo codigo HTML
-         editor.setCaretPosition(0);
+        editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
@@ -135,6 +138,7 @@ public final class Fun extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
+
     /**
      * Método para manejar el evento del botón "Volver al menú principal".
      */

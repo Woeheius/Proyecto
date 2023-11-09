@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase donde se mostrara la interfaz de la graficadora de funciones
+ * Propósito:Clase donde se mostrará la interfaz de la graficadora de funciones
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -12,6 +12,7 @@
  * Versión JDK: 12
  */
 package Menu;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -22,18 +23,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
 /**
- * La clase VentanaGraficar se utiliza para graficar funciones matemáticas en una ventana de Java Swing.
+ * La clase VentanaGraficar se utiliza para graficar funciones matemáticas en
+ * una ventana de Java Swing.
  */
 public class VentanaGraficar extends JFrame {
-    
+
     Matematicas mt;
     JTextField Texfuncion;
-    JButton jbVolver, graficar, limpiar,jbpuntos;
+    JButton jbVolver, graficar, limpiar, jbpuntos;
     JPanel panel;
+
     /**
      * Constructor de la clase VentanaGraficar.
-     * @param obj Una instancia de la clase Matematicas para gestionar la navegación.
+     *
+     * @param obj Una instancia de la clase Matematicas para gestionar la
+     * navegación.
      */
     public VentanaGraficar(Matematicas obj) {
         super("Graficar Funciones");
@@ -50,6 +56,7 @@ public class VentanaGraficar extends JFrame {
         setIconImage(im);
         crearGUI();
     }
+
     /**
      * Crea la interfaz gráfica de la ventana de graficación de funciones.
      */
@@ -75,16 +82,16 @@ public class VentanaGraficar extends JFrame {
             // Manda el panel
             Plano p = new Plano(panel);
             // Manda la función
-            p.GraficarFuncion(funcion); 
+            p.GraficarFuncion(funcion);
         });
         add(graficar);
 
         limpiar = new JButton("Limpiar");
         limpiar.setBounds(200, 450, 165, 30);
         limpiar.addActionListener((e) -> {
-        panel.removeAll();  // Elimina todos los componentes del panel
-        panel.repaint();     // Vuelve a pintar el panel vacío
-        Texfuncion.setText("");
+            panel.removeAll();  // Elimina todos los componentes del panel
+            panel.repaint();     // Vuelve a pintar el panel vacío
+            Texfuncion.setText("");
         });
 
         add(limpiar);
@@ -97,15 +104,16 @@ public class VentanaGraficar extends JFrame {
             dispose();
         });
         add(jbVolver);
-        
-        jbpuntos = new JButton("Puntos criticos"); 
+
+        jbpuntos = new JButton("Puntos criticos");
         jbpuntos.setBounds(390, 420, 165, 20);
-        add(jbpuntos);
+        
     }
-        /**
+
+    /**
      * Evento al presionar el botón "Volver".
      */
-     public void evento_jbVolver() {
+    public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         mt.setVisible(true); // mostrar la ventana de menu principal

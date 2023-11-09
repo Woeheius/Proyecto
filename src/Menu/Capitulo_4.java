@@ -1,5 +1,5 @@
 /**
- * Propósito: Clase que representa el capitulo sobre el impacto de el ODS 1 en comunidades indigenas.
+ * Propósito: Clase que representa el capítulo sobre el impacto de el ODS 1 en comunidades indígenas.
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -11,7 +11,6 @@
  * Fecha última actualización: 3/11/2023
  * Versión JDK: 12
  */
-
 package Menu;
 
 import java.awt.Color;
@@ -30,6 +29,7 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
  * Clase que representa la ventana del "Capítulo 4".
  */
@@ -38,7 +38,8 @@ public final class Capitulo_4 extends JFrame {
     JEditorPane editor;
     Capitulo_4 cap4;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_4,jbsig,jbant;
+    JButton jbVolver, jbCapitulo_4, jbsig, jbant;
+
     /**
      * Constructor de la clase Capitulo_4.
      *
@@ -82,8 +83,7 @@ public final class Capitulo_4 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
-                
-                
+
         jbsig = new JButton("Siguiente");
         jbsig.setBounds(350, 630, 200, 30);
         jbsig.addActionListener((e) -> {
@@ -96,7 +96,7 @@ public final class Capitulo_4 extends JFrame {
             evento_jbant();
         });
         add(jbant);
-       
+
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -123,17 +123,16 @@ public final class Capitulo_4 extends JFrame {
                 + "            <p>Para lograr un desarrollo sostenible en comunidades indígenas, es fundamental promover la participación y el empoderamiento de estas comunidades. Esto implica garantizar su acceso a recursos y servicios básicos, fortalecer sus capacidades y habilidades, y fomentar su participación activa en la planificación, implementación y evaluación de proyectos y programas de desarrollo.</p>\n"
                 + "            <p>Apoyo institucional y financiero:</p>\n"
                 + "            <p>El desarrollo sostenible en comunidades indígenas requiere de un apoyo institucional y financiero adecuado.</p>\n"
-                    + "            <p><strong>Recursos adicionales:</strong></p>\n"
- + "            <p><a href=\"https://www.iwgia.org/es/ip-i-mi/3776-mi-2020-ods.html\">Enlace 1</a></p>\n"
-    + "            <p><a href=\"https://elpais.com/elpais/2019/08/10/3500_millones/1565448989_143006.html\">Enlace 2</a></p>\n"
-    + "            <p><a href=\"https://www.un.org/esa/socdev/unpfii/documents/2016/Docs-updates/SPANISH_Backgrounder_2030_Agenda.pdf\">Enlace 3</a></p>\n"
-    + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://youtu.be/NnUGRANj8o4?si=2Jjw2YCzRO7uTQJ8\">VIDEO</a></p>\n"
-            
-    + "        </font>\n"
-    + "    </body>\n"
-    + "</html>"
-);
+                + "            <p><strong>Recursos adicionales:</strong></p>\n"
+                + "            <p><a href=\"https://www.iwgia.org/es/ip-i-mi/3776-mi-2020-ods.html\">Enlace 1</a></p>\n"
+                + "            <p><a href=\"https://elpais.com/elpais/2019/08/10/3500_millones/1565448989_143006.html\">Enlace 2</a></p>\n"
+                + "            <p><a href=\"https://www.un.org/esa/socdev/unpfii/documents/2016/Docs-updates/SPANISH_Backgrounder_2030_Agenda.pdf\">Enlace 3</a></p>\n"
+                + "<p><strong>Video relacionado:</strong></p>\n"
+                + "            <p><a href=\"https://youtu.be/NnUGRANj8o4?si=2Jjw2YCzRO7uTQJ8\">VIDEO</a></p>\n"
+                + "        </font>\n"
+                + "    </body>\n"
+                + "</html>"
+        );
         editor.setEditable(false);//mostrar solo codigo HTML
         editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
@@ -155,8 +154,10 @@ public final class Capitulo_4 extends JFrame {
         add(js);
 
     }
+
     /**
-     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y
+     * mostrar la ventana de Capitulos.
      */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
@@ -168,18 +169,22 @@ public final class Capitulo_4 extends JFrame {
         cap4.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-        /**
-     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 5" y ocultar la ventana actual.
+
+    /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del
+     * "Capítulo 5" y ocultar la ventana actual.
      */
-    public void evento_jbsig(){
+    public void evento_jbsig() {
         Capitulo_5 Capitulo_5 = new Capitulo_5(ca);
         Capitulo_5.setVisible(true);
         setVisible(false);
     }
-        /**
-     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 3" y ocultar la ventana actual.
+
+    /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo
+     * 3" y ocultar la ventana actual.
      */
-    public void evento_jbant(){
+    public void evento_jbant() {
         Capitulo_3 Capitulo_3 = new Capitulo_3(ca);
         Capitulo_3.setVisible(true);
         setVisible(false);

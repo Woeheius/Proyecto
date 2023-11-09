@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase donde se mostrara informacion sobre conceptos de TGS y su aplicacion en el proyecto
+ * Propósito:Clase donde se mostrará información sobre conceptos de TGS y su aplicación en el proyecto
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -29,17 +29,22 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
- * La clase Tgs se utiliza para mostrar información sobre un área de "Teoría General de Sistemas" en una ventana de JavaSwing.
+ * La clase Tgs se utiliza para mostrar información sobre un área de "Teoría
+ * General de Sistemas" en una ventana de JavaSwing.
  */
 public class Tgs extends JFrame {
 
     JEditorPane editor;
     MenuPrincipal mp;
     JButton jbVolver;
+
     /**
      * Constructor de la clase Tgs.
-     * @param obj Una instancia de la clase MenuPrincipal para gestionar la navegación.
+     *
+     * @param obj Una instancia de la clase MenuPrincipal para gestionar la
+     * navegación.
      */
     public Tgs(MenuPrincipal obj) {
         super("Area de Teoria General de Sistemas");
@@ -59,8 +64,10 @@ public class Tgs extends JFrame {
 
         setVisible(true);
     }
+
     /**
-     * Crea la interfaz gráfica de la ventana de información sobre "Teoría General de Sistemas".
+     * Crea la interfaz gráfica de la ventana de información sobre "Teoría
+     * General de Sistemas".
      */
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
@@ -205,6 +212,7 @@ public class Tgs extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
+
     /**
      * Evento al presionar el botón "Volver al menú principal".
      */

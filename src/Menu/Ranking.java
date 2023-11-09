@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase donde se llenara la tabla y se organizara en forma descendente segun las respuestas correctas
+ * Propósito:Clase donde se llenará la tabla y se organizará en forma descendente según las respuestas correctas
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -14,9 +14,12 @@
 package Menu;
 
 import java.awt.Color;
+import static java.awt.Component.CENTER_ALIGNMENT;
 import java.awt.Font;
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -49,6 +52,9 @@ public class Ranking extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null); //asignar un diseño libre
+        Image im = new ImageIcon(
+                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        setIconImage(im);
         crearGUI();
         llenar();
         setVisible(false);

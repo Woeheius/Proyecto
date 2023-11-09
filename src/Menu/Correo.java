@@ -1,5 +1,5 @@
 /**
- * Propósito: Clase en la cual se enviara un correo al docente
+ * Propósito: Clase en la cual se enviará un correo al docente
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez

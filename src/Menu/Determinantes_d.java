@@ -30,15 +30,18 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.plaf.ColorUIResource;
+
 /**
- * Esta clase representa una ventana que proporciona información sobre los determinantes de matrices.
- * Incluye definiciones, propiedades y métodos comunes para calcular determinantes de matrices cuadradas.
+ * Esta clase representa una ventana que proporciona información sobre los
+ * determinantes de matrices. Incluye definiciones, propiedades y métodos
+ * comunes para calcular determinantes de matrices cuadradas.
  */
 public final class Determinantes_d extends JFrame {
 
     JEditorPane editor;
     Alg al;
     JButton jbVolver;
+
     /**
      * Constructor de la ventana Determinantes_d.
      *
@@ -63,6 +66,7 @@ public final class Determinantes_d extends JFrame {
 
         setVisible(true);
     }
+
     /**
      * Crea la interfaz gráfica de la ventana.
      */
@@ -155,8 +159,10 @@ public final class Determinantes_d extends JFrame {
         add(js);
 
     }
+
     /**
-     * Maneja el evento de volver. Oculta la ventana actual y muestra la ventana del menú principal.
+     * Maneja el evento de volver. Oculta la ventana actual y muestra la ventana
+     * del menú principal.
      */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas

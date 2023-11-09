@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase en la cual el usuario ingresara sus datos
+ * Propósito:Clase en la cual el usuario ingresará sus datos
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -14,10 +14,12 @@
 package Menu;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -25,6 +27,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+
 /**
  * Clase que representa la ventana "Datos".
  */
@@ -35,6 +38,7 @@ public class Datos extends JFrame {
     JButton jbVolver, jbLimpiar, jbGuardar;
     Cuestionario_ods preg;
     private static final long serialVersionUID = 1L;
+
     /**
      * Constructor de la clase Datos que crea una ventana para ingresar datos.
      */
@@ -47,9 +51,13 @@ public class Datos extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null); //asignar un diseño libre
+        Image im = new ImageIcon(
+                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        setIconImage(im);
         crearGUI();
         setVisible(false);
     }
+
     /**
      * Crea la interfaz gráfica de la ventana de ingreso de datos.
      */
@@ -120,6 +128,7 @@ public class Datos extends JFrame {
         jbVolver.setBounds(360, 270, 150, 30);
         add(jbVolver);
     }
+
     /**
      * Maneja el evento de limpiar los campos de ingreso de datos.
      */
@@ -130,6 +139,7 @@ public class Datos extends JFrame {
         jcCarrera.setSelectedIndex(0);
         jtNombre.requestFocus();
     }
+
     /**
      * Maneja el evento de guardar los datos ingresados en un archivo CSV.
      */
@@ -190,6 +200,7 @@ public class Datos extends JFrame {
 
         }
     }
+
     /**
      * Maneja el evento de volver al menú principal.
      */
@@ -199,9 +210,12 @@ public class Datos extends JFrame {
         dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
+
     /**
      * Método principal para ejecutar la ventana de ingreso de datos.
-     * @param args Los argumentos de la línea de comandos (no se utilizan en este caso).
+     *
+     * @param args Los argumentos de la línea de comandos (no se utilizan en
+     * este caso).
      */
     public static void main(String[] args) {
         Datos d = new Datos();

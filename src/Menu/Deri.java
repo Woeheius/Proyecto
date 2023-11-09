@@ -29,6 +29,7 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
  * Clase que representa la ventana de "Deri".
  */
@@ -37,8 +38,10 @@ public final class Deri extends JFrame {
     JEditorPane editor;
     Matematicas ma;
     JButton jbVolver;
+
     /**
-     * Constructor de la clase Deri que muestra información sobre las aplicaciones de las derivadas.
+     * Constructor de la clase Deri que muestra información sobre las
+     * aplicaciones de las derivadas.
      *
      * @param obj Objeto de la clase Matematicas.
      */
@@ -60,8 +63,10 @@ public final class Deri extends JFrame {
 
         setVisible(true);
     }
+
     /**
-     * Crea la interfaz gráfica para mostrar información sobre las aplicaciones de las derivadas.
+     * Crea la interfaz gráfica para mostrar información sobre las aplicaciones
+     * de las derivadas.
      */
     public void crearGUI() {
 
@@ -130,6 +135,7 @@ public final class Deri extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
+
     /**
      * Maneja el evento de volver al menú principal.
      */

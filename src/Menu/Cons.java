@@ -11,7 +11,6 @@
  * Fecha última actualización: 1/11/2023
  * Versión JDK: 12
  */
-
 package Menu;
 
 import java.awt.Color;
@@ -30,6 +29,7 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
  * Clase que representa la ventana de "Constitucion Politica".
  */
@@ -37,7 +37,8 @@ public class Cons extends JFrame {
 
     JEditorPane editor;
     MenuPrincipal mp;
-    JButton jbVolver,jbDerechos;
+    JButton jbVolver, jbDerechos;
+
     /**
      * Constructor de la clase Cons.
      *
@@ -61,6 +62,7 @@ public class Cons extends JFrame {
 
         setVisible(true);
     }
+
     /**
      * Crea y configura la interfaz gráfica de la ventana.
      */
@@ -82,7 +84,7 @@ public class Cons extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
-        
+
         jbDerechos = new JButton("Derechos Fundamentales");
         jbDerechos.setBounds(100, 630, 200, 30);
         jbDerechos.addActionListener((e) -> {
@@ -150,8 +152,7 @@ public class Cons extends JFrame {
                 + "      </font>\n"
                 + "    </body>\n"
                 + "</html>");
-                        
-               
+
         editor.setEditable(false);//mostrar solo codigo HTML
         editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
@@ -172,16 +173,20 @@ public class Cons extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
+
     /**
-     * Maneja el evento del botón "Volver al menú principal" para ocultar la ventana actual y mostrar la ventana de MenuPrincipal.
+     * Maneja el evento del botón "Volver al menú principal" para ocultar la
+     * ventana actual y mostrar la ventana de MenuPrincipal.
      */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-        /**
-     * Maneja el evento del botón "Derechos Fundamentales" para abrir la ventana de Derechos y ocultar la ventana actual.
+
+    /**
+     * Maneja el evento del botón "Derechos Fundamentales" para abrir la ventana
+     * de Derechos y ocultar la ventana actual.
      */
     public void evento_jbDerechos() {
         Derechos de = new Derechos(this);

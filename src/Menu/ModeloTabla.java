@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase en la cual se creara el modelo de la tabla
+ * Propósito:Clase en la cual se creará el modelo de la tabla
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -14,25 +14,29 @@
 package Menu;
 
 import javax.swing.table.DefaultTableModel;
+
 /**
- * Clase personalizada que extiende DefaultTableModel para controlar el comportamiento de una tabla.
+ * Clase personalizada que extiende DefaultTableModel para controlar el
+ * comportamiento de una tabla.
  */
 public class ModeloTabla extends DefaultTableModel {
+
     /**
-     * Constructor de la clase ModeloTabla.
-     * Crea una instancia de ModeloTabla con los datos y encabezados especificados.
+     * Constructor de la clase ModeloTabla. Crea una instancia de ModeloTabla
+     * con los datos y encabezados especificados.
      *
-     * @param datos      Los datos de la tabla en forma de matriz bidimensional.
+     * @param datos Los datos de la tabla en forma de matriz bidimensional.
      * @param encazados
      */
     public ModeloTabla(Object datos[][], Object encazados[]) {
         super(datos, encazados);
     }
+
     /**
-     * Determina si una celda de la tabla es editable o no.
-     * En este caso, se establece que todas las celdas no son editables.
+     * Determina si una celda de la tabla es editable o no. En este caso, se
+     * establece que todas las celdas no son editables.
      *
-     * @param row    El índice de la fila.
+     * @param row El índice de la fila.
      * @param column El índice de la columna.
      * @return false para indicar que la celda no es editable.
      */
@@ -40,9 +44,10 @@ public class ModeloTabla extends DefaultTableModel {
 
         return false;
     }
+
     /**
-     * Ordena los datos de la tabla en función de los puntajes en orden descendente.
-     * Esto permite ordenar la tabla por puntajes de mayor a menor.
+     * Ordena los datos de la tabla en función de los puntajes en orden
+     * descendente. Esto permite ordenar la tabla por puntajes de mayor a menor.
      */
     public void sortPuntajes() {
         java.util.Vector<java.util.Vector> data = getDataVector();

@@ -1,5 +1,5 @@
 /**
- * Propósito: Clase que representa el capitulo sobre como el ODS 1 se relaciona con los demas ODS.
+ * Propósito: Clase que representa el capitulo sobre como el ODS 1 se relaciona con los demás ODS.
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -12,6 +12,7 @@
  * Versión JDK: 12
  */
 package Menu;
+
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Font;
@@ -28,6 +29,7 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
  * Clase que representa la ventana del "Capítulo 2".
  */
@@ -36,8 +38,9 @@ public final class Capitulo_2 extends JFrame {
     JEditorPane editor;
     Capitulo_2 cap2;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_2,jbsig,jbant;
- /**
+    JButton jbVolver, jbCapitulo_2, jbsig, jbant;
+
+    /**
      * Constructor de la clase Capitulo_2.
      *
      * @param obj El objeto Capitulos al que pertenece esta ventana.
@@ -59,6 +62,7 @@ public final class Capitulo_2 extends JFrame {
 
         setVisible(false);
     }
+
     /**
      * Crea y configura la interfaz gráfica de la ventana.
      */
@@ -79,7 +83,7 @@ public final class Capitulo_2 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
-                        
+
         jbsig = new JButton("Siguiente");
         jbsig.setBounds(350, 630, 200, 30);
         jbsig.addActionListener((e) -> {
@@ -92,7 +96,7 @@ public final class Capitulo_2 extends JFrame {
             evento_jbant();
         });
         add(jbant);
-        
+
         editor = new JEditorPane();
         editor.setContentType("text/html");
 
@@ -113,19 +117,18 @@ public final class Capitulo_2 extends JFrame {
                 + "            <p>La relación del ODS 1, \"Fin de la pobreza\", con otros Objetivos de Desarrollo Sostenible (ODS) en Colombia es fundamental para comprender cómo el progreso en la reducción de la pobreza tiene un impacto significativo en el desarrollo sostenible del país. Uno de los vínculos más notables se encuentra con el ODS 8, \"Trabajo Decente y Crecimiento Económico\". La reducción de la pobreza está intrínsecamente relacionada con la creación de empleo digno y el fomento de un crecimiento económico sostenible.</p>\n"
                 + "            <p>En Colombia, se han implementado políticas y programas orientados a promover la inclusión laboral y mejorar las condiciones de trabajo. Esto incluye la promoción del empleo formal, la protección de los derechos laborales y la igualdad de oportunidades en el mercado laboral. Al reducir la pobreza y proporcionar oportunidades de trabajo digno, se crea un entorno propicio para el crecimiento económico y el desarrollo sostenible. Las personas que salen de la pobreza tienen más recursos para invertir en educación y salud, lo que a su vez contribuye a alcanzar otros ODS, como el ODS 4 (Educación de Calidad) y el ODS 3 (Salud y Bienestar).</p>\n"
                 + "            <p>Además, la reducción de la pobreza tiene un impacto positivo en otros ODS, como el ODS 2 (Hambre Cero), al mejorar la capacidad de las personas para acceder a alimentos nutritivos, y el ODS 5 (Igualdad de Género), al empoderar a las mujeres y niñas en situaciones de pobreza. En resumen, el ODS 1 actúa como un catalizador para el logro de múltiples Objetivos de Desarrollo Sostenible en Colombia, creando un efecto positivo y sinérgico en la agenda de desarrollo del país.</p>\n"
-                    + "            <p><strong>Recursos adicionales:</strong></p>\n"
- + "            <p><a href=\"https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/#:~:text=Los%20Objetivos%20de%20desarrollo%20sostenible%20son%20el%20plan%20maestro%20para,la%20paz%20y%20la%20justicia\">Enlace 1</a></p>\n"
-    + "            <p><a href=\"https://www.dnp.gov.co/Prensa_/Noticias/Paginas/colombia-avanza-en-mas-del-72-de-cumplimiento-de-los-ods.aspx\">Enlace 2</a></p>\n"
-    + "            <p><a href=\"https://minciencias.gov.co/sites/default/files/objetivos_de_desarrollo_sostenible_y_aporte_a_la_cti_v_3.5.pdf\">Enlace 3</a></p>\n"
-    + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://www.youtube.com/watch?v=YuQHEAwaj6c&t=168s\"style=\"color: white;\">VIDEO</a></p>\n"
+                + "            <p><strong>Recursos adicionales:</strong></p>\n"
+                + "            <p><a href=\"https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/#:~:text=Los%20Objetivos%20de%20desarrollo%20sostenible%20son%20el%20plan%20maestro%20para,la%20paz%20y%20la%20justicia\">Enlace 1</a></p>\n"
+                + "            <p><a href=\"https://www.dnp.gov.co/Prensa_/Noticias/Paginas/colombia-avanza-en-mas-del-72-de-cumplimiento-de-los-ods.aspx\">Enlace 2</a></p>\n"
+                + "            <p><a href=\"https://minciencias.gov.co/sites/default/files/objetivos_de_desarrollo_sostenible_y_aporte_a_la_cti_v_3.5.pdf\">Enlace 3</a></p>\n"
+                + "<p><strong>Video relacionado:</strong></p>\n"
+                + "            <p><a href=\"https://www.youtube.com/watch?v=YuQHEAwaj6c&t=168s\"style=\"color: white;\">VIDEO</a></p>\n"
                 + "</ol>"
-    + "        </font>\n"
-    + "    </body>\n"
-    + "</html>"
-);
-        
-        
+                + "        </font>\n"
+                + "    </body>\n"
+                + "</html>"
+        );
+
         editor.setEditable(false);//mostrar solo codigo HTML
         editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
@@ -146,8 +149,10 @@ public final class Capitulo_2 extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
+
     /**
-     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y
+     * mostrar la ventana de Capitulos.
      */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
@@ -159,18 +164,22 @@ public final class Capitulo_2 extends JFrame {
         cap2.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-        /**
-     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 3" y ocultar la ventana actual.
+
+    /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del
+     * "Capítulo 3" y ocultar la ventana actual.
      */
-        public void evento_jbsig(){
+    public void evento_jbsig() {
         Capitulo_3 Capitulo_3 = new Capitulo_3(ca);
         Capitulo_3.setVisible(true);
         setVisible(false);
     }
-            /**
-     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 1" y ocultar la ventana actual.
+
+    /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo
+     * 1" y ocultar la ventana actual.
      */
-    public void evento_jbant(){
+    public void evento_jbant() {
         Capitulo_1 Capitulo_1 = new Capitulo_1(ca);
         Capitulo_1.setVisible(true);
         setVisible(false);

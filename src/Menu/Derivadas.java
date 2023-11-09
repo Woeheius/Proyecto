@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase en la cual se realiza el cálculo de la derivada de la función ingresada por el usuario.
+ * Propósito:Clase en la cual se realizá el cálculo de la derivada de la función ingresada por el usuario.
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -16,6 +16,7 @@ package Menu;
 import org.lsmp.djep.djep.DJep;
 import org.nfunk.jep.Node;
 import org.nfunk.jep.ParseException;
+
 /**
  * Clase que representa la ventana de "Derivadas".
  */
@@ -25,12 +26,14 @@ public class Derivadas {
     DJep djep;
     Node nodoFuncion;
     Node nodoDerivada;
+
     /**
      * Constructor de la clase Derivadas.
      */
     public Derivadas() {
 
     }
+
     /**
      * Establece la función a derivar.
      *
@@ -39,6 +42,7 @@ public class Derivadas {
     public void setFuncionADerivar(String funcion) {
         this.funcion = funcion;
     }
+
     /**
      * Obtiene la función que se va a derivar.
      *
@@ -47,8 +51,10 @@ public class Derivadas {
     public String getFuncionDerivada() {
         return this.funcion;
     }
+
     /**
-     * Realiza el cálculo de la derivada de la función con respecto a la variable 'x'.
+     * Realiza el cálculo de la derivada de la función con respecto a la
+     * variable 'x'.
      */
     public void derivar() {
         try {

@@ -1,5 +1,6 @@
 /**
- * Propósito:Clase la cual se mostrara al finalizar el cuestionario donde el usuario podra visualizar el ranking y podra volver a responder las preguntas
+ * Propósito:Clase la cual se mostrará al finalizar el cuestionario donde el usuario podrá visualizar
+ *el ranking y podrá volver a responder las preguntas 
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -14,12 +15,15 @@
 package Menu;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.io.FileWriter;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 /**
  * Esta clase representa la ventana final del cuestionario de humanidades. Aquí,
@@ -44,6 +48,10 @@ public class Fin_Cuestionario extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null); //asignar un diseño libre
+        Image im = new ImageIcon(
+                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        setIconImage(im);
+
         crearGUI();
         setVisible(false);
     }
@@ -140,7 +148,6 @@ public class Fin_Cuestionario extends JFrame {
     /**
      * Maneja el evento de guardar la calificación del usuario.
      */
-
     private void evento_jbguardar() { //se guarda la calificacion que de el usuario
         if (Calif.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debes rellenar este campo con valores entre 0 y 5", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -171,6 +178,7 @@ public class Fin_Cuestionario extends JFrame {
                     }
                     setVisible(true);
                     jb_Jugar.setEnabled(true);
+                    jb_Ranking.setEnabled(true);
                 }
             }
         }

@@ -1,5 +1,5 @@
 /**
- * Propósito: Clase en la cual sera presentado el cuestionario de 5 preguntas sobre el ODS 1
+ * Propósito: Clase en la cual será presentado el cuestionario de 5 preguntas sobre el ODS 1
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -14,6 +14,7 @@
 package Menu;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -22,6 +23,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.io.FileWriter;
 import java.text.DecimalFormat;
+import javax.swing.ImageIcon;
 
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
@@ -56,6 +58,9 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         label.setForeground(Color.white);
         add(label);
         bg = new ButtonGroup();
+        Image im = new ImageIcon(
+                getClass().getResource("/imagenes/aaaa.png")).getImage();
+        setIconImage(im);
         for (int i = 0; i < 5; i++) {
             radioButton[i] = new JRadioButton();
             add(radioButton[i]);
@@ -243,7 +248,7 @@ class Cuestionario_ods extends JFrame implements ActionListener {
             radioButton[3].setText("Youtube");
         }
         if (pregunta == 15) {
-            label.setText("¿Para que año esta esta planeado que los objetivos de desarrollo sostenible sean cumplidos?");
+            label.setText("¿Para que año esta planeado que los objetivos de desarrollo sostenible sean cumplidos?");
             radioButton[0].setText("2050");
             radioButton[1].setText("2020");
             radioButton[2].setText("2030");

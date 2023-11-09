@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase en la cual se creara el plano cartesiano y se graficara
+ * Propósito:Clase en la cual se creará el plano cartesiano y se graficará
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -18,9 +18,10 @@ import java.awt.Graphics2D;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
+
 /**
- * La clase Plano se utiliza para dibujar un plano cartesiano en un panel de Java Swing
- * y graficar puntos en él.
+ * La clase Plano se utiliza para dibujar un plano cartesiano en un panel de
+ * Java Swing y graficar puntos en él.
  */
 class Plano {
 
@@ -29,10 +30,9 @@ class Plano {
     private final int h;
     private final int escala;
 
-
     /**
      * Constructor de la clase Plano.
-     * 
+     *
      * @param panel El panel en el que se dibujará el plano.
      */
     public Plano(JPanel panel) {
@@ -46,6 +46,7 @@ class Plano {
         DibujarEjesYEscala();
 
     }
+
     /**
      * Dibuja los ejes del plano cartesiano y la escala.
      */
@@ -80,10 +81,11 @@ class Plano {
     }
 
     /**
-     * Grafica un punto en el plano cartesiano en la posición (x, y) con el color especificado.
-     * 
-     * @param x     Coordenada x del punto.
-     * @param y     Coordenada y del punto.
+     * Grafica un punto en el plano cartesiano en la posición (x, y) con el
+     * color especificado.
+     *
+     * @param x Coordenada x del punto.
+     * @param y Coordenada y del punto.
      */
     public void graficarPorPuntos(float x, float y) {
         Graphics2D g = (Graphics2D) panel.getGraphics();
@@ -93,9 +95,10 @@ class Plano {
         g.fillOval((int) (GraficarX - 1), (int) (GraficarY - 1), 2, 2);
 
     }
+
     /**
      * Grafica una función en el plano cartesiano.
-     * 
+     *
      * @param funcion La función a graficar..
      */
     public void GraficarFuncion(String funcion) {
@@ -114,12 +117,12 @@ class Plano {
 
     /**
      * Limpia el plano cuando se presiona un botón para limpiar.
-     * 
+     *
      * @param JBlimpiar Botón utilizado para limpiar el plano.
      */
     public void limpiar(JButton JBlimpiar) {
         Graphics2D g = (Graphics2D) panel.getGraphics();
-       
+
         JBlimpiar.addActionListener((e) -> {
 
             //limpia el plano

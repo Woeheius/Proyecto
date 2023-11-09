@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase la cual se mostrara el menu de el area de fisica
+ * Propósito:Clase la cual se mostrará el menú de el área de Física
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -21,17 +21,17 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+
 /**
  * Clase que representa la ventana del área de Física.
  */
 public class Fisica extends JFrame {
 
-   MenuPrincipal mp;
-    JButton jbVolver, jbVectores, jbGraficadora,jbJuego;
+    MenuPrincipal mp;
+    JButton jbVolver, jbVectores, jbGraficadora, jbJuego, jbMovyca;
     GraficVectores g = new GraficVectores(this);
     InterfazFisica i = new InterfazFisica(this);
-    
-    
+
     /**
      * Constructor de la clase Fisica.
      *
@@ -61,7 +61,6 @@ public class Fisica extends JFrame {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    
     /**
      * Método para crear la interfaz gráfica de la ventana.
      */
@@ -83,8 +82,8 @@ public class Fisica extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
-        
-         ImageIcon i_vect = new ImageIcon(
+
+        ImageIcon i_vect = new ImageIcon(
                 getClass().getResource("/imagenes/vect.png"));
         jbVectores = new JButton("Vectores", i_vect);
         jbVectores.setBounds(100, 160, 300, 50);
@@ -92,25 +91,34 @@ public class Fisica extends JFrame {
             evento_jbVectores();
         });
         add(jbVectores);
-        
-        
+
+        ImageIcon i_ca = new ImageIcon(
+                getClass().getResource("/imagenes/vect.png"));
+        jbMovyca = new JButton("Caida libre y mov.parabolico", i_vect);
+        jbMovyca.setBounds(100, 360, 300, 50);
+        jbMovyca.addActionListener((e) -> {
+            evento_jbMovyca();
+        });
+        add(jbMovyca);
+
         jbGraficadora = new JButton("Graficadora");
         jbGraficadora.setBounds((2025 - 610) / 2, 168, 100, 40);
         jbGraficadora.addActionListener((e) -> {
             evento_jbGraficadora();
         });
         add(jbGraficadora);
-        
+
         jbJuego = new JButton("Juego");
-        jbJuego.setBounds((2025-610)/2, 375, 100, 40);
+        jbJuego.setBounds((2025 - 610) / 2, 375, 100, 40);
         jbJuego.addActionListener((e) -> {
             evento_jbJuego();
             InterfazFisica InterfazFisica = new InterfazFisica(this);
             setVisible(false);
-            
-           });
+
+        });
         add(jbJuego);
     }
+
     /**
      * Método para manejar el evento del botón "Vectores".
      */
@@ -118,6 +126,12 @@ public class Fisica extends JFrame {
         Vectores ve = new Vectores(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
+
+    public void evento_jbMovyca() {
+        MovyCa e = new MovyCa(this);
+        setVisible(false); // ocultar la ventana de menu principal
+    }
+
     /**
      * Método para manejar el evento del botón "Volver al menú principal".
      */
@@ -126,6 +140,7 @@ public class Fisica extends JFrame {
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
+
     /**
      * Método para manejar el evento del botón "Graficadora".
      */
@@ -133,15 +148,15 @@ public class Fisica extends JFrame {
         g.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-        /**
+
+    /**
      * Método para manejar el evento del botón "Juego".
      */
     public void evento_jbJuego() {
         i.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-    
-   
+
 }
 
   

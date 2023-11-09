@@ -2,34 +2,49 @@
 
 package Menu;
 
-public class Hilo extends Thread
-{
+/**
+ * La clase Hilo extiende la clase Thread y se utiliza para controlar el hilo de
+ * ejecución en la aplicación.
+ */
+public class Hilo extends Thread {
 
-    public Hilo(Ventana caidalibre){
+    /**
+     * Constructor de la clase Hilo.
+     *
+     * @param caidalibre La instancia de Ventana asociada al hilo.
+     */
+    public Hilo(Ventana caidalibre) {
         msg = 0;
         pause = true;
         parent = caidalibre;
     }
 
-    public void run(){
+    /**
+     * Método run, que se ejecuta cuando se inicia el hilo.
+     */
+    public void run() {
         long l = System.currentTimeMillis();
-        do{
+        do {
             int i = getMsg();
             parent.canvas.mover();
-            if(i == 1){
+            if (i == 1) {
                 pause = true;
             }
-            try{//detencion del hilo durante cierto tiempo
+            try {//detencion del hilo durante cierto tiempo
                 Thread.sleep(Math.max(20L, l - System.currentTimeMillis()));
-            }
-            catch(InterruptedException interruptedexception){
+            } catch (InterruptedException interruptedexception) {
                 return;
             }
-        } while(true);
+        } while (true);
     }
 
-    public synchronized int getMsg(){
-        while(pause) {
+    /**
+     * Método sincronizado que obtiene el mensaje del hilo.
+     *
+     * @return El mensaje actual del hilo.
+     */
+    public synchronized int getMsg() {
+        while (pause) {
             try {
                 wait(1000L);
             } catch (InterruptedException interruptedexception) {
@@ -38,8 +53,13 @@ public class Hilo extends Thread
         return msg;
     }
 
-    public synchronized void putMsg(int i)
-    {
+    /**
+     * Método sincronizado que establece el mensaje del hilo y actualiza la
+     * bandera de pausa.
+     *
+     * @param i El nuevo mensaje del hilo.
+     */
+    public synchronized void putMsg(int i) {
         msg = i;
         pause = msg != 2 ? msg != 1 : false;
         notify();

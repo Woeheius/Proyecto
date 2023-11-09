@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase donde se mostrara informacion sobre los vectores,que son y aplicaciones
+ * Propósito:Clase donde se mostrará información sobre los vectores,que son y aplicaciones
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -29,6 +29,7 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
  * Clase que representa la ventana de "Vectores".
  */
@@ -37,7 +38,7 @@ public final class Vectores extends JFrame {
     JEditorPane editor;
     Fisica fi;
     JButton jbVolver;
-    
+
     public Vectores(Fisica obj) {
         super("Vectores");
         fi = obj;
@@ -53,10 +54,10 @@ public final class Vectores extends JFrame {
         setIconImage(im);
         setLayout(null); // asignar un diseño libre
         crearGUI();
-        
+
         setVisible(true);//a
     }
-    
+
     public void crearGUI() {
         JLabel jlTitulo = new JLabel("Vectores");
         jlTitulo.setBounds(0, 0, 1000, 60);
@@ -66,7 +67,7 @@ public final class Vectores extends JFrame {
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);
         jlTitulo.setFont(new Font("Colonna MT", Font.BOLD, 35));
         add(jlTitulo);
-        
+
         jbVolver = new JButton("Volver al menu principal");
         jbVolver.setBounds(700, 630, 200, 30);
         jbVolver.addActionListener((e) -> {
@@ -75,7 +76,7 @@ public final class Vectores extends JFrame {
         add(jbVolver);
         editor = new JEditorPane();
         editor.setContentType("text/html");
-        
+
         URL url = getClass().getResource("imagenes/logo_duke.png");
         editor.setText(
                 "<!DOCTYPE html>\n"
@@ -113,7 +114,7 @@ public final class Vectores extends JFrame {
                 + "</body>\n"
                 + "</html>"
         );
-        
+
         editor.setEditable(false);//mostrar solo codigo HTML
         editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
@@ -134,7 +135,7 @@ public final class Vectores extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
-    
+
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

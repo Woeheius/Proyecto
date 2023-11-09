@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase la cual se mostrara la informacion de el equipo de el proyecto(The best equipo)
+ * Propósito:Clase la cual se mostrará la información del equipo del proyecto(The best equipo)
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+
 /**
  * Clase que representa la ventana de información sobre el equipo de trabajo.
  */
@@ -28,6 +29,7 @@ public final class Inf extends JFrame {
 
     MenuPrincipal mp;
     JButton jbVolver;
+
     /**
      * Constructor de la clase Inf.
      *
@@ -51,9 +53,11 @@ public final class Inf extends JFrame {
 
         setVisible(true);
     }
-/**
- * Método para crear la interfaz gráfica de la ventana de información sobre el equipo de trabajo.
- */
+
+    /**
+     * Método para crear la interfaz gráfica de la ventana de información sobre
+     * el equipo de trabajo.
+     */
     public void crearGUI() {
         JLabel jlTitulo = new JLabel("Equipo de Trabajo");
         jlTitulo.setBounds(0, 0, 900, 80);
@@ -63,14 +67,14 @@ public final class Inf extends JFrame {
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);
         jlTitulo.setFont(new Font("Castellar", Font.BOLD, 35));
         add(jlTitulo);
-        
+
         JLabel imagenMiembro1 = new JLabel();
         imagenMiembro1.setBounds(100, 150, 120, 120);
         ImageIcon img1 = new ImageIcon(getClass().getResource("/imagenes/Angie.jpeg")); // Ruta de la imagen de Angie
         img1 = new ImageIcon(img1.getImage().getScaledInstance(imagenMiembro1.getWidth(), imagenMiembro1.getHeight(), Image.SCALE_DEFAULT));
         imagenMiembro1.setIcon(img1);
         add(imagenMiembro1);
-        
+
         JLabel nombreMiembro1 = new JLabel("Angie Natalia Cobo Vásquez");
         nombreMiembro1.setBounds(230, 150, 600, 30);
         nombreMiembro1.setForeground(Color.white);
@@ -92,7 +96,7 @@ public final class Inf extends JFrame {
         img2 = new ImageIcon(img2.getImage().getScaledInstance(imagenMiembro2.getWidth(), imagenMiembro2.getHeight(), Image.SCALE_DEFAULT));
         imagenMiembro2.setIcon(img2);
         add(imagenMiembro2);
-        
+
         JLabel nombreMiembro2 = new JLabel("Sebastian Henao Gamboa");
         nombreMiembro2.setBounds(640, 150, 600, 30);
         nombreMiembro2.setForeground(Color.white);
@@ -114,7 +118,7 @@ public final class Inf extends JFrame {
         img3 = new ImageIcon(img3.getImage().getScaledInstance(imagenMiembro3.getWidth(), imagenMiembro3.getHeight(), Image.SCALE_DEFAULT));
         imagenMiembro3.setIcon(img3);
         add(imagenMiembro3);
-        
+
         JLabel nombreMiembro3 = new JLabel("Santiago Ospina Gonzalez");
         nombreMiembro3.setBounds(230, 350, 600, 30);
         nombreMiembro3.setForeground(Color.white);
@@ -136,7 +140,7 @@ public final class Inf extends JFrame {
         img4 = new ImageIcon(img4.getImage().getScaledInstance(imagenMiembro4.getWidth(), imagenMiembro4.getHeight(), Image.SCALE_DEFAULT));
         imagenMiembro4.setIcon(img4);
         add(imagenMiembro4);
-        
+
         JLabel nombreMiembro4 = new JLabel("Juan Diego Rodriguez Ortiz");
         nombreMiembro4.setBounds(640, 350, 600, 30);
         nombreMiembro4.setForeground(Color.white);
@@ -152,7 +156,6 @@ public final class Inf extends JFrame {
         correoMiembro4.setForeground(Color.white);
         add(correoMiembro4);
 
-
         jbVolver = new JButton("Volver al menu principal");
         jbVolver.setBounds(570, 530, 300, 30);
         jbVolver.addActionListener((e) -> {
@@ -160,6 +163,7 @@ public final class Inf extends JFrame {
         });
         add(jbVolver);
     }
+
     /**
      * Método para manejar el evento del botón "Volver".
      */

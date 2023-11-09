@@ -18,10 +18,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+
 /**
- * Clase que representa una aplicación para graficar vectores en un plano cartesiano y calcular la suma de los mismos.
+ * Clase que representa una aplicación para graficar vectores en un plano
+ * cartesiano y calcular la suma de los mismos.
  */
 public class GraficVectores extends JFrame {
+
     JButton jbVolver;
     Fisica fs;
     // Lista para almacenar los vectores ingresados por el usuario
@@ -34,6 +38,7 @@ public class GraficVectores extends JFrame {
     private JTextField xField; // Campo de entrada para la coordenada X
     private JTextField yField; // Campo de entrada para la coordenada Y
     private int gridSize = 10; // Tamaño de la cuadrícula
+
     /**
      * Constructor de la clase GraficVectores.
      *
@@ -67,15 +72,15 @@ public class GraficVectores extends JFrame {
         yField = new JTextField(5);
         JButton drawButton = new JButton("Graficar");
         JButton sumButton = new JButton("Sumar Vectores");
-        
+
         jbVolver = new JButton("Volver");
         jbVolver.setBounds(475, 548, 110, 20);
         jbVolver.addActionListener((e) -> {
             evento_jbVolver();
         });
         add(jbVolver);
-        
-       // ActionListener para el botón "Graficar"
+
+        // ActionListener para el botón "Graficar"
         drawButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -104,7 +109,6 @@ public class GraficVectores extends JFrame {
                 }
             }
         });
-        
 
         inputPanel.add(new JLabel("X:"));
         inputPanel.add(xField);
@@ -168,19 +172,21 @@ public class GraficVectores extends JFrame {
             g.drawString(coords, x2, y2 - 5);
         }
     }
+
     /**
      * Método de entrada principal para la aplicación GraficVectores.
      *
      * @param args Argumentos de la línea de comandos (no se utilizan).
      */
     public static void main(String[] args) {
-       SwingUtilities.invokeLater(() -> {
+        SwingUtilities.invokeLater(() -> {
             GraficVectores frame = new GraficVectores(new Fisica(new MenuPrincipal()));
             frame.setVisible(true);
         });
-      
+
     }
-        /**
+
+    /**
      * Método para manejar el evento del botón "Volver".
      */
     public void evento_jbVolver() {
@@ -190,6 +196,7 @@ public class GraficVectores extends JFrame {
     }
 
 }
+
 /**
  * Clase que representa un vector en un plano cartesiano.
  */
@@ -199,6 +206,7 @@ class Vector {
     private double startY;
     private double endX;
     private double endY;
+
     /**
      * Constructor de la clase Vector.
      *
@@ -229,9 +237,9 @@ class Vector {
     }
 
     // Método estático para sumar varios vectores
-    
-        /**
-     * Método estático para sumar varios vectores y obtener un nuevo vector como resultado.
+    /**
+     * Método estático para sumar varios vectores y obtener un nuevo vector como
+     * resultado.
      *
      * @param vectors Lista de vectores a sumar.
      * @return Vector resultante de la suma de los vectores.

@@ -29,6 +29,7 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
  * Clase que representa la ventana de "Derechos".
  */
@@ -37,8 +38,10 @@ public final class Derechos extends JFrame {
     JEditorPane editor;
     Cons co;
     JButton jbVolver;
+
     /**
-     * Constructor de la clase Derechos que muestra información sobre los Derechos Fundamentales.
+     * Constructor de la clase Derechos que muestra información sobre los
+     * Derechos Fundamentales.
      *
      * @param obj Objeto de la clase Cons.
      */
@@ -60,8 +63,10 @@ public final class Derechos extends JFrame {
 
         setVisible(true);
     }
+
     /**
-     * Crea la interfaz gráfica para mostrar información sobre los Derechos Fundamentales.
+     * Crea la interfaz gráfica para mostrar información sobre los Derechos
+     * Fundamentales.
      */
     public void crearGUI() {
 
@@ -142,6 +147,7 @@ public final class Derechos extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
+
     /**
      * Maneja el evento de volver al menú principal.
      */
@@ -151,4 +157,3 @@ public final class Derechos extends JFrame {
         co.setVisible(true); // mostrar la ventana  
     }
 }
-

@@ -12,8 +12,6 @@
  * Fecha última actualización: 9/10/2023
  * Versión JDK: 12
  */
-
-
 package Menu;
 
 import java.awt.Color;
@@ -25,21 +23,24 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.plaf.ColorUIResource;
+
 /**
  * Clase que representa la ventana de "Algebra".
  */
 public final class Alg extends JFrame {
 
     MenuPrincipal mp;
-    JButton jbVolver, jbMatrices, jbSistema, jbDeterminantes_d,jbInversa_Matriz,jbCalculadoraDeterminantes,jbd_inversa;
+    JButton jbVolver, jbMatrices, jbSistema, jbDeterminantes_d, jbInversa_Matriz, jbCalculadoraDeterminantes, jbd_inversa;
     GaussJordan gau = new GaussJordan(this);
     Inversa_Matriz inv = new Inversa_Matriz(this);
     Determinantes de = new Determinantes(this);
-/**
- * Constructor para la clase Alg, que representa la ventana de la "Área de Álgebra Lineal".
- *
- * @param obj El objeto MenuPrincipal al que pertenece esta ventana.
- */
+
+    /**
+     * Constructor para la clase Alg, que representa la ventana de la "Área de
+     * Álgebra Lineal".
+     *
+     * @param obj El objeto MenuPrincipal al que pertenece esta ventana.
+     */
     public Alg(MenuPrincipal obj) {
         super("Area de Algebra Lineal");
         mp = obj;
@@ -58,10 +59,12 @@ public final class Alg extends JFrame {
 
         setVisible(true);
     }
-/**
- * Crea y configura la interfaz gráfica de la ventana "Área de Álgebra Lineal".
- * Esta función agrega componentes como etiquetas, botones e imágenes a la ventana.
- */
+
+    /**
+     * Crea y configura la interfaz gráfica de la ventana "Área de Álgebra
+     * Lineal". Esta función agrega componentes como etiquetas, botones e
+     * imágenes a la ventana.
+     */
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/lineall.png"));
@@ -83,13 +86,13 @@ public final class Alg extends JFrame {
 
         ImageIcon i_sist = new ImageIcon(
                 getClass().getResource("/imagenes/sist.png"));
-        jbMatrices= new JButton("Sistema de Ecuaciones", i_sist);
+        jbMatrices = new JButton("Sistema de Ecuaciones", i_sist);
         jbMatrices.setBounds(100, 300, 300, 50);
         jbMatrices.addActionListener((e) -> {
             evento_jbMatrices();
         });
         add(jbMatrices);
- 
+
         ImageIcon i_deter = new ImageIcon(
                 getClass().getResource("/imagenes/deter.png"));
         jbDeterminantes_d = new JButton("Determinantes", i_deter);
@@ -105,27 +108,24 @@ public final class Alg extends JFrame {
             evento_jbSistema();
         });
         add(jbSistema);
-        
-        
+
         jbInversa_Matriz = new JButton("Calculadora Inversa Matriz");
         jbInversa_Matriz.setBounds((1825 - 610) / 2, 460, 250, 40);
         jbInversa_Matriz.addActionListener((e) -> {
             evento_jbInversa_Matriz();
         });
         add(jbInversa_Matriz);
-        
-        
+
         jbCalculadoraDeterminantes = new JButton("Calculadora Determinante Matriz");
         jbCalculadoraDeterminantes.setBounds((1825 - 610) / 2, 170, 250, 40);
         jbCalculadoraDeterminantes.addActionListener((e) -> {
             evento_jbCalculadoraDeterminantes();
         });
         add(jbCalculadoraDeterminantes);
-        
-        
+
         ImageIcon i_inver = new ImageIcon(
                 getClass().getResource("/imagenes/inversa.png"));
-        jbd_inversa= new JButton("Matriz Inversa", i_inver);
+        jbd_inversa = new JButton("Matriz Inversa", i_inver);
         jbd_inversa.setBounds(100, 460, 300, 50);
         jbd_inversa.addActionListener((e) -> {
             evento_jbd_inversa();
@@ -133,52 +133,65 @@ public final class Alg extends JFrame {
         add(jbd_inversa);
 
     }
-/**
- * Abre la ventana de "Sistema de Ecuaciones" y oculta la ventana del menú principal.
- */
+
+    /**
+     * Abre la ventana de "Sistema de Ecuaciones" y oculta la ventana del menú
+     * principal.
+     */
     public void evento_jbMatrices() {
         Matrices mt = new Matrices(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-/**
- * Muestra la ventana del "Calculadora de sistema de Ecuaciones" y oculta la ventana del menú principal.
- */
+
+    /**
+     * Muestra la ventana del "Calculadora de sistema de Ecuaciones" y oculta la
+     * ventana del menú principal.
+     */
     public void evento_jbSistema() {
         gau.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+
     /**
- * Muestra la ventana de "Calculadora Inversa Matriz" y oculta la ventana del menú principal.
- */
-     public void evento_jbInversa_Matriz() {
+     * Muestra la ventana de "Calculadora Inversa Matriz" y oculta la ventana
+     * del menú principal.
+     */
+    public void evento_jbInversa_Matriz() {
         inv.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-/**
- * Abre la ventana de "Determinantes" y oculta la ventana del menú principal.
- */
+
+    /**
+     * Abre la ventana de "Determinantes" y oculta la ventana del menú
+     * principal.
+     */
     public void evento_jbDeterminantes_d() {
         Determinantes_d det = new Determinantes_d(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
+
     /**
- * Muestra la ventana de "Calculadora Determinante Matriz" y oculta la ventana del menú principal.
- */
-        public void evento_jbCalculadoraDeterminantes() {
-         de.setVisible(true);
+     * Muestra la ventana de "Calculadora Determinante Matriz" y oculta la
+     * ventana del menú principal.
+     */
+    public void evento_jbCalculadoraDeterminantes() {
+        de.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-        /**
- * Abre la ventana de "Matriz Inversa" y oculta la ventana del menú principal.
- */
-     public void evento_jbd_inversa() {
+
+    /**
+     * Abre la ventana de "Matriz Inversa" y oculta la ventana del menú
+     * principal.
+     */
+    public void evento_jbd_inversa() {
         d_inversa inver = new d_inversa(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-/**
- * Oculta la ventana actual y muestra la ventana del menú principal.
- * Luego, destruye la ventana actual.
- */
+
+    /**
+     * Oculta la ventana actual y muestra la ventana del menú principal. Luego,
+     * destruye la ventana actual.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

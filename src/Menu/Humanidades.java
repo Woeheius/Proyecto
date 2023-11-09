@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase la cual se mostrara el menu de el area de humanidades y sus botones.
+ * Propósito:Clase la cual se mostrará el menú del área de Humanidades y sus botones.
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -23,14 +23,17 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+
 /**
- * Clase que representa la ventana de la "Área de Humanidades" en una aplicación educativa.
+ * Clase que representa la ventana de la "Área de Humanidades" en una aplicación
+ * educativa.
  */
 public final class Humanidades extends JFrame {
 
     MenuPrincipal mp;
     Inf inf;
     JButton jbVolver, jbCapitulos, jbEncuesta;
+
     /**
      * Constructor de la clase Humanidades.
      *
@@ -55,7 +58,6 @@ public final class Humanidades extends JFrame {
         setVisible(true);
     }
 
-
     /**
      * Método para crear la interfaz gráfica de la ventana.
      */
@@ -70,17 +72,16 @@ public final class Humanidades extends JFrame {
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);
         jlTitulo.setFont(new Font("Colonna MT", Font.BOLD, 35));
         add(jlTitulo);
-        
+
         ImageIcon i_cap = new ImageIcon(
                 getClass().getResource("/imagenes/libros.png"));
         jbCapitulos = new JButton("Leer capitulos", i_cap);
-         jbCapitulos.setBounds((670 - 200) / 2, 170, 500, 50);
+        jbCapitulos.setBounds((670 - 200) / 2, 170, 500, 50);
         jbCapitulos.addActionListener((e) -> {
             evento_jbCapitulos();
         });
         add(jbCapitulos);
-        
-        
+
         ImageIcon i_enc = new ImageIcon(
                 getClass().getResource("/imagenes/encuesta.png"));
         jbEncuesta = new JButton("Encuesta", i_enc);
@@ -97,6 +98,7 @@ public final class Humanidades extends JFrame {
         });
         add(jbVolver);
     }
+
     /**
      * Método para manejar el evento del botón "Volver".
      */
@@ -105,6 +107,7 @@ public final class Humanidades extends JFrame {
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
+
     /**
      * Método para manejar el evento del botón "Leer Capítulos".
      */
@@ -112,6 +115,7 @@ public final class Humanidades extends JFrame {
         Capitulos ca = new Capitulos(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
+
     /**
      * Método para manejar el evento del botón "Encuesta".
      */

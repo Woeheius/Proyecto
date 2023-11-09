@@ -1,5 +1,5 @@
 /**
- * Propósito:Clase la cual se mostrara la interfaz para ingresar los valores de el sistema de ecuaciones y se resuelve
+ * Propósito:Clase la cual se mostrará la interfaz para ingresar los valores del sistema de ecuaciones y se resuelve
  *
  * Autores:
  * - Angie Natalia Cobo Vásquez
@@ -19,8 +19,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+
 /**
- * Clase que representa la resolución de sistemas de ecuaciones mediante el método de Gauss-Jordan.
+ * Clase que representa la resolución de sistemas de ecuaciones mediante el
+ * método de Gauss-Jordan.
  */
 public class GaussJordan extends JFrame {
 
@@ -30,23 +32,21 @@ public class GaussJordan extends JFrame {
     //int n = 3; // Tamaño de la matriz (3x3)
     //double[][] a = {{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
     //double[] x = new double[n + 1]; // Soluciones
-      
+
     //int n = 4; // Tamaño de la matriz (4x4)
     //double[][] a = {{1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
     //double[] x = new double[n]; // Soluciones
-    
     int n = 5; // Tamaño de la matriz (5x5)
-    double[][] a = {{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
+    double[][] a = {{1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}}; // Matriz aumentada (coeficientes + resultados)
     double[] x = new double[n]; // Soluciones
-    
+
     private JTextField[][] matrixFields; // Campos de entrada para la matriz
     private JTextArea resultArea; // Área para mostrar los resultados
     private DecimalFormat decimalFormat; // Formateador de números decimales
 
     /*Se declaran las variables de clase que se utilizarán en toda la clase, 
     como botones, matrices, campos de entrada y áreas de texto*/
-    
-        /**
+    /**
      * Constructor de la clase GaussJordan.
      *
      * @param obj Objeto de la clase Alg.
@@ -68,9 +68,9 @@ public class GaussJordan extends JFrame {
         // Crear una matriz de campos de texto para ingresar los coeficientes
         JPanel matrixPanel = new JPanel(new GridLayout(n, n + 1));
         matrixFields = new JTextField[n][n + 1];
-        
+
         // Crear un JComboBox 
-        nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 });
+        nComboBox = new JComboBox<>(new Integer[]{2, 3, 4, 5});
         nComboBox.setSelectedItem(n); // Establecer el valor inicial
         nComboBox.setBounds(100, 545, 110, 20);
         nComboBox.addActionListener(new ActionListener() {
@@ -121,8 +121,7 @@ public class GaussJordan extends JFrame {
     }
 
     // Leer la matriz de los campos de texto
-    
-        /**
+    /**
      * Método para leer la matriz de los campos de texto.
      */
     public void readMatrix() {
@@ -138,15 +137,19 @@ public class GaussJordan extends JFrame {
     }
 
     /**
-     * Método para realizar el proceso de eliminación de Gauss-Jordan y resolver el sistema de ecuaciones.
+     * Método para realizar el proceso de eliminación de Gauss-Jordan y resolver
+     * el sistema de ecuaciones.
      */
     public void solve() {
         for (int i = 0; i < n; i++) {
             pivot(i);
         }
         sustitucion();
-    }    /**
-     * Método para aplicar la operación de pivote en la fila i y hacer ceros en las columnas debajo del elemento diagonal actual.
+    }
+
+    /**
+     * Método para aplicar la operación de pivote en la fila i y hacer ceros en
+     * las columnas debajo del elemento diagonal actual.
      *
      * @param i Índice de la fila.
      */
@@ -191,7 +194,8 @@ public class GaussJordan extends JFrame {
     }
 
     /**
-     * Método para mostrar las soluciones en el área de texto de resultados con formato.
+     * Método para mostrar las soluciones en el área de texto de resultados con
+     * formato.
      */
     public void displayResults() {
         resultArea.setText("Resultados:\n");
@@ -200,8 +204,9 @@ public class GaussJordan extends JFrame {
         }
     }
 
-       /**
-     * Punto de entrada del programa para crear una instancia de la clase GaussJordan y ejecutarla en el hilo de la interfaz de usuario.
+    /**
+     * Punto de entrada del programa para crear una instancia de la clase
+     * GaussJordan y ejecutarla en el hilo de la interfaz de usuario.
      *
      * @param args Argumentos de la línea de comandos (no se utilizan).
      */
@@ -211,6 +216,7 @@ public class GaussJordan extends JFrame {
             frame.setVisible(true);
         });
     }
+
     /**
      * Método para manejar el evento del botón "Volver".
      */
@@ -219,22 +225,24 @@ public class GaussJordan extends JFrame {
         dispose(); // destruir la ventana de Matematicas
         al.setVisible(true); // mostrar la ventana de menu principal 
     }
-    /**
-     * Método para reconstruir la interfaz gráfica cuando cambia el valor de "n".
-     */
-private void rebuildUI() {
-    getContentPane().removeAll(); // Elimina todos los componentes
-    getContentPane().invalidate();
-    getContentPane().revalidate();
-    getContentPane().repaint();
-    
-    // Ahora, vuelva a construir la interfaz con el nuevo valor de "n"
-    decimalFormat = new DecimalFormat("#.##");
 
-    JPanel matrixPanel = new JPanel(new GridLayout(n, n + 1));
-    matrixFields = new JTextField[n][n + 1];
+    /**
+     * Método para reconstruir la interfaz gráfica cuando cambia el valor de
+     * "n".
+     */
+    private void rebuildUI() {
+        getContentPane().removeAll(); // Elimina todos los componentes
+        getContentPane().invalidate();
+        getContentPane().revalidate();
+        getContentPane().repaint();
+
+        // Ahora, vuelva a construir la interfaz con el nuevo valor de "n"
+        decimalFormat = new DecimalFormat("#.##");
+
+        JPanel matrixPanel = new JPanel(new GridLayout(n, n + 1));
+        matrixFields = new JTextField[n][n + 1];
 // Crear un JComboBox 
-        nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 });
+        nComboBox = new JComboBox<>(new Integer[]{2, 3, 4, 5});
         nComboBox.setSelectedItem(n); // Establecer el valor inicial
         nComboBox.setBounds(100, 545, 110, 20);
         nComboBox.addActionListener(new ActionListener() {
@@ -277,14 +285,14 @@ private void rebuildUI() {
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(solveButton);
 
-    // Agregar los componentes actualizados a la ventana
-    add(nComboBox);
-    add(matrixPanel, BorderLayout.CENTER);
-    add(buttonPanel, BorderLayout.SOUTH);
-    add(resultArea, BorderLayout.NORTH);
+        // Agregar los componentes actualizados a la ventana
+        add(nComboBox);
+        add(matrixPanel, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
+        add(resultArea, BorderLayout.NORTH);
 
-    revalidate(); // Vuelve a validar la ventana
-    repaint(); // Vuelve a pintar la ventana
-}
+        revalidate(); // Vuelve a validar la ventana
+        repaint(); // Vuelve a pintar la ventana
+    }
 
 }

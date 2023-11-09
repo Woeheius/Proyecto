@@ -1,5 +1,5 @@
 /**
- * Propósito: Clase que representa el capitulo que habla sobre los problemas en la implementacion de
+ * Propósito: Clase que representa el capítulo que habla sobre los problemas en la implementación de
  * el ODS 1.
  *
  * Autores:
@@ -12,7 +12,6 @@
  * Fecha última actualización: 3/11/2023
  * Versión JDK: 12
  */
-
 package Menu;
 
 import java.awt.Color;
@@ -31,6 +30,7 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+
 /**
  * Clase que representa la ventana del "Capítulo 3".
  */
@@ -39,7 +39,8 @@ public final class Capitulo_3 extends JFrame {
     JEditorPane editor;
     Capitulo_3 cap3;
     Capitulos ca;
-    JButton jbVolver, jbCapitulo_3,jbsig,jbant;
+    JButton jbVolver, jbCapitulo_3, jbsig, jbant;
+
     /**
      * Constructor de la clase Capitulo_3.
      *
@@ -63,6 +64,7 @@ public final class Capitulo_3 extends JFrame {
 
         setVisible(false);
     }
+
     /**
      * Crea y configura la interfaz gráfica de la ventana.
      */
@@ -83,7 +85,7 @@ public final class Capitulo_3 extends JFrame {
             evento_jbVolver();
         });
         add(jbVolver);
-                
+
         jbsig = new JButton("Siguiente");
         jbsig.setBounds(350, 630, 200, 30);
         jbsig.addActionListener((e) -> {
@@ -122,17 +124,16 @@ public final class Capitulo_3 extends JFrame {
                 + "        <center><img src=\"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg\" width=\"440\"></center>\n"
                 + "        <br>\n"
                 + "        <br>\n"
-                         + "            <p><strong>Recursos adicionales:</strong></p>\n"
- + "            <p><a href=\"https://news.un.org/es/story/2019/10/1463292\">Enlace 1</a></p>\n"
-    + "            <p><a href=\"https://https://canaltrece.com.co/noticias/algunos-obstaculos-de-los-objetivos-de-desarrollo-sostenible-en-america-latina-y-colombia/\">Enlace 2</a></p>\n"
-    + "            <p><a href=\"https://canaltrece.com.co/noticias/algunos-obstaculos-de-los-objetivos-de-desarrollo-sostenible-en-america-latina-y-colombia/\">Enlace 3</a></p>\n"
-    + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://youtu.be/CLq6tykbIrk?si=HSlf1spwZ5DYjIO-\">VIDEO</a></p>\n"
-            
-    + "        </font>\n"
-    + "    </body>\n"
-    + "</html>"
-);
+                + "            <p><strong>Recursos adicionales:</strong></p>\n"
+                + "            <p><a href=\"https://news.un.org/es/story/2019/10/1463292\">Enlace 1</a></p>\n"
+                + "            <p><a href=\"https://https://canaltrece.com.co/noticias/algunos-obstaculos-de-los-objetivos-de-desarrollo-sostenible-en-america-latina-y-colombia/\">Enlace 2</a></p>\n"
+                + "            <p><a href=\"https://canaltrece.com.co/noticias/algunos-obstaculos-de-los-objetivos-de-desarrollo-sostenible-en-america-latina-y-colombia/\">Enlace 3</a></p>\n"
+                + "<p><strong>Video relacionado:</strong></p>\n"
+                + "            <p><a href=\"https://youtu.be/CLq6tykbIrk?si=HSlf1spwZ5DYjIO-\">VIDEO</a></p>\n"
+                + "        </font>\n"
+                + "    </body>\n"
+                + "</html>"
+        );
         editor.setEditable(false);//mostrar solo codigo HTML
         editor.setCaretPosition(0);
         editor.addHyperlinkListener(new HyperlinkListener() {
@@ -154,8 +155,10 @@ public final class Capitulo_3 extends JFrame {
         add(js);
 
     }
+
     /**
-     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y
+     * mostrar la ventana de Capitulos.
      */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana
@@ -167,18 +170,22 @@ public final class Capitulo_3 extends JFrame {
         cap3.setVisible(true);
         setVisible(false); // ocultar la ventana 
     }
-        /**
-     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 4" y ocultar la ventana actual.
+
+    /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del
+     * "Capítulo 4" y ocultar la ventana actual.
      */
-    public void evento_jbsig(){
+    public void evento_jbsig() {
         Capitulo_4 Capitulo_4 = new Capitulo_4(ca);
         Capitulo_4.setVisible(true);
         setVisible(false);
     }
-        /**
-     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 2" y ocultar la ventana actual.
+
+    /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo
+     * 2" y ocultar la ventana actual.
      */
-    public void evento_jbant(){
+    public void evento_jbant() {
         Capitulo_2 Capitulo_2 = new Capitulo_2(ca);
         Capitulo_2.setVisible(true);
         setVisible(false);
