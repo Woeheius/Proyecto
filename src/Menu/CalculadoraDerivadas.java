@@ -1,3 +1,17 @@
+/**
+ * Clase que representa una calculadora de derivadas de funciones matemáticas.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 6/10/2023
+ * Versión JDK: 12
+ */
+
 package Menu;
 
 import java.awt.Color;
@@ -10,7 +24,9 @@ import javax.swing.JTextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-
+/**
+ * Clase que representa la ventana de la "Calculadora de Derivadas".
+ */
 public class CalculadoraDerivadas extends JFrame {
 
     private JButton jbVolver;
@@ -18,14 +34,20 @@ public class CalculadoraDerivadas extends JFrame {
     private Matematicas mt;
     private JTextField texFuncion;
     private JTextField texFuncionSalida;
-
+    /**
+     * Constructor de la clase CalculadoraDerivadas.
+     *
+     * @param obj El objeto Matematicas al que pertenece esta ventana.
+     */
     public CalculadoraDerivadas(Matematicas obj) {
         super("Calculadora Derivadas");
         mt = obj;
         setupFrame();
         initComponents();
     }
-
+    /**
+     * Inicializa los componentes de la interfaz gráfica de la ventana.
+     */
     private void initComponents() {
         JLabel jLabel1 = new JLabel("Función a derivar");
         JLabel jLabel2 = new JLabel("Función derivada");
@@ -63,13 +85,21 @@ public class CalculadoraDerivadas extends JFrame {
         add(texFuncionSalida);
         add(jButton1);
     }
-
+    /**
+     * Maneja el evento del botón "Limpiar" para borrar los campos de texto.
+     *
+     * @param evt El evento de acción.
+     */
     private void jbLimpiarActionPerformed(ActionEvent evt) {
         // Limpia el contenido de los campos de texto
         texFuncion.setText("");
         texFuncionSalida.setText("");
     }
-
+    /**
+     * Maneja el evento del botón "Derivar" para calcular la derivada de la función ingresada.
+     *
+     * @param evt El evento de acción.
+     */
     private void jButton1ActionPerformed(ActionEvent evt) {
         String Funcion = texFuncion.getText();
         Derivadas derivada = new Derivadas();
@@ -77,13 +107,17 @@ public class CalculadoraDerivadas extends JFrame {
         derivada.derivar();
         texFuncionSalida.setText(derivada.getFuncionDerivada());
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Matematicas.
+     */
     public void evento_jbVolver() {
         setVisible(false);
         dispose();
         mt.setVisible(true);
     }
-
+    /**
+     * Configura las propiedades iniciales de la ventana.
+     */
     private void setupFrame() {
         setSize(600, 300);
         setLocationRelativeTo(null);
@@ -94,7 +128,11 @@ public class CalculadoraDerivadas extends JFrame {
         setIconImage(im);
         setLayout(null);
     }
-
+    /**
+     * Método principal para ejecutar la aplicación de la Calculadora de Derivadas.
+     *
+     * @param args Los argumentos de la línea de comandos (no se utilizan en este caso).
+     */
     public static void main(String args[]) {
         CalculadoraDerivadas c = new CalculadoraDerivadas(new Matematicas(new MenuPrincipal()));
         c.setVisible(true);

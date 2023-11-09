@@ -1,3 +1,19 @@
+/**
+ * Propósito: Clase que representa el menú de Álgebra Lineal con opciones para
+ * cálculos relacionados con sistemas de ecuaciones, determinantes y matrices.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 9/10/2023
+ * Versión JDK: 12
+ */
+
+
 package Menu;
 
 import java.awt.Color;
@@ -9,7 +25,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.plaf.ColorUIResource;
-
+/**
+ * Clase que representa la ventana de "Algebra".
+ */
 public final class Alg extends JFrame {
 
     MenuPrincipal mp;
@@ -17,7 +35,11 @@ public final class Alg extends JFrame {
     GaussJordan gau = new GaussJordan(this);
     Inversa_Matriz inv = new Inversa_Matriz(this);
     Determinantes de = new Determinantes(this);
-
+/**
+ * Constructor para la clase Alg, que representa la ventana de la "Área de Álgebra Lineal".
+ *
+ * @param obj El objeto MenuPrincipal al que pertenece esta ventana.
+ */
     public Alg(MenuPrincipal obj) {
         super("Area de Algebra Lineal");
         mp = obj;
@@ -36,7 +58,10 @@ public final class Alg extends JFrame {
 
         setVisible(true);
     }
-
+/**
+ * Crea y configura la interfaz gráfica de la ventana "Área de Álgebra Lineal".
+ * Esta función agrega componentes como etiquetas, botones e imágenes a la ventana.
+ */
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/lineall.png"));
@@ -108,34 +133,52 @@ public final class Alg extends JFrame {
         add(jbd_inversa);
 
     }
-
+/**
+ * Abre la ventana de "Sistema de Ecuaciones" y oculta la ventana del menú principal.
+ */
     public void evento_jbMatrices() {
         Matrices mt = new Matrices(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+/**
+ * Muestra la ventana del "Calculadora de sistema de Ecuaciones" y oculta la ventana del menú principal.
+ */
     public void evento_jbSistema() {
         gau.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+    /**
+ * Muestra la ventana de "Calculadora Inversa Matriz" y oculta la ventana del menú principal.
+ */
      public void evento_jbInversa_Matriz() {
         inv.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+/**
+ * Abre la ventana de "Determinantes" y oculta la ventana del menú principal.
+ */
     public void evento_jbDeterminantes_d() {
         Determinantes_d det = new Determinantes_d(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
+    /**
+ * Muestra la ventana de "Calculadora Determinante Matriz" y oculta la ventana del menú principal.
+ */
         public void evento_jbCalculadoraDeterminantes() {
          de.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+        /**
+ * Abre la ventana de "Matriz Inversa" y oculta la ventana del menú principal.
+ */
      public void evento_jbd_inversa() {
         d_inversa inver = new d_inversa(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+/**
+ * Oculta la ventana actual y muestra la ventana del menú principal.
+ * Luego, destruye la ventana actual.
+ */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

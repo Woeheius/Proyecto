@@ -1,18 +1,17 @@
-/*
-Proposito:
-Clase en la cual sera presentado el cuestionario de 5 preguntas sobre el ODS 1
-Autores:
-Angie Natalia Cobo Vasquez
-Juan Diego Rodriguez Ortiz
-Sebastian Henao Gamboa
-Santiago Ospina Gonzalez
-
-Version:
-2.0
-Fecha ultima actualizacion:
-08/11/2023
-Version JDK:
+/**
+ * Propósito: Clase en la cual sera presentado el cuestionario de 5 preguntas sobre el ODS 1
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
  */
+
 package Menu;
 
 import java.awt.Color;
@@ -41,7 +40,11 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     int m[] = new int[10];
     private String[] guardar = new String[6];
     boolean[] salio = new boolean[30]; //arreglo para controlar las preguntas que salen
-
+    /**
+     * Constructor de la clase Cuestionario_ods.
+     *
+     * @param s Título de la ventana del cuestionario.
+     */
     Cuestionario_ods(String s) {
         super("CUESTIONARIO DE HUMANIDADES");
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -96,6 +99,11 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     }
 
     //manejar todas las acciones basadas en el evento
+        /**
+     * Maneja las acciones basadas en eventos, principalmente para el botón "Siguiente".
+     *
+     * @param e Evento de acción.
+     */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jbSiguiente && cant_preg <= 6) {
             if (check()) {
@@ -118,6 +126,9 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     }
 
     // Seteando preguntas con sus respuestas
+        /**
+     * Controla la configuración de las preguntas y respuestas, mostrándolas en la interfaz gráfica.
+     */
     private void set() {
         do {
             pregunta = (int) (Math.random() * 30);//la variable pregunta sera aleatoria, y el numero que salga sera la pregunta con sus respuestas que se muestre
@@ -342,6 +353,11 @@ class Cuestionario_ods extends JFrame implements ActionListener {
     }
 
     //defino las respuestas correctas de las preguntas
+        /**
+     * Comprueba si las respuestas seleccionadas son correctas y aumenta el contador de respuestas correctas.
+     *
+     * @return `true` si la respuesta seleccionada es correcta, de lo contrario `false`.
+     */
     boolean check() {
         if (pregunta == 0) {
             return (radioButton[3].isSelected());
@@ -435,14 +451,18 @@ class Cuestionario_ods extends JFrame implements ActionListener {
         }
         return false;
     }
-
+    /**
+     * Maneja el evento de volver al menú principal.
+     */
     public void evento_jbVolver() {
         MenuPrincipal mp = new MenuPrincipal();
         setVisible(false); // ocultar la ventana 
         dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-
+    /**
+     * Guarda el puntaje obtenido en un archivo CSV.
+     */
     private void guardar() {
         FileWriter fw = null;
         boolean error = false;
@@ -466,7 +486,11 @@ class Cuestionario_ods extends JFrame implements ActionListener {
             }
         }
     }
-
+    /**
+     * Método principal para ejecutar el cuestionario.
+     *
+     * @param s Arreglo de argumentos de cadena.
+     */
     public static void main(String s[]) {
         Cuestionario_ods preg = new Cuestionario_ods("Cuestionario de humanidades");
         preg.setVisible(true);

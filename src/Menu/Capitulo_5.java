@@ -1,3 +1,17 @@
+/**
+ * Propósito: Clase que representa el capitulo sobre la tecnologia en la lucha contra la pobreza.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/11/2023
+ * Versión JDK: 12
+ */
+
 package Menu;
 
 import java.awt.Color;
@@ -16,14 +30,20 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana del "Capítulo 5".
+ */
 public final class Capitulo_5 extends JFrame {
 
     JEditorPane editor;
     Capitulo_5 cap5;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_5,jbsig,jbant;
-
+    /**
+     * Constructor de la clase Capitulo_5.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_5(Capitulos obj) {
         super("Capitulo 5");
         ca = obj;
@@ -42,7 +62,9 @@ public final class Capitulo_5 extends JFrame {
 
         setVisible(false);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Capiulo 5");
@@ -102,7 +124,7 @@ editor.setText(
     + "            <p><a href=\"https://www.un.org/es/desa/forum-science-technology-innovation\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://www.bbva.com/es/como-usar-la-tecnologia-para-luchar-contra-la-pobreza-y-exclusion-social/\">Enlace 3</a></p>\n"
     + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"         
+    + "            <p><a href=\"https://youtu.be/bafvyuddZ8c?si=9a4Pe8BrnvQ8DoZy\">VIDEO</a></p>\n"         
     + "        </font>\n"
     + "    </body>\n"
     + "</html>"
@@ -128,7 +150,9 @@ editor.setText(
         add(js);
 
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
@@ -139,11 +163,17 @@ editor.setText(
         cap5.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 6" y ocultar la ventana actual.
+     */
         public void evento_jbsig(){
         Capitulo_6 Capitulo_6 = new Capitulo_6(ca);
         Capitulo_6.setVisible(true);
         setVisible(false);
     }
+            /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 4" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_4 Capitulo_4 = new Capitulo_4(ca);
         Capitulo_4.setVisible(true);

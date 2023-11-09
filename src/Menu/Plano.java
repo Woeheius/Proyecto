@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase en la cual se creara el plano cartesiano y se graficara
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -5,7 +18,10 @@ import java.awt.Graphics2D;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
-
+/**
+ * La clase Plano se utiliza para dibujar un plano cartesiano en un panel de Java Swing
+ * y graficar puntos en él.
+ */
 class Plano {
 
     private final JPanel panel;
@@ -14,7 +30,11 @@ class Plano {
     private final int escala;
 
 
-    //Contructor recibe el panel de la clase VentanaGraficar
+    /**
+     * Constructor de la clase Plano.
+     * 
+     * @param panel El panel en el que se dibujará el plano.
+     */
     public Plano(JPanel panel) {
 
         this.escala = 20;
@@ -26,9 +46,10 @@ class Plano {
         DibujarEjesYEscala();
 
     }
-
+    /**
+     * Dibuja los ejes del plano cartesiano y la escala.
+     */
     public void DibujarEjesYEscala() {
-        //crea un graphics en el panel
         Graphics2D g = (Graphics2D) panel.getGraphics();
 
         //crea lineas en posicion del x
@@ -50,7 +71,7 @@ class Plano {
             ny = ny - escala;
 
         }
-        //ejes X y Y
+        //ejes
         g.setColor(Color.BLACK);
         g.drawLine(w / 2, 0, w / 2, h);
         g.setColor(Color.BLACK);
@@ -58,20 +79,26 @@ class Plano {
 
     }
 
-    //grafica puntos y recibe la eleccion de color
-    public void graficarPorPuntos(float x, float y, JComboBox color) {
+    /**
+     * Grafica un punto en el plano cartesiano en la posición (x, y) con el color especificado.
+     * 
+     * @param x     Coordenada x del punto.
+     * @param y     Coordenada y del punto.
+     */
+    public void graficarPorPuntos(float x, float y) {
         Graphics2D g = (Graphics2D) panel.getGraphics();
-        
-        //color de los puntos
-
         //posicion de puntos
         int GraficarX = (int) (w / 2 + x * escala);
         int GraficarY = (int) (h / 2 - y * escala);
         g.fillOval((int) (GraficarX - 1), (int) (GraficarY - 1), 2, 2);
 
     }
-
-    public void GraficarFuncion(String funcion, JComboBox color) {
+    /**
+     * Grafica una función en el plano cartesiano.
+     * 
+     * @param funcion La función a graficar..
+     */
+    public void GraficarFuncion(String funcion) {
         float y = 0;
         //evalua la funcion desde x = -15 hasta x = 15
         Evaluar e = new Evaluar();
@@ -80,12 +107,16 @@ class Plano {
             e.setValorX(x);
             e.evaluar();
             y = (float) e.getResultadoFuncion();
-            graficarPorPuntos(x, y, color);
+            graficarPorPuntos(x, y);
         }
 
     }
 
-    //actionListener de boton limpiar
+    /**
+     * Limpia el plano cuando se presiona un botón para limpiar.
+     * 
+     * @param JBlimpiar Botón utilizado para limpiar el plano.
+     */
     public void limpiar(JButton JBlimpiar) {
         Graphics2D g = (Graphics2D) panel.getGraphics();
        

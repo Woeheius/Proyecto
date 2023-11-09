@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase la cual se mostrara la interfaz para ingresar los valores de el sistema de ecuaciones y se resuelve
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import javax.swing.*;
@@ -6,7 +19,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
-
+/**
+ * Clase que representa la resolución de sistemas de ecuaciones mediante el método de Gauss-Jordan.
+ */
 public class GaussJordan extends JFrame {
 
     JButton jbVolver;
@@ -30,6 +45,12 @@ public class GaussJordan extends JFrame {
 
     /*Se declaran las variables de clase que se utilizarán en toda la clase, 
     como botones, matrices, campos de entrada y áreas de texto*/
+    
+        /**
+     * Constructor de la clase GaussJordan.
+     *
+     * @param obj Objeto de la clase Alg.
+     */
     public GaussJordan(Alg obj) {
         super("Sistema de Ecuaciones");
         al = obj;
@@ -100,6 +121,10 @@ public class GaussJordan extends JFrame {
     }
 
     // Leer la matriz de los campos de texto
+    
+        /**
+     * Método para leer la matriz de los campos de texto.
+     */
     public void readMatrix() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= n; j++) {
@@ -112,18 +137,19 @@ public class GaussJordan extends JFrame {
         }
     }
 
-    /*Realiza el proceso de eliminación de Gauss-Jordan para resolver el sistema de ecuaciones, 
-    comienza por aplicar pivotes para obtener una matriz escalonada 
-    y luego realiza sustitución hacia atrás para obtener las soluciones*/
+    /**
+     * Método para realizar el proceso de eliminación de Gauss-Jordan y resolver el sistema de ecuaciones.
+     */
     public void solve() {
         for (int i = 0; i < n; i++) {
             pivot(i);
         }
         sustitucion();
-    }
-
-    /*Este método aplica la operación de pivote en la fila i para hacer ceros en las columnas 
-    debajo del elemento diagonal actual*/
+    }    /**
+     * Método para aplicar la operación de pivote en la fila i y hacer ceros en las columnas debajo del elemento diagonal actual.
+     *
+     * @param i Índice de la fila.
+     */
     public void pivot(int i) {
         for (int j = i + 1; j < n; j++) {
             if (Math.abs(a[i][i]) < Math.abs(a[j][i])) {
@@ -149,7 +175,9 @@ public class GaussJordan extends JFrame {
         }
     }
 
-    // Realizar la sustitución hacia atrás para obtener las soluciones
+    /**
+     * Método para realizar la sustitución hacia atrás y obtener las soluciones.
+     */
     public void sustitucion() {
         x[n - 1] = a[n - 1][n];
 
@@ -162,7 +190,9 @@ public class GaussJordan extends JFrame {
         }
     }
 
-    //Muestra las soluciones en el área de texto de resultados con formato.
+    /**
+     * Método para mostrar las soluciones en el área de texto de resultados con formato.
+     */
     public void displayResults() {
         resultArea.setText("Resultados:\n");
         for (int i = 0; i < n; i++) {
@@ -170,21 +200,28 @@ public class GaussJordan extends JFrame {
         }
     }
 
-    /*Este es el punto de entrada del programa,
-    Crea una instancia de la clase GaussJordan, la hace visible y la ejecuta en el hilo de la interfaz de usuario.*/
+       /**
+     * Punto de entrada del programa para crear una instancia de la clase GaussJordan y ejecutarla en el hilo de la interfaz de usuario.
+     *
+     * @param args Argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             GaussJordan frame = new GaussJordan(new Alg(new MenuPrincipal()));
             frame.setVisible(true);
         });
     }
-
+    /**
+     * Método para manejar el evento del botón "Volver".
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         al.setVisible(true); // mostrar la ventana de menu principal 
     }
-    // Método para reconstruir la interfaz gráfica cuando cambia el valor de "n"
+    /**
+     * Método para reconstruir la interfaz gráfica cuando cambia el valor de "n".
+     */
 private void rebuildUI() {
     getContentPane().removeAll(); // Elimina todos los componentes
     getContentPane().invalidate();

@@ -1,5 +1,17 @@
+/**
+ * Propósito: Clase que representa el capitulo sobre como el ODS 1 se relaciona con los demas ODS.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
-//
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Font;
@@ -16,14 +28,20 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana del "Capítulo 2".
+ */
 public final class Capitulo_2 extends JFrame {
 
     JEditorPane editor;
     Capitulo_2 cap2;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_2,jbsig,jbant;
-
+ /**
+     * Constructor de la clase Capitulo_2.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_2(Capitulos obj) {
         super("Capitulo 2");
         ca = obj;
@@ -41,7 +59,9 @@ public final class Capitulo_2 extends JFrame {
 
         setVisible(false);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Capitulo 2");
@@ -126,7 +146,9 @@ public final class Capitulo_2 extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
@@ -137,11 +159,17 @@ public final class Capitulo_2 extends JFrame {
         cap2.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 3" y ocultar la ventana actual.
+     */
         public void evento_jbsig(){
         Capitulo_3 Capitulo_3 = new Capitulo_3(ca);
         Capitulo_3.setVisible(true);
         setVisible(false);
     }
+            /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 1" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_1 Capitulo_1 = new Capitulo_1(ca);
         Capitulo_1.setVisible(true);

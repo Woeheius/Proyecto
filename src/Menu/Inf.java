@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase la cual se mostrara la informacion de el equipo de el proyecto(The best equipo)
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -8,12 +21,18 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
-
+/**
+ * Clase que representa la ventana de información sobre el equipo de trabajo.
+ */
 public final class Inf extends JFrame {
 
     MenuPrincipal mp;
     JButton jbVolver;
-
+    /**
+     * Constructor de la clase Inf.
+     *
+     * @param obj Objeto de la clase MenuPrincipal.
+     */
     public Inf(MenuPrincipal obj) {
         super("Integrantes del equipo de trabajo");
         mp = obj;
@@ -32,7 +51,9 @@ public final class Inf extends JFrame {
 
         setVisible(true);
     }
-
+/**
+ * Método para crear la interfaz gráfica de la ventana de información sobre el equipo de trabajo.
+ */
     public void crearGUI() {
         JLabel jlTitulo = new JLabel("Equipo de Trabajo");
         jlTitulo.setBounds(0, 0, 900, 80);
@@ -139,7 +160,9 @@ public final class Inf extends JFrame {
         });
         add(jbVolver);
     }
-
+    /**
+     * Método para manejar el evento del botón "Volver".
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

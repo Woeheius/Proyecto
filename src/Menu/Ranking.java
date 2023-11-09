@@ -1,17 +1,15 @@
-/*
-Proposito:
-Clase donde se llenara la tabla y se organizara en forma descendente segun las respuestas correctas
-Autores:
-Angie Natalia Cobo Vasquez
-Juan Diego Rodriguez Ortiz
-Sebastian Henao Gamboa
-Santiago Ospina Gonzalez
-
-Version:
-2.0
-Fecha ultima actualizacion:
-08/11/2023
-Version JDK:
+/**
+ * Propósito:Clase donde se llenara la tabla y se organizara en forma descendente segun las respuestas correctas
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
  */
 package Menu;
 
@@ -28,13 +26,17 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.table.DefaultTableCellRenderer;
-
+/**
+ * La clase Ranking se utiliza para mostrar un ranking de puntajes en una ventana de JavaSwing.
+ */
 public class Ranking extends JFrame {
 
     JButton jb_Volver;
     ModeloTabla mt;
     JTable tabla;
-
+    /**
+     * Constructor de la clase Ranking.
+     */
     public Ranking() {
         super("RANKING");
         setSize(700, 500);
@@ -48,7 +50,9 @@ public class Ranking extends JFrame {
         llenar();
         setVisible(false);
     }
-
+    /**
+     * Crea la interfaz gráfica de la ventana de ranking.
+     */
     public void crearGUI() {
         JLabel jlMejores = new JLabel("Los mejores puntajes son:", (int) CENTER_ALIGNMENT);
         jlMejores.setBounds(600 / 2 - 500 / 2, 0, 600, 30);
@@ -90,7 +94,9 @@ public class Ranking extends JFrame {
         });
         add(jb_Volver);
     }
-
+    /**
+     * Llena la tabla con los datos de los puntajes.
+     */
     public void llenar() { //se lee el archivo para llenar la tabla
         FileReader datosFileReader = null;
         FileReader puntajesFileReader = null;
@@ -138,14 +144,20 @@ public class Ranking extends JFrame {
             }
         }
     }
-
+    /**
+     * Evento al presionar el botón "Volver al menú".
+     */
     private void evento_Jbvolver() {
         Fin_Cuestionario f = new Fin_Cuestionario();
         setVisible(false); // ocultar la ventana 
         dispose(); // destruir la ventana 
         f.setVisible(true); // mostrar la ventana de menu principal 
     }
-
+    /**
+     * Método principal para ejecutar la ventana de ranking.
+     *
+     * @param args Los argumentos de la línea de comandos.
+     */
     public static void main(String[] args) {
         Ranking r = new Ranking();
         r.setVisible(true);

@@ -1,3 +1,18 @@
+/**
+ * Propósito: Clase que representa el capitulo que habla sobre la relacion entre la educacion y 
+ * la pobreza.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/11/2023
+ * Versión JDK: 12
+ */
+
 package Menu;
 
 import java.awt.Color;
@@ -16,14 +31,20 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana del "Capítulo 8".
+ */
 public final class Capitulo_8 extends JFrame {
 
     JEditorPane editor;
     Capitulo_8 cap8;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_8,jbsig,jbant;
-
+    /**
+     * Constructor de la clase Capitulo_8.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_8(Capitulos obj) {
         super("Capitulo 8");
         ca = obj;
@@ -42,7 +63,9 @@ public final class Capitulo_8 extends JFrame {
 
         setVisible(false);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Capitulo 8");
@@ -105,7 +128,7 @@ editor.setText(
     + "            <p><a href=\"https://www.educo.org/blog/claves-para-acabar-pobreza-con-educacion\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://www.un.org/es/chronicle/article/acabar-con-la-pobreza-mediante-la-educacion-el-desafio-de-la-educacion-para-todos\">Enlace 3</a></p>\n"
     + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+    + "            <p><a href=\"https://youtu.be/brNGKoSTEqA?si=zJx-ZN84l2XkT6se\">VIDEO</a></p>\n"
             
     + "        </font>\n"
     + "    </body>\n"
@@ -134,22 +157,32 @@ editor.setText(
         add(js);
 
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         ca.setVisible(true); // mostrar la ventana de menu principal 
     }
-
+    /**
+     * Maneja el evento del botón "Capitulo_8" para abrir la ventana del "Capítulo 8" y ocultar la ventana actual. (Nota: El nombre del método y su funcionalidad parecen estar duplicados).
+     */
     public void evento_jbCapitulo_6() {
         cap8.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 9" y ocultar la ventana actual.
+     */
             public void evento_jbsig(){
         Capitulo_9 Capitulo_9 = new Capitulo_9(ca);
         Capitulo_9.setVisible(true);
         setVisible(false);
     }
+                /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 7" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_7 Capitulo_7 = new Capitulo_7(ca);
         Capitulo_7.setVisible(true);

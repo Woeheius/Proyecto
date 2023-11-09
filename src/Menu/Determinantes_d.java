@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase en la cual se habla sobre que es la determinante.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -17,13 +30,20 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.plaf.ColorUIResource;
-
+/**
+ * Esta clase representa una ventana que proporciona información sobre los determinantes de matrices.
+ * Incluye definiciones, propiedades y métodos comunes para calcular determinantes de matrices cuadradas.
+ */
 public final class Determinantes_d extends JFrame {
 
     JEditorPane editor;
     Alg al;
     JButton jbVolver;
-
+    /**
+     * Constructor de la ventana Determinantes_d.
+     *
+     * @param obj Objeto de la clase Alg, que permite volver al menú principal.
+     */
     public Determinantes_d(Alg obj) {
         super("Area Determinantes");
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -43,7 +63,9 @@ public final class Determinantes_d extends JFrame {
 
         setVisible(true);
     }
-
+    /**
+     * Crea la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
         JLabel jlTitulo = new JLabel("Area Determinantes");
         jlTitulo.setBounds(0, 0, 1000, 60);
@@ -133,7 +155,9 @@ public final class Determinantes_d extends JFrame {
         add(js);
 
     }
-
+    /**
+     * Maneja el evento de volver. Oculta la ventana actual y muestra la ventana del menú principal.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

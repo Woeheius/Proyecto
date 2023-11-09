@@ -10,14 +10,23 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+/**
+ * Clase que representa la ventana de la sección de Física en la aplicación.
+ * Permite acceder a cálculos y volver al menú principal.
+ */
 
 public class InterfazFisica extends JFrame   {
-
+    // Etiqueta para mostrar el título de la sección de Física
     JLabel jlTexto, jlImagen, jlTextoImg;
+    // Botones para realizar cálculos y volver al menú principal
     JButton jbMovimiento,jbVolver; 
+        // Referencia a la ventana del menú principal
     Fisica fs; 
     
-      
+          /**
+     * Constructor de la clase InterfazFisica.
+     * @param obj La ventana del menú principal.
+     */
     public InterfazFisica(Fisica obj){
     super("FISICA");
     fs = obj;
@@ -32,6 +41,9 @@ public class InterfazFisica extends JFrame   {
     
     setVisible(false);
 }
+        /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI(){
         jlTexto = new JLabel("FISICA");
         jlTexto.setBounds(0, 0, 800, 80);
@@ -72,11 +84,18 @@ public class InterfazFisica extends JFrame   {
         add(jlImagen);
         
     }
+        /**
+     * Maneja el evento del botón "Cálculos", abre la ventana de cálculos y la hace visible.
+     */
     public void Evento_JbMovimiento(){
         INTERFAZSF INTERFAZSF = new INTERFAZSF(this);
         INTERFAZSF.setVisible(true);
     }
-
+    /**
+     * Método principal que crea una instancia de la clase InterfazFisica
+     * y la hace visible.
+     * @param args Los argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         InterfazFisica ej = new InterfazFisica(new Fisica(new MenuPrincipal()));
         ej.setVisible(true);

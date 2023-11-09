@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase la cual se crea el plano cartesiano y se grafican los vectores ingresados por el usuario
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import javax.swing.*;
@@ -5,7 +18,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
+/**
+ * Clase que representa una aplicación para graficar vectores en un plano cartesiano y calcular la suma de los mismos.
+ */
 public class GraficVectores extends JFrame {
     JButton jbVolver;
     Fisica fs;
@@ -19,7 +34,11 @@ public class GraficVectores extends JFrame {
     private JTextField xField; // Campo de entrada para la coordenada X
     private JTextField yField; // Campo de entrada para la coordenada Y
     private int gridSize = 10; // Tamaño de la cuadrícula
-
+    /**
+     * Constructor de la clase GraficVectores.
+     *
+     * @param obj Objeto de la clase Fisica.
+     */
     public GraficVectores(Fisica obj) {
         setTitle("Plano Cartesiano");
         fs = obj;
@@ -149,7 +168,11 @@ public class GraficVectores extends JFrame {
             g.drawString(coords, x2, y2 - 5);
         }
     }
-
+    /**
+     * Método de entrada principal para la aplicación GraficVectores.
+     *
+     * @param args Argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
        SwingUtilities.invokeLater(() -> {
             GraficVectores frame = new GraficVectores(new Fisica(new MenuPrincipal()));
@@ -157,6 +180,9 @@ public class GraficVectores extends JFrame {
         });
       
     }
+        /**
+     * Método para manejar el evento del botón "Volver".
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
@@ -164,14 +190,21 @@ public class GraficVectores extends JFrame {
     }
 
 }
-
+/**
+ * Clase que representa un vector en un plano cartesiano.
+ */
 class Vector {
 
     private double startX;
     private double startY;
     private double endX;
     private double endY;
-
+    /**
+     * Constructor de la clase Vector.
+     *
+     * @param x Coordenada X del vector.
+     * @param y Coordenada Y del vector.
+     */
     public Vector(double x, double y) {
         this.startX = 0;
         this.startY = 0;
@@ -196,6 +229,13 @@ class Vector {
     }
 
     // Método estático para sumar varios vectores
+    
+        /**
+     * Método estático para sumar varios vectores y obtener un nuevo vector como resultado.
+     *
+     * @param vectors Lista de vectores a sumar.
+     * @return Vector resultante de la suma de los vectores.
+     */
     public static Vector sum(ArrayList<Vector> vectors) {
         double sumX = 0;
         double sumY = 0;

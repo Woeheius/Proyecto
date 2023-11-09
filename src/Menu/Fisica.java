@@ -1,4 +1,16 @@
-
+/**
+ * Propósito:Clase la cual se mostrara el menu de el area de fisica
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -9,7 +21,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
-
+/**
+ * Clase que representa la ventana del área de Física.
+ */
 public class Fisica extends JFrame {
 
    MenuPrincipal mp;
@@ -18,7 +32,11 @@ public class Fisica extends JFrame {
     InterfazFisica i = new InterfazFisica(this);
     
     
-
+    /**
+     * Constructor de la clase Fisica.
+     *
+     * @param obj Objeto de la clase MenuPrincipal.
+     */
     public Fisica(MenuPrincipal obj) {
         super("Area de Fisica");
         mp = obj;
@@ -44,7 +62,9 @@ public class Fisica extends JFrame {
     }
 
     
-
+    /**
+     * Método para crear la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/fisicaa.png"));
@@ -91,22 +111,31 @@ public class Fisica extends JFrame {
            });
         add(jbJuego);
     }
-
+    /**
+     * Método para manejar el evento del botón "Vectores".
+     */
     public void evento_jbVectores() {
         Vectores ve = new Vectores(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Método para manejar el evento del botón "Volver al menú principal".
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-
+    /**
+     * Método para manejar el evento del botón "Graficadora".
+     */
     public void evento_jbGraficadora() {
         g.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+        /**
+     * Método para manejar el evento del botón "Juego".
+     */
     public void evento_jbJuego() {
         i.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal

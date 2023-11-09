@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase donde se mostrara informacion sobre la matriz inversa
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -16,13 +29,19 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * La clase `d_inversa` representa una ventana que proporciona información sobre matrices inversas.
+ * Permite al usuario aprender sobre el concepto de matriz inversa y los métodos para calcularla.
+ */
 public final class d_inversa extends JFrame {
 
     JEditorPane editor;
     Alg al;
     JButton jbVolver;
-
+    /**
+     * Constructor de la clase `d_inversa`.
+     * @param obj Un objeto de la clase `Alg` que representa la ventana principal.
+     */
     public d_inversa(Alg obj) {
         super("Matriz Inversa");
         al = obj;
@@ -41,7 +60,9 @@ public final class d_inversa extends JFrame {
 
         setVisible(true);
     }
-
+    /**
+     * Crea la interfaz de usuario de la ventana.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Matriz Inversa");
@@ -119,7 +140,9 @@ public final class d_inversa extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
-
+    /**
+     * Maneja el evento de "Volver" cuando se presiona el botón.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

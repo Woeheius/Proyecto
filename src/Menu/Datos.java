@@ -1,17 +1,15 @@
-/*
-Proposito:
-Clase en la cual el usuario ingresara sus datos
-Autores:
-Angie Natalia Cobo Vasquez
-Juan Diego Rodriguez Ortiz
-Sebastian Henao Gamboa
-Santiago Ospina Gonzalez
-
-Version:
-2.0
-Fecha ultima actualizacion:
-08/11/2023
-Version JDK:
+/**
+ * Propósito:Clase en la cual el usuario ingresara sus datos
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
  */
 package Menu;
 
@@ -27,7 +25,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
-
+/**
+ * Clase que representa la ventana "Datos".
+ */
 public class Datos extends JFrame {
 
     JTextField jtNombre, jtCorreo, jtCodigo;
@@ -35,7 +35,9 @@ public class Datos extends JFrame {
     JButton jbVolver, jbLimpiar, jbGuardar;
     Cuestionario_ods preg;
     private static final long serialVersionUID = 1L;
-
+    /**
+     * Constructor de la clase Datos que crea una ventana para ingresar datos.
+     */
     public Datos() {
         super("Ingreso datos");
         setSize(600, 350);
@@ -48,7 +50,9 @@ public class Datos extends JFrame {
         crearGUI();
         setVisible(false);
     }
-
+    /**
+     * Crea la interfaz gráfica de la ventana de ingreso de datos.
+     */
     public void crearGUI() {
         JLabel jlNombre = new JLabel("Nombre y apellido");
         jlNombre.setBounds(40, 30, 120, 30);
@@ -116,7 +120,9 @@ public class Datos extends JFrame {
         jbVolver.setBounds(360, 270, 150, 30);
         add(jbVolver);
     }
-
+    /**
+     * Maneja el evento de limpiar los campos de ingreso de datos.
+     */
     private void evento_jbLimpiar() { //si se da click en el boton limpiar, los jtextField quedaran en balco y el combobox en su primera pocision
         jtNombre.setText("");
         jtCodigo.setText("");
@@ -124,7 +130,9 @@ public class Datos extends JFrame {
         jcCarrera.setSelectedIndex(0);
         jtNombre.requestFocus();
     }
-
+    /**
+     * Maneja el evento de guardar los datos ingresados en un archivo CSV.
+     */
     private void evento_jbGuardar() { //se guardan los datos ingresados en un archivo .csv
         if (jtNombre.getText().isEmpty() || jtCodigo.getText().isEmpty() || jtCorreo.getText().isEmpty() || jcCarrera.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "DEBES COMPLETAR TODOS LOS CAMPOS", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -182,14 +190,19 @@ public class Datos extends JFrame {
 
         }
     }
-
+    /**
+     * Maneja el evento de volver al menú principal.
+     */
     private void evento_jbVolver() {
         MenuPrincipal mp = new MenuPrincipal();
         setVisible(false); // ocultar la ventana 
         dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-
+    /**
+     * Método principal para ejecutar la ventana de ingreso de datos.
+     * @param args Los argumentos de la línea de comandos (no se utilizan en este caso).
+     */
     public static void main(String[] args) {
         Datos d = new Datos();
         d.setVisible(true);

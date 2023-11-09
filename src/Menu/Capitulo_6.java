@@ -1,3 +1,17 @@
+/**
+ * Propósito: Clase que representa el capitulo medicion de la pobreza a nivel mundial.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/11/2023
+ * Versión JDK: 12
+ */
+
 package Menu;
 
 import java.awt.Color;
@@ -16,14 +30,20 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana del "Capítulo 6".
+ */
 public final class Capitulo_6 extends JFrame {
 
     JEditorPane editor;
     Capitulo_6 cap6;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_6,jbsig,jbant;
-
+    /**
+     * Constructor de la clase Capitulo_6.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_6(Capitulos obj) {
         super("Capitulo 6");
         ca = obj;
@@ -42,7 +62,9 @@ public final class Capitulo_6 extends JFrame {
 
         setVisible(false);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Capitulo 6");
@@ -102,7 +124,7 @@ editor.setText(
     + "            <p><a href=\"https://www.fundacioncarolina.es/wp-content/uploads/2020/05/DT_FC_Especial2.pdf\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://ayudaenaccion.org/blog/solidaridad/como-se-mide-la-pobreza/\">Enlace 3</a></p>\n"
     + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+    + "            <p><a href=\"https://youtu.be/VcRN2H-rPu0?si=hbtvCcbovq0Pq-zR\">VIDEO</a></p>\n"
             
     + "        </font>\n"
     + "    </body>\n"
@@ -130,7 +152,9 @@ editor.setText(
         add(js);
 
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
@@ -141,11 +165,17 @@ editor.setText(
         cap6.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 7" y ocultar la ventana actual.
+     */
         public void evento_jbsig(){
         Capitulo_7 Capitulo_7 = new Capitulo_7(ca);
         Capitulo_7.setVisible(true);
         setVisible(false);
     }
+            /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 5" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_5 Capitulo_5 = new Capitulo_5(ca);
         Capitulo_5.setVisible(true);

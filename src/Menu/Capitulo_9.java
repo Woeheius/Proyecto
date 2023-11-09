@@ -1,3 +1,18 @@
+/**
+ * Propósito: Clase que representa el capitulo sobre los desafios que se han enfrentado al intentar
+ * implementar el ODS 1 en el mundo.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/11/2023
+ * Versión JDK: 12
+ */
+
 package Menu;
 
 import java.awt.Color;
@@ -16,14 +31,20 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana del "Capítulo 9".
+ */
 public final class Capitulo_9 extends JFrame {
 
     JEditorPane editor;
     Capitulo_9 cap9;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_9,jbsig,jbant;
-
+    /**
+     * Constructor de la clase Capitulo_9.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_9(Capitulos obj) {
         super("Capitulo 9");
         ca = obj;
@@ -42,7 +63,9 @@ public final class Capitulo_9 extends JFrame {
 
         setVisible(false);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Capitulo 9");
@@ -101,7 +124,7 @@ editor.setText(
     + "            <p><a href=\"https://revista.une.org/11/ods-1-fin-de-la-pobreza.html\">Enlace 2</a></p>\n"
     + "            <p><a href=\"http://www.lineaverdehuelva.com/lv/consejos-ambientales/conciencia-ambientual/Que-es-el-desarrollo-sostenible.asp\">Enlace 3</a></p>\n"
     + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+    + "            <p><a href=\"https://www.youtube.com/live/bgC83WIVFhI?si=TdXW5G3dYhKkOE3-\">VIDEO</a></p>\n"
             
     + "        </font>\n"
     + "    </body>\n"
@@ -129,22 +152,32 @@ editor.setText(
         add(js);
 
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana
         dispose(); // destruir la ventana 
         ca.setVisible(true); // mostrar la ventana 
     }
-
+    /**
+     * Maneja el evento del botón "Capitulo_9" para abrir la ventana del "Capítulo 9" y ocultar la ventana actual. (Nota: El nombre del método y su funcionalidad parecen estar duplicados).
+     */
     public void evento_jbCapitulo_6() {
         cap9.setVisible(true);
         setVisible(false); // ocultar la ventana 
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 10" y ocultar la ventana actual.
+     */
         public void evento_jbsig(){
         Capitulo_10 Capitulo_10 = new Capitulo_10(ca);
         Capitulo_10.setVisible(true);
         setVisible(false);
     }
+            /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 8" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_8 Capitulo_8 = new Capitulo_8(ca);
         Capitulo_8.setVisible(true);

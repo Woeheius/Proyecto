@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase la cual se mostrara el menu de matematicas y sus funciones 
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -7,14 +20,22 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
+/**
+ * Esta clase representa la ventana principal del módulo de Matemáticas.
+ * Permite acceder a diversas funcionalidades relacionadas con matemáticas.
+ */
 public class Matematicas extends JFrame {
 
     MenuPrincipal mp;
     JButton jbVolver, jbDeri, jbFun, jbCalculadoraDerivadas, jbGrafi;
     CalculadoraDerivadas c = new CalculadoraDerivadas(this);
     VentanaGraficar ven = new VentanaGraficar(this);
-
+    /**
+     * Constructor de la clase Matematicas.
+     *
+     * @param obj Instancia de la clase MenuPrincipal.
+     *            Representa la ventana principal del programa.
+     */
     public Matematicas(MenuPrincipal obj) {
         super("Area de Matematicas");
         mp = obj;
@@ -33,7 +54,11 @@ public class Matematicas extends JFrame {
 
         setVisible(true);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana de Matemáticas.
+     * Incluye botones para acceder a las funcionalidades de Funciones, Derivadas,
+     * Calculadora de Derivadas y Graficadora, así como un botón para volver al menú principal.
+     */
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/calcula.png"));
@@ -88,27 +113,42 @@ public class Matematicas extends JFrame {
         });
         add(jbGrafi);
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Funciones".
+     * Abre una nueva ventana de Funciones y oculta la ventana de Matemáticas.
+     */
     public void evento_jbFun() {
         Fun fu = new Fun(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Derivadas".
+     * Abre una nueva ventana de Derivadas y oculta la ventana de Matemáticas.
+     */
     public void evento_jbDeri() {
         Deri de = new Deri(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Calculadora".
+     * Abre una nueva ventana de Calculadora de Derivadas y oculta la ventana de Matemáticas.
+     */
     public void evento_jbCalculadoraDerivadas() {
         c.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Volver al menú principal".
+     * Oculta la ventana de Matemáticas y muestra la ventana del menú principal.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Graficadora".
+     * Abre una nueva ventana de Graficadora y oculta la ventana de Matemáticas.
+     */
     public void evento_jbGraficadora() {
         ven.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal

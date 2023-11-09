@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase donde se mostrara la interfaz de la graficadora de funciones
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 import java.awt.Color;
 import java.awt.Font;
@@ -9,18 +22,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-
+/**
+ * La clase VentanaGraficar se utiliza para graficar funciones matemáticas en una ventana de Java Swing.
+ */
 public class VentanaGraficar extends JFrame {
     
     Matematicas mt;
     JTextField Texfuncion;
     JButton jbVolver, graficar, limpiar,jbpuntos;
     JPanel panel;
-
+    /**
+     * Constructor de la clase VentanaGraficar.
+     * @param obj Una instancia de la clase Matematicas para gestionar la navegación.
+     */
     public VentanaGraficar(Matematicas obj) {
         super("Graficar Funciones");
         mt = obj;
-        setSize(600, 540); // Tamaño reducido para ajustar a los botones y el plano
+        setSize(600, 540);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -32,7 +50,9 @@ public class VentanaGraficar extends JFrame {
         setIconImage(im);
         crearGUI();
     }
-
+    /**
+     * Crea la interfaz gráfica de la ventana de graficación de funciones.
+     */
     public void crearGUI() {
         panel = new JPanel();
         panel.setLayout(null);
@@ -54,8 +74,8 @@ public class VentanaGraficar extends JFrame {
             String funcion = Texfuncion.getText();
             // Manda el panel
             Plano p = new Plano(panel);
-            // Manda la función y la elección del color
-            p.GraficarFuncion(funcion, null); // No se necesita el JComboBox
+            // Manda la función
+            p.GraficarFuncion(funcion); 
         });
         add(graficar);
 
@@ -82,6 +102,9 @@ public class VentanaGraficar extends JFrame {
         jbpuntos.setBounds(390, 420, 165, 20);
         add(jbpuntos);
     }
+        /**
+     * Evento al presionar el botón "Volver".
+     */
      public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

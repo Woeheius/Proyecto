@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase la cual se mostrara la interfaz para obtener la inversa de una matriz y se hace el proceso.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import javax.swing.*;
@@ -7,25 +20,26 @@ import java.awt.event.ActionListener;
 import static java.nio.file.Files.size;
 import java.text.DecimalFormat;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
-
+/**
+ * Clase que representa la ventana de cálculo de la inversa de una matriz.
+ * Permite al usuario ingresar una matriz y calcula su inversa utilizando el método de Gauss-Jordan.
+ */
 public class Inversa_Matriz extends JFrame {
 
     JButton jbVolver;
     Alg al;
+    JComboBox<Integer> nComboBox;
 
-/*Se declaran las variables de clase que se utilizarán en toda la clase, 
-    como botones, matrices, campos de entrada y áreas de texto*/
-    
     int n; // Tamaño de la matriz
     double[][] a; // Matriz a la que se calculará la inversa
     double[][] invA; // Matriz inversa
     private JTextField[][] matrixFields; // Campos de entrada para la matriz
     private JTextArea resultArea; // Área para mostrar los resultados
     private DecimalFormat decimalFormat; // Formateador de números decimales
-
-     
-  /*Este es el constructor de la clase Inversa_Matriz, que toma un objeto de tipo Alg como argumento. 
-    La clase Alg parece estar relacionada con el manejo de la interfaz de usuario.*/
+    /**
+     * Constructor de la clase Inversa_Matriz.
+     * @param obj La ventana principal de la aplicación.
+     */
     public Inversa_Matriz(Alg obj) {
         super("Inversa de una Matriz");
         al = obj;
@@ -33,11 +47,8 @@ public class Inversa_Matriz extends JFrame {
         n = size;
         a = new double[n][n];
         invA = new double[n][n];
-    
-/*En esta sección, se configura la ventana de la aplicación. Se establece el título, el tamaño, la ubicación, la 
-imagen del ícono y otras propiedades de la ventana. También se inicializa la matriz a y invA con el tamaño especificado.*/
-        
-setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setSize(700, 600);
         setLocation(330, 70);
         setResizable(false);
@@ -48,13 +59,23 @@ setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         decimalFormat = new DecimalFormat("#.##"); // Establece el formato a dos decimales
 
-        /* Se crean campos de entrada en forma de una matriz de JTextField para que el usuario 
-        pueda ingresar los coeficientes de la matriz. Estos campos se organizan en una cuadrícula utilizando un panel.*/
-        
+        // Crear una matriz de campos de texto para ingresar los coeficientes
         JPanel matrixPanel = new JPanel(new GridLayout(n, n));
         matrixFields = new JTextField[n][n];
-     
-       
+
+        // Agregar un JComboBox para seleccionar "n"
+    nComboBox = new JComboBox<>(new Integer[] { 2, 3, 4, 5 });
+    nComboBox.setSelectedItem(n);
+    nComboBox.setBounds(420, 545, 110, 20);
+    nComboBox.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            n = (int) nComboBox.getSelectedItem();
+            rebuildUI();
+        }
+    });
+
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 matrixFields[i][j] = new JTextField(5);
@@ -62,10 +83,9 @@ setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
             }
         }
 
-        /*Se crea un botón llamado "Calcular Inversa" que, cuando se hace clic, ejecuta una serie de acciones, 
-        como leer la matriz desde los campos de entrada, calcular la inversa y mostrar el resultado.*/
-        
+        // Crear un botón para calcular la inversa
         JButton inverseButton = new JButton("Calcular Inversa");
+        inverseButton.setBounds(220, 545, 110, 20);
         inverseButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 readMatrix(); // Leer la matriz desde los campos de texto
@@ -81,8 +101,7 @@ setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         });
         add(jbVolver);
 
-        /* Se crea un área de texto que se utilizará para mostrar los resultados de los cálculos, 
-        y se configura como no editable para que el usuario no pueda modificarlo*/
+        // Crear un área de texto para mostrar los resultados
         resultArea = new JTextArea(5, 20);
         resultArea.setEditable(false);
 
@@ -90,15 +109,17 @@ setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(inverseButton);
 
-        /*En esta sección, se organizan y agregan todos los componentes (matriz de entrada, botones y área de resultados) 
-        en la ventana utilizando un diseño de BorderLayout.*/
+        // Agregar los componentes a la ventana
+        add(nComboBox);
         add(matrixPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
         add(resultArea, BorderLayout.NORTH);
     }
 
-    /*Este método se utiliza para leer los valores ingresados 
-    por el usuario en los campos de entrada y almacenarlos en la matriz a.*/
+    // Leer la matriz de los campos de texto
+        /**
+     * Lee los valores de la matriz desde los campos de texto en la interfaz.
+     */
     public void readMatrix() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -111,8 +132,10 @@ setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         }
     }
 
-    
-    //Este método realiza los cálculos para calcular la inversa de la matriz utilizando el método de Gauss-Jordan.
+
+    /**
+     * Calcula la inversa de la matriz utilizando el método de Gauss-Jordan.
+     */
 public void calculateInverse() {
     // Copia la matriz original a la matriz de trabajo 'invA'
     for (int i = 0; i < n; i++) {
@@ -155,7 +178,9 @@ public void calculateInverse() {
 }
 
 
-    // Este método muestra la inversa calculada en el área de texto de resultados con un formato específico.
+    /**
+     * Muestra la matriz inversa en el área de resultados con formato.
+     */
     public void displayInverse() {
         resultArea.setText("Inversa de la Matriz:\n");
         for (int i = 0; i < n; i++) {
@@ -165,18 +190,77 @@ public void calculateInverse() {
             resultArea.append("\n");
         }
     }
-/*El método main es la entrada principal de la aplicación. 
- Se crea una instancia de Inversa_Matriz y se hace visible para que el usuario pueda interactuar con la ventana.*/
+    /**
+     * Método principal que crea una instancia de la clase Inversa_Matriz
+     * y la hace visible.
+     * @param args Los argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
        SwingUtilities.invokeLater(() -> {
             Inversa_Matriz frame = new Inversa_Matriz(new Alg(new MenuPrincipal()));
             frame.setVisible(true);
         });
     }
-//Este método se ejecuta cuando se presiona el botón "Volver".
+    /**
+     * Maneja el evento del botón "Volver" para regresar al menú principal.
+     */
     public void evento_jbVolver() {
-        setVisible(false); // ocultar la ventana 
-        dispose(); // destruir la ventana 
-        al.setVisible(true); // mostrar la ventana 
+        setVisible(false); // ocultar la ventana de Matematicas
+        dispose(); // destruir la ventana de Matematicas
+        al.setVisible(true); // mostrar la ventana de menu principal 
     }
+/**
+ * Reconstruye la interfaz gráfica de la ventana cuando se cambia el valor de "n", 
+ * actualizando los campos de entrada para la matriz y los componentes relacionados. 
+ * Permite al usuario cambiar el tamaño de la matriz y preparar la interfaz para 
+ * realizar nuevos cálculos de la inversa.
+ */
+private void rebuildUI() {
+    getContentPane().removeAll(); // Elimina todos los componentes
+    getContentPane().invalidate();
+    getContentPane().revalidate();
+    getContentPane().repaint();
+
+    // Ahora, vuelva a construir la interfaz con el nuevo valor de "n"
+    int size = (int) nComboBox.getSelectedItem(); // Nuevo valor de "n"
+    n = size;
+    a = new double[n][n];
+    invA = new double[n][n];
+
+    JPanel matrixPanel = new JPanel(new GridLayout(n, n));
+    matrixFields = new JTextField[n][n];
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            matrixFields[i][j] = new JTextField(5);
+            matrixPanel.add(matrixFields[i][j]);
+        }
+    }
+        JButton inverseButton = new JButton("Calcular Inversa");
+        inverseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                readMatrix();
+                calculateInverse();
+                displayInverse();
+            }
+        });
+
+        jbVolver = new JButton("Volver");
+        jbVolver.setBounds(550, 545, 110, 20);
+        jbVolver.addActionListener((e) -> {
+            evento_jbVolver();
+        });
+                JPanel buttonPanel = new JPanel();
+        buttonPanel.add(inverseButton);
+
+        add(jbVolver);
+        add(nComboBox);
+        add(matrixPanel, BorderLayout.CENTER);
+                add(buttonPanel, BorderLayout.SOUTH);
+        add(new JScrollPane(resultArea), BorderLayout.NORTH);
+    revalidate(); // Vuelve a validar la ventana
+    repaint(); // Vuelve a pintar la ventana
+}
+
 }

@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase en la cual se habla sobre la derivada y sus aplicaciones
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -16,13 +29,19 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana de "Deri".
+ */
 public final class Deri extends JFrame {
 
     JEditorPane editor;
     Matematicas ma;
     JButton jbVolver;
-
+    /**
+     * Constructor de la clase Deri que muestra información sobre las aplicaciones de las derivadas.
+     *
+     * @param obj Objeto de la clase Matematicas.
+     */
     public Deri(Matematicas obj) {
         super("Derivadas");
         ma = obj;
@@ -41,7 +60,9 @@ public final class Deri extends JFrame {
 
         setVisible(true);
     }
-
+    /**
+     * Crea la interfaz gráfica para mostrar información sobre las aplicaciones de las derivadas.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Derivadas");
@@ -109,7 +130,9 @@ public final class Deri extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
-
+    /**
+     * Maneja el evento de volver al menú principal.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

@@ -1,3 +1,16 @@
+/**
+ * Propósito: Clase que representa el capitulo sobre el ODS 1 en america latina.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/10/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -16,14 +29,20 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana del "Capítulo 10".
+ */
 public final class Capitulo_10 extends JFrame {
 
     JEditorPane editor;
     Capitulo_10 cap10;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_10,jbsig,jbant,jbencuesta;
-
+    /**
+     * Constructor de la clase Capitulo_10.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_10(Capitulos obj) {
         super("Capitulo 10");
         ca = obj;
@@ -42,7 +61,9 @@ public final class Capitulo_10 extends JFrame {
 
         setVisible(false);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Capitulo 10");
@@ -142,7 +163,9 @@ editor.setText(
         add(js);
 
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana 
         dispose(); // destruir la ventana 
@@ -153,20 +176,29 @@ editor.setText(
         cap10.setVisible(true);
         setVisible(false); // ocultar la ventana 
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 1" y ocultar la ventana actual.
+     */
     public void evento_jbsig(){
         Capitulo_1 Capitulo_1 = new Capitulo_1(ca);
         Capitulo_1.setVisible(true);
         setVisible(false);
     }
+        /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 9" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_9 Capitulo_9 = new Capitulo_9(ca);
         Capitulo_9.setVisible(true);
         setVisible(false);
     }
-        public void evento_jbEncuesta() {
-        Datos d = new Datos();
+        /**
+     * Maneja el evento del botón "Encuesta" para abrir la ventana de Datos y ocultar la ventana actual.
+     */
+    public void evento_jbEncuesta() {
+        Cuestionario_ods preg = new Cuestionario_ods("CUESTIONARIO DE HUMANIDADES");
         setVisible(false); // ocultar la ventana de menu principal
-        d.setVisible(true);
+        preg.setVisible(true);
     }
 
 }

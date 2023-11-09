@@ -1,15 +1,15 @@
-/*
-Proposito: Menu que contiene todos los botones y apartados de cada asignatura
-que trata la aplicacion.
-Autores:
-Angie Natalia Cobo Vasquez
-Juan Diego Rodriguez Ortiz
-Sebastian Henao Gamboa
-Santiago Ospina Gonzalez
-
-Version: 2.0
-Fecha ultima actualizacion:10/10/2023 
-Version JDK:
+/**
+ * Propósito:Menu que contiene todos los botones y apartados de cada asignatura
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
  */
 package Menu;
 
@@ -22,11 +22,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
-
+/**
+ * Clase que representa la ventana del Menú Principal de la aplicación.
+ * Proporciona acceso a diferentes áreas y funcionalidades del programa.
+ */
 public class MenuPrincipal extends JFrame {
 
     JButton jbMate, jbFisica, jbHuma, jbTgs, jbAlg, jbCons, jbSem, jbInf;
-
+    /**
+     * Constructor de la clase MenuPrincipal.
+     * Crea una instancia de la ventana del Menú Principal.
+     */
     public MenuPrincipal() {
         super("Proyecto Integrador");
         setSize(900, 600);
@@ -43,7 +49,10 @@ public class MenuPrincipal extends JFrame {
 
         setVisible(true);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica del Menú Principal.
+     * Proporciona botones para acceder a diferentes áreas y funcionalidades.
+     */
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/aaaa.png"));
@@ -128,52 +137,84 @@ public class MenuPrincipal extends JFrame {
         add(jbInf);
 
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Física".
+     * Muestra la ventana de Física y oculta la ventana del Menú Principal.
+     */
     public void evento_jbFisica() {
         Fisica fs = new Fisica(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Matemáticas".
+     * Muestra la ventana de Matemáticas y oculta la ventana del Menú Principal.
+     */
     public void evento_jbMate() {
         Matematicas mt = new Matematicas(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Humanidades".
+     * Muestra la ventana de Humanidades y oculta la ventana del Menú Principal.
+     */
     public void evento_jbHuma() {
         Humanidades hu = new Humanidades(this);
         setVisible(false); // ocultar la ventana de menu princip
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Teoría General de Sistemas".
+     * Muestra la ventana de Teoría General de Sistemas y oculta la ventana del Menú Principal.
+     */
     public void evento_jbTgs() {
         Tgs tg = new Tgs(this);
         setVisible(false); // ocultar la ventana de menu princip
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Álgebra Lineal".
+     * Muestra la ventana de Álgebra Lineal y oculta la ventana del Menú Principal.
+     */
     public void evento_jbAlg() {
         Alg al = new Alg(this);
         setVisible(false); // ocultar la ventana de menu princip
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Constitución Política".
+     * Muestra la ventana de Constitución Política y oculta la ventana del Menú Principal.
+     */
     public void evento_jbCons() {
         Cons co = new Cons(this);
         setVisible(false); // ocultar la ventana de menu princip
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Seminario Universidad".
+     * Muestra la ventana de Seminario Universidad y oculta la ventana del Menú Principal.
+     */
     public void evento_jbSem() {
         Sem se = new Sem(this);
         setVisible(false); // ocultar la ventana de menu princip
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Información Equipo".
+     * Muestra la ventana de Información del Equipo y oculta la ventana del Menú Principal.
+     */
     public void evento_jbInf() {
         Inf ia = new Inf(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Calculadora de Derivadas".
+     * Muestra la Calculadora de Derivadas y oculta la ventana del Menú Principal.
+     */
     public void evento_jbCalculadoraDerivadas() {
         CalculadoraDerivadas c = new CalculadoraDerivadas(new Matematicas(this));
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Método principal que inicia la aplicación.
+     * Crea una instancia de la clase MenuPrincipal para mostrar el Menú Principal.
+     *
+     * @param args Los argumentos de la línea de comandos (no se utilizan en esta aplicación).
+     */
     public static void main(String[] args) {
         //setDefaultLookAndFeelDecorated(true);
         String look = "";

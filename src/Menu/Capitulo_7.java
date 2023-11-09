@@ -1,3 +1,17 @@
+/**
+ * Propósito: Clase que representa el capitulo sobre el impacto de la pandemia en la pobreza.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/11/2023
+ * Versión JDK: 12
+ */
+
 package Menu;
 
 import java.awt.Color;
@@ -16,6 +30,9 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+/**
+ * Clase que representa la ventana del "Capítulo 7".
+ */
 
 public final class Capitulo_7 extends JFrame {
 
@@ -23,7 +40,11 @@ public final class Capitulo_7 extends JFrame {
     Capitulo_7 cap7;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_7,jbsig,jbant;
-
+   /**
+     * Constructor de la clase Capitulo_7.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_7(Capitulos obj) {
         super("Capitulo 7");
         ca = obj;
@@ -131,7 +152,9 @@ editor.setText(
         add(js);
 
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
@@ -142,11 +165,17 @@ editor.setText(
         cap7.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 8" y ocultar la ventana actual.
+     */
     public void evento_jbsig(){
         Capitulo_8 Capitulo_8 = new Capitulo_8(ca);
         Capitulo_8.setVisible(true);
         setVisible(false);
     }
+        /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 6" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_6 Capitulo_6 = new Capitulo_6(ca);
         Capitulo_6.setVisible(true);

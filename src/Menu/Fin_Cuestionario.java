@@ -1,17 +1,15 @@
-/*
-Proposito:
-Clase la cual se mostrara al finalizar el cuestionario donde el usuario podra visualizar el ranking y podra volver a responder las preguntas
-Autores:
-Angie Natalia Cobo Vasquez
-Juan Diego Rodriguez Ortiz
-Sebastian Henao Gamboa
-Santiago Ospina Gonzalez
-
-Version:
-2.0
-Fecha ultima actualizacion:
-08/11/2023
-Version JDK:
+/**
+ * Propósito:Clase la cual se mostrara al finalizar el cuestionario donde el usuario podra visualizar el ranking y podra volver a responder las preguntas
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
  */
 package Menu;
 
@@ -22,13 +20,18 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
+/**
+ * Esta clase representa la ventana final del cuestionario de humanidades. Aquí, el usuario puede ver su calificación,
+ * volver a jugar, guardar su calificación y ver el ranking de calificaciones.
+ */
 public class Fin_Cuestionario extends JFrame {
 
     JButton jb_Volver, jb_Calificar, jb_Jugar, jb_guardar, jb_Ranking;
     JTextField Calif;
     int calificacion;
-
+    /**
+     * Constructor de la ventana de fin de cuestionario.
+     */
     public Fin_Cuestionario() {
         super("CUESTIONARIO DE HUMANIDADES");
         setSize(700, 500);
@@ -41,7 +44,9 @@ public class Fin_Cuestionario extends JFrame {
         crearGUI();
         setVisible(false);
     }
-
+    /**
+     * Crea la interfaz gráfica de la ventana de fin de cuestionario.
+     */
     public void crearGUI() {
         JLabel jlFin = new JLabel("Has termanidao el cuestionario, gracias por participar");
         jlFin.setBounds(150, 10, 350, 150);
@@ -96,21 +101,27 @@ public class Fin_Cuestionario extends JFrame {
         jb_Ranking.setBounds(220, 300, 150, 30);
         add(jb_Ranking);
     }
-
+    /**
+     * Maneja el evento de volver a jugar el cuestionario.
+     */
     private void evento_jbJugar() {
         Cuestionario_ods preg = new Cuestionario_ods("CUESTIONARIO DE HUMANIDADES");
         setVisible(false);
         dispose();
         preg.setVisible(true);
     }
-
+    /**
+     * Maneja el evento de volver al menú principal.
+     */
     private void evento_jbVolver() {
         MenuPrincipal mp = new MenuPrincipal();
         setVisible(false); // ocultar la ventana 
         dispose(); // destruir la ventana 
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-
+    /**
+     * Maneja el evento de calificar el cuestionario.
+     */
     private void evento_jbCalificar() {
         Calif.setEditable(true);
         jb_Jugar.setEnabled(false);
@@ -118,6 +129,9 @@ public class Fin_Cuestionario extends JFrame {
         jb_Ranking.setEnabled(false);
         jb_guardar.setEnabled(true);
     }
+    /**
+     * Maneja el evento de guardar la calificación del usuario.
+     */
 
     private void evento_jbguardar() { //se guarda la calificacion que de el usuario
         if (Calif.getText().isEmpty()) {
@@ -154,7 +168,9 @@ public class Fin_Cuestionario extends JFrame {
         }
 
     }
-
+    /**
+     * Maneja el evento de ver el ranking de calificaciones.
+     */
     private void evento_jbRanking() {
         Ranking r = new Ranking();
         setVisible(false); //ocultar la ventana

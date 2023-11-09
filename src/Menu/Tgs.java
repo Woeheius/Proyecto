@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase donde se mostrara informacion sobre conceptos de TGS y su aplicacion en el proyecto
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -16,13 +29,18 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * La clase Tgs se utiliza para mostrar información sobre un área de "Teoría General de Sistemas" en una ventana de JavaSwing.
+ */
 public class Tgs extends JFrame {
 
     JEditorPane editor;
     MenuPrincipal mp;
     JButton jbVolver;
-
+    /**
+     * Constructor de la clase Tgs.
+     * @param obj Una instancia de la clase MenuPrincipal para gestionar la navegación.
+     */
     public Tgs(MenuPrincipal obj) {
         super("Area de Teoria General de Sistemas");
         mp = obj;
@@ -41,7 +59,9 @@ public class Tgs extends JFrame {
 
         setVisible(true);
     }
-
+    /**
+     * Crea la interfaz gráfica de la ventana de información sobre "Teoría General de Sistemas".
+     */
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/laptop.png"));
@@ -70,7 +90,7 @@ public class Tgs extends JFrame {
                 + "<head>"
                 + "<style>"
                 + "body {"
-                + "  background-color: #2E2E2E; /* Color de fondo proporcionado (#2E2E2E) */"
+                + "  background-color: #181818; /* Color de fondo proporcionado (#2E2E2E) */"
                 + "  color: white; /* Color del texto en blanco */"
                 + "  font-family: Arial, sans-serif;"
                 + "  font-size: 14px;"
@@ -185,7 +205,9 @@ public class Tgs extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
-
+    /**
+     * Evento al presionar el botón "Volver al menú principal".
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

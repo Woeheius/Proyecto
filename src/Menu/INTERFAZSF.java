@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase la cual se muestra la interfaz de fisica   
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import Menu.calculos;
@@ -15,7 +28,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-
+/**
+ * Clase que representa la ventana de un juego de Física con movimiento parabólico.
+ */
 public class INTERFAZSF extends JFrame   {
     JTextField jtEntero, jtEnter,jtTIEMPO;
     JLabel jlTexto, jlTextoImg, jlAltgra, jlAlcgra, jlPosixgra, jlPosiygra, jlRadianes;
@@ -25,7 +40,11 @@ public class INTERFAZSF extends JFrame   {
     InterfazFisica i; 
   
    
-    
+        /**
+     * Constructor de la clase INTERFAZSF.
+     *
+     * @param obj Objeto de la clase InterfazFisica.
+     */
 public INTERFAZSF(InterfazFisica obj){
     super("Juego - Fisica");
     i = obj;
@@ -166,7 +185,9 @@ public INTERFAZSF(InterfazFisica obj){
             public void actionPerformed(ActionEvent e) {
                 evento_jbLimpiar();
             }
-            
+                /**
+     * Método para manejar el evento del botón "Limpiar".
+     */
             private void evento_jbLimpiar() {
                 jtEntero.setText("");
                 jtEnter.setText("");
@@ -208,7 +229,9 @@ public INTERFAZSF(InterfazFisica obj){
         jpfg.setBackground(Color.black);
         add(jpfg);
     }
-
+    /**
+     * Método para manejar el evento del botón "Guardar".
+     */
     public void evento_jbGuardar(){
         calculos obj = new calculos();
         String entero = jtEntero.getText();
@@ -257,7 +280,11 @@ public INTERFAZSF(InterfazFisica obj){
        jlPosiygra.setForeground(Color.CYAN);
        
     }
-    
+       /**
+     * Método principal que inicia la aplicación.
+     *
+     * @param args Los argumentos de la línea de comandos (no se utilizan en este caso).
+     */ 
     public static void main(String[] args) {
         
         INTERFAZSF ej = new INTERFAZSF(new InterfazFisica(new Fisica()));

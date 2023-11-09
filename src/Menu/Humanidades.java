@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase la cual se mostrara el menu de el area de humanidades y sus botones.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -10,13 +23,19 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
-
+/**
+ * Clase que representa la ventana de la "Área de Humanidades" en una aplicación educativa.
+ */
 public final class Humanidades extends JFrame {
 
     MenuPrincipal mp;
     Inf inf;
     JButton jbVolver, jbCapitulos, jbEncuesta;
-
+    /**
+     * Constructor de la clase Humanidades.
+     *
+     * @param obj Objeto de la clase MenuPrincipal.
+     */
     public Humanidades(MenuPrincipal obj) {
         super("Area de Humanidades");
         mp = obj;
@@ -37,7 +56,9 @@ public final class Humanidades extends JFrame {
     }
 
 
-
+    /**
+     * Método para crear la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
         ImageIcon ic = new ImageIcon(
                 getClass().getResource("/imagenes/mundo.png"));
@@ -76,18 +97,24 @@ public final class Humanidades extends JFrame {
         });
         add(jbVolver);
     }
-
+    /**
+     * Método para manejar el evento del botón "Volver".
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
         mp.setVisible(true); // mostrar la ventana de menu principal 
     }
-
+    /**
+     * Método para manejar el evento del botón "Leer Capítulos".
+     */
     public void evento_jbCapitulos() {
         Capitulos ca = new Capitulos(this);
         setVisible(false); // ocultar la ventana de menu principal
     }
-
+    /**
+     * Método para manejar el evento del botón "Encuesta".
+     */
     public void evento_jbEncuesta() {
         Cuestionario_ods preg = new Cuestionario_ods("CUESTIONARIO DE HUMANIDADES");
         setVisible(false); // ocultar la ventana de menu principal

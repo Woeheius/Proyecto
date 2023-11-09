@@ -1,3 +1,18 @@
+/**
+ * Propósito: Clase que representa el capitulo que habla sobre los problemas en la implementacion de
+ * el ODS 1.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/11/2023
+ * Versión JDK: 12
+ */
+
 package Menu;
 
 import java.awt.Color;
@@ -16,14 +31,20 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana del "Capítulo 3".
+ */
 public final class Capitulo_3 extends JFrame {
 
     JEditorPane editor;
     Capitulo_3 cap3;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_3,jbsig,jbant;
-
+    /**
+     * Constructor de la clase Capitulo_3.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_3(Capitulos obj) {
         super("Capitulo 3");
         ca = obj;
@@ -42,7 +63,9 @@ public final class Capitulo_3 extends JFrame {
 
         setVisible(false);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Capitulo 3");
@@ -100,11 +123,11 @@ public final class Capitulo_3 extends JFrame {
                 + "        <br>\n"
                 + "        <br>\n"
                          + "            <p><strong>Recursos adicionales:</strong></p>\n"
- + "            <p><a href=\"https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/#:~:text=Los%20Objetivos%20de%20desarrollo%20sostenible%20son%20el%20plan%20maestro%20para,la%20paz%20y%20la%20justicia\">Enlace 1</a></p>\n"
-    + "            <p><a href=\"https://www.dnp.gov.co/Prensa_/Noticias/Paginas/colombia-avanza-en-mas-del-72-de-cumplimiento-de-los-ods.aspx\">Enlace 2</a></p>\n"
-    + "            <p><a href=\"https://minciencias.gov.co/sites/default/files/objetivos_de_desarrollo_sostenible_y_aporte_a_la_cti_v_3.5.pdf\">Enlace 3</a></p>\n"
+ + "            <p><a href=\"https://news.un.org/es/story/2019/10/1463292\">Enlace 1</a></p>\n"
+    + "            <p><a href=\"https://https://canaltrece.com.co/noticias/algunos-obstaculos-de-los-objetivos-de-desarrollo-sostenible-en-america-latina-y-colombia/\">Enlace 2</a></p>\n"
+    + "            <p><a href=\"https://canaltrece.com.co/noticias/algunos-obstaculos-de-los-objetivos-de-desarrollo-sostenible-en-america-latina-y-colombia/\">Enlace 3</a></p>\n"
     + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+    + "            <p><a href=\"https://youtu.be/CLq6tykbIrk?si=HSlf1spwZ5DYjIO-\">VIDEO</a></p>\n"
             
     + "        </font>\n"
     + "    </body>\n"
@@ -131,7 +154,9 @@ public final class Capitulo_3 extends JFrame {
         add(js);
 
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana
         dispose(); // destruir la ventana 
@@ -142,11 +167,17 @@ public final class Capitulo_3 extends JFrame {
         cap3.setVisible(true);
         setVisible(false); // ocultar la ventana 
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 4" y ocultar la ventana actual.
+     */
     public void evento_jbsig(){
         Capitulo_4 Capitulo_4 = new Capitulo_4(ca);
         Capitulo_4.setVisible(true);
         setVisible(false);
     }
+        /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 2" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_2 Capitulo_2 = new Capitulo_2(ca);
         Capitulo_2.setVisible(true);

@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase en la cual se realiza el cálculo para obtener la determinante de el sistema ingresado
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import javax.swing.*;
@@ -5,7 +18,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
-
+/**
+ * Clase que representa la ventana de "Determinantes".
+ */
 public class Determinantes extends JFrame {
 
     JButton jbVolver;
@@ -19,6 +34,12 @@ public class Determinantes extends JFrame {
     private DecimalFormat decimalFormat; // Formateador de números decimales
 
     // Constructor de la ventana
+         
+    /**
+     * Constructor de la ventana Determinantes.
+     *
+     * @param obj Objeto de la clase Alg, que permite volver al menú principal.
+     */
     public Determinantes(Alg obj) {
         super("Determinante de una Matriz");
         al = obj;
@@ -90,6 +111,11 @@ public class Determinantes extends JFrame {
 
     /*Este método se utiliza para leer los valores de la matriz desde los campos de entrada 
     y almacenarlos en la matriz a. Itera a través de los campos de entrada y maneja las entradas inválidas como cero.*/
+        
+    /**
+     * Lee los valores de la matriz desde los campos de entrada y los almacena en la matriz a.
+     * Itera a través de los campos de entrada y maneja las entradas inválidas como cero.
+     */
     public void readMatrix() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -104,6 +130,14 @@ public class Determinantes extends JFrame {
 
   /*Este método calcula el determinante de la matriz utilizando el método de eliminación de Gauss. Itera a través de la matriz y realiza operaciones para llevar 
   la matriz a una forma triangular superior, y luego calcula el determinante a partir de los elementos de la diagonal.*/
+        
+    /**
+     * Calcula el determinante de la matriz utilizando el método de eliminación de Gauss.
+     * Itera a través de la matriz y realiza operaciones para llevar la matriz a una forma triangular superior,
+     * y luego calcula el determinante a partir de los elementos de la diagonal.
+     *
+     * @return El valor del determinante calculado.
+     */
     public double calculateDeterminant() {
         double determinant = 1.0;
 
@@ -121,8 +155,12 @@ public class Determinantes extends JFrame {
         return determinant;
     }
 
-   /*Este método muestra el determinante calculado en 
-   el área de resultados con un formato específico. Utiliza el decimalFormat para mostrar el valor con dos decimales.*/
+     /**
+     * Muestra el determinante calculado en el área de resultados con un formato específico.
+     * Utiliza el decimalFormat para mostrar el valor con dos decimales.
+     *
+     * @param determinant El valor del determinante a mostrar.
+     */
     public void displayDeterminant(double determinant) {
         resultArea.setText("Determinante de la Matriz: " + decimalFormat.format(determinant));
     }
@@ -134,17 +172,20 @@ public class Determinantes extends JFrame {
             frame.setVisible(true); // Hacer visible la ventana
         });
     }
-
-    // Método para manejar el evento de volver
+   /**
+     * Maneja el evento de volver. Oculta la ventana actual y muestra la ventana del menú principal.
+     */
     public void evento_jbVolver() {
         setVisible(false);
         dispose(); // Ocultar y destruir la ventana actual
         al.setVisible(true); // Mostrar la ventana del menú principal
     }
 
-   /*Este método se utiliza para reconstruir la interfaz gráfica cuando cambia el valor seleccionado en el ComboBox. 
-     Elimina y recrea los campos de entrada y otros componentes 
-     según el nuevo tamaño de la matriz seleccionado. Luego, vuelve a validar y repintar la ventana para reflejar los cambios.*/
+      /**
+     * Reconstruye la interfaz gráfica cuando cambia el valor seleccionado en el ComboBox.
+     * Elimina y recrea los campos de entrada y otros componentes según el nuevo tamaño de la matriz seleccionado.
+     * Luego, vuelve a validar y repintar la ventana para reflejar los cambios.
+     */
     private void rebuildUI() {
         getContentPane().removeAll();
         getContentPane().invalidate();

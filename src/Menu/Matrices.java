@@ -1,3 +1,16 @@
+/**
+ * Propósito:Clase la cual se mostrara informacion sobre las matrices y que son.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 8/11/2023
+ * Versión JDK: 12
+ */
 package Menu;
 
 import java.awt.Color;
@@ -16,13 +29,21 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Esta clase representa la ventana del Sistema de Ecuaciones.
+ * Proporciona información y definiciones sobre sistemas de ecuaciones.
+ */
 public final class Matrices extends JFrame {
 
     JEditorPane editor;
     Alg al;
     JButton jbVolver;
-
+    /**
+     * Constructor de la clase Matrices.
+     *
+     * @param obj Instancia de la clase Alg.
+     *            Representa la ventana principal del programa.
+     */
     public Matrices(Alg obj) {
         super("Sistema de Ecuaciones");
         al = obj;
@@ -41,7 +62,10 @@ public final class Matrices extends JFrame {
 
         setVisible(true);
     }
-
+    /**
+     * Crea y configura la interfaz gráfica de la ventana del Sistema de Ecuaciones.
+     * Muestra información sobre sistemas de ecuaciones y métodos para resolverlos.
+     */
     public void crearGUI() {
 
         JLabel jlTitulo = new JLabel("Sistema de Ecuaciones");
@@ -115,7 +139,10 @@ public final class Matrices extends JFrame {
         js.setBounds(40, 90, 915, 500);
         add(js);
     }
-
+    /**
+     * Maneja el evento cuando se hace clic en el botón "Volver al menú principal".
+     * Oculta la ventana del Sistema de Ecuaciones y muestra la ventana del menú principal.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas

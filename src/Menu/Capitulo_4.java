@@ -1,3 +1,17 @@
+/**
+ * Propósito: Clase que representa el capitulo sobre el impacto de el ODS 1 en comunidades indigenas.
+ *
+ * Autores:
+ * - Angie Natalia Cobo Vásquez
+ * - Juan Diego Rodríguez Ortiz
+ * - Sebastián Henao Gamboa
+ * - Santiago Ospina González
+ *
+ * Versión: 2.0
+ * Fecha última actualización: 3/11/2023
+ * Versión JDK: 12
+ */
+
 package Menu;
 
 import java.awt.Color;
@@ -16,14 +30,20 @@ import javax.swing.JScrollPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
-
+/**
+ * Clase que representa la ventana del "Capítulo 4".
+ */
 public final class Capitulo_4 extends JFrame {
 
     JEditorPane editor;
     Capitulo_4 cap4;
     Capitulos ca;
     JButton jbVolver, jbCapitulo_4,jbsig,jbant;
-
+    /**
+     * Constructor de la clase Capitulo_4.
+     *
+     * @param obj El objeto Capitulos al que pertenece esta ventana.
+     */
     public Capitulo_4(Capitulos obj) {
         super("Capitulo 4");
         ca = obj;
@@ -43,6 +63,9 @@ public final class Capitulo_4 extends JFrame {
         setVisible(false);
     }
 
+    /**
+     * Crea y configura la interfaz gráfica de la ventana.
+     */
     public void crearGUI() {
         JLabel jlTitulo = new JLabel("Capitulo 4");
         jlTitulo.setBounds(0, 0, 1000, 70);
@@ -105,7 +128,7 @@ public final class Capitulo_4 extends JFrame {
     + "            <p><a href=\"https://elpais.com/elpais/2019/08/10/3500_millones/1565448989_143006.html\">Enlace 2</a></p>\n"
     + "            <p><a href=\"https://www.un.org/esa/socdev/unpfii/documents/2016/Docs-updates/SPANISH_Backgrounder_2030_Agenda.pdf\">Enlace 3</a></p>\n"
     + "<p><strong>Video relacionado:</strong></p>\n"
-    + "            <p><a href=\"https://www.youtube.com/watch?v=-8srmzpYU9g\">VIDEO</a></p>\n"
+    + "            <p><a href=\"https://youtu.be/NnUGRANj8o4?si=2Jjw2YCzRO7uTQJ8\">VIDEO</a></p>\n"
             
     + "        </font>\n"
     + "    </body>\n"
@@ -132,7 +155,9 @@ public final class Capitulo_4 extends JFrame {
         add(js);
 
     }
-
+    /**
+     * Maneja el evento del botón "Volver" para ocultar la ventana actual y mostrar la ventana de Capitulos.
+     */
     public void evento_jbVolver() {
         setVisible(false); // ocultar la ventana de Matematicas
         dispose(); // destruir la ventana de Matematicas
@@ -143,11 +168,17 @@ public final class Capitulo_4 extends JFrame {
         cap4.setVisible(true);
         setVisible(false); // ocultar la ventana de menu principal
     }
+        /**
+     * Maneja el evento del botón "Siguiente" para abrir la ventana del "Capítulo 5" y ocultar la ventana actual.
+     */
     public void evento_jbsig(){
         Capitulo_5 Capitulo_5 = new Capitulo_5(ca);
         Capitulo_5.setVisible(true);
         setVisible(false);
     }
+        /**
+     * Maneja el evento del botón "Anterior" para abrir la ventana del "Capítulo 3" y ocultar la ventana actual.
+     */
     public void evento_jbant(){
         Capitulo_3 Capitulo_3 = new Capitulo_3(ca);
         Capitulo_3.setVisible(true);
