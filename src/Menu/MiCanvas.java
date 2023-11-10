@@ -153,11 +153,11 @@ public class MiCanvas extends Canvas {
         g.drawString(s, (3 * (wAncho - orgX)) / 4 + orgX + 4 * cAncho, cAlto);
         g.setColor(Color.black);
         g.drawString("Vectores:", orgX + cAncho, wAlto - cAlto / 4);
-        g.setColor(Color.red);
+        g.setColor(Color.yellow);
         g.fillRect(orgX + 9 * cAncho, wAlto - cAlto / 2, 2 * cAncho, cAlto / 4);
         g.setColor(Color.black);
         g.drawString("aceleraci\363n", orgX + 12 * cAncho, wAlto - cAlto / 4);
-        g.setColor(Color.blue);
+        g.setColor(Color.green);
         g.fillRect(orgX + 27 * cAncho, wAlto - cAlto / 2, 2 * cAncho, cAlto / 4);
         g.setColor(Color.black);
         g.drawString("velocidad", orgX + 30 * cAncho, wAlto - cAlto / 4);
